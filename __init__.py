@@ -1,5 +1,6 @@
-__all__ = ['Wien2kEnergyReader', 'Wien2kScf2Reader', 'Wien2kStructReader']
+#__all__ = ['EnergyReader', 'Scf2Reader', 'StructReader', 'Band']
 
-from Wien2kEnergyReader import Wien2kEnergyReader
-from Wien2kScf2Reader import Wien2kScf2Reader
-from Wien2kStructReader import Wien2kStructReader
+from readers.EnergyReader import EnergyReader
+from reader.Scf2Reader import Scf2Reader
+from readers.StructReader import StructReader
+from Band import Band

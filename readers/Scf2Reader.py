@@ -1,10 +1,10 @@
-'''Wien2kScf2Reader.py
+'''Scf2Reader.py
 
 Reads a WIEN2k .scf2 file into an object
 '''
 
 
-class Wien2kScf2Reader(object):
+class Scf2Reader(object):
     '''Reads a WIEN2k .struct file specified in 'filename' parameter into an object
 
     At present, properties read include,

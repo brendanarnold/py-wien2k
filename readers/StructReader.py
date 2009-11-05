@@ -1,12 +1,10 @@
 '''
-Wien2kStructReader.py
+StructReader.py
 
 Reads a WIEN2k .struct file into an object
 '''
 
-__all__ = ['Wien2kStructReader']
-
-class Wien2kStructReader(object):
+class StructReader(object):
     '''Reads a WIEN2k .struct file specified in 'filename' parameter into an object
 
     At present, properties read include,
@@ -26,13 +24,14 @@ class Wien2kStructReader(object):
         file_handle = open(self.filename, 'r')
         line_num = 1
         for line in file_handle:
-            if line_num == 1:
-                self.lattice_type = line[1]
-                self.space_group = line.split(':')[-1].strip()
             if line_num == 2:
-                self.units = line.split('=')[-1].strip()
+                self.lattice_type = line[0]
+                self.space_group = line.split(':')[-1].strip()
             if line_num == 3:
-                self.a, self.b, self.c, aelf.alpha, self.beta, self.gamma = \
+                self.units = line.split('=')[-1].strip()
+            if line_num == 4:
+                self.a, self.b, self.c, self.alpha, self.beta, self.gamma = \
                     [float(num.strip()) for num in line.split(' ') if num.strip() != '']
+            line_num = line_num + 1
         # TODO: Rest of parsing
         file_handle.close()

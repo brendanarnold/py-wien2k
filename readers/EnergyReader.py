@@ -1,25 +1,17 @@
 '''
-Wien2kEnergyReader.py
+EnergyReader.py
 
 A class for reading Wien2k .energy files
 '''
 
 import numpy as np
+from wien2k.Band import Band
 
 # Some file format information
 kpoint_line_lengths = (84, 87)
 band_line_length = 36
 
-class Band(object):
-    '''An object representing the bands in the calculation
-    '''
-    def __init__(self, name='', character=''):
-        self.name = name
-        self.character = character
-        self.kpoints = None
-        self.energies = None
-
-class Wien2kEnergyReader(object):
+class EnergyReader(object):
     '''An object which reads WIEN2k .energy files and
     places the energies into bands
 
