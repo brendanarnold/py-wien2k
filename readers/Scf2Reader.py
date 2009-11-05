@@ -17,7 +17,7 @@ class Scf2Reader(object):
         file_handle = open(self.filename, 'r')
         for line in file_handle:
             # Takes the last fermi energy (i.e. from last interation) in the file
-            if line.strip().startswith('FER:'):
+            if line.strip().startswith(':FER'):
                 self.fermi_energy = float(line.split('=')[-1].strip())
         # TODO: Include other stuff
         file_handle.close()
