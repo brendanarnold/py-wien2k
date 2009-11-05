@@ -4,12 +4,14 @@ EnergyReader.py
 A class for reading Wien2k .energy files
 '''
 
+__all__ = ['EnergyReader']
+
 import numpy as np
 from wien2k.Band import Band
 
 # Some file format information
-kpoint_line_lengths = (84, 87)
-band_line_length = 36
+kpoint_line_lengths = (85, 88)
+band_line_length = 37
 
 class EnergyReader(object):
     '''An object which reads WIEN2k .energy files and
@@ -38,15 +40,16 @@ class EnergyReader(object):
                 band_num_id, energy = [x for x in line.split(' ') if x.strip() != '']
                 energy = float(energy)
                 band_num_id = int(band_num_id)
-                while band_num_id > len(self.bands):
+                while band_num_id > len(tmp_bands):
                     tmp_bands.append([])
                 tmp_bands[band_num_id - 1].append([i, j, k, energy])
         file_handle.close()
+
         # Now cast into Band objects
         for i in range(len(tmp_bands)):
             self.bands.append(Band(str(i)))
             data = np.array(tmp_bands[i])
-            self.bands[i].kpoints = data[:,:1]
-            self.bands[i].energies = data[:,2]
+            self.bands[i].kpoints = data[:,:3] # This slice notation is supremely gay
+            self.bands[i].energies = data[:,3]
         del tmp_bands # Frees up memory?
-        del data
+        #del data

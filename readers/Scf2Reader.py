@@ -3,6 +3,7 @@
 Reads a WIEN2k .scf2 file into an object
 '''
 
+__all__ = ['Scf2Reader']
 
 class Scf2Reader(object):
     '''Reads a WIEN2k .struct file specified in 'filename' parameter into an object
@@ -12,6 +13,7 @@ class Scf2Reader(object):
     '''
     def __init__(self, filename):
         self.filename = filename
+        self.fermi_energy = None
         file_handle = open(self.filename, 'r')
         for line in file_handle:
             # Takes the last fermi energy (i.e. from last interation) in the file

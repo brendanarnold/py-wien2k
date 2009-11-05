@@ -4,6 +4,8 @@ StructReader.py
 Reads a WIEN2k .struct file into an object
 '''
 
+__all__ = ['StructReader']
+
 class StructReader(object):
     '''Reads a WIEN2k .struct file specified in 'filename' parameter into an object
 
@@ -26,7 +28,7 @@ class StructReader(object):
         for line in file_handle:
             if line_num == 2:
                 self.lattice_type = line[0]
-                self.space_group = line.split(':')[-1].strip()
+                self.space_group = line.split(':')[-1].strip().split('_')[1]
             if line_num == 3:
                 self.units = line.split('=')[-1].strip()
             if line_num == 4:
