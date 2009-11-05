@@ -48,8 +48,6 @@ class EnergyReader(object):
         # Now cast into Band objects
         for i in range(len(tmp_bands)):
             self.bands.append(Band(str(i)))
-            data = np.array(tmp_bands[i])
-            self.bands[i].kpoints = data[:,:3] # This slice notation is supremely gay
-            self.bands[i].energies = data[:,3]
+            self.bands[i].data = np.array(tmp_bands[i])
         del tmp_bands # Frees up memory?
         #del data
