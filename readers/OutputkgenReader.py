@@ -7,16 +7,20 @@ Reads from the .outputkgen file which contains symmetry matrices
 __all__ = ['OutputkgenReader']
 
 import numpy as np
-##from wien2k.errors import UnexpectedFileFormat
+from wien2k.errors import UnexpectedFileFormat
 
 skip_lines = 11
-matrix_header_test_string = 'SYMMETRY MATRIX NR.' # A string that denotes the line before the symmetry matrices
+# A string that denotes the line before the symmetry matrices
+matrix_header_test_string = 'SYMMETRY MATRIX NR.' 
+# A string that denotes the line before the rectangular lattice vectors
+rec_lattice_vectors_header_test_string = 'G1        G2        G3'
 
 class OutputkgenReader(object):
     '''A class which reads from the .outputkgen file which contains symmetry vectors'''
     def __init__(self, filename):
         self.filename = filename
         self.symmetry_matrices = []
+        self.rec_lattice_vectors = []
         # Read in the symmetry matrices
         file_handle = open(filename, 'r')
         line_num = 0
@@ -50,5 +54,22 @@ class OutputkgenReader(object):
                         continue
                     else:
                         self.symmetry_matrices.append(tmp_matrix)
-##        if len(self.symmetry_matrices) == 0:
-##            raise UnexpectedFileFormat('No symmetry matrices found in file: %s' % self.filename)
+            # Test to see if is line preceding the rectangular lattice vectors
+            if line.strip().startswith(rec_lattice_vectors_header_test_string):
+                tmp_vectors = [[],[],[]]
+                for i in [1,2,3]:
+                    line_num = line_num + 1
+                    line = file_handle.readline()
+                    try:
+                        vals = [float(x.strip()) for x in line.split(' ') if x.strip() != '']
+                        g1.append(vals[0])
+                        g2.append(vals[1])
+                        g3.append(vals[2])
+                    except:
+                        raise UnexpectedFileFormat('Could not parse rectangular lattice vectors from line (line: %d)' % line_num)
+                self.rectangular_lattice_vectors.append(np.array(g1))
+                self.rectangular_lattice_vectors.append(np.array(g2))
+                self.rectangular_lattice_vectors.append(np.array(g3))
+                # Only take the first set of lattice vectors (second set is just 2*pi*a)
+                break
+        file_handle.close()
