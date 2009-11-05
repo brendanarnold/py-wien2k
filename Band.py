@@ -13,7 +13,8 @@ class Band(object):
         
     def kpoints(self):
         if self.data is not None:
-            return self.data[:,:3] # This slice notation is supremely gay - means columns 1-3
+            # This slice notation is rubbish - means columns 1-3 (whereas [:,3] means column 4)
+            return self.data[:,:3] 
         else:
             return None
         
