@@ -9,18 +9,24 @@ __all__ = ['OutputkgenReader']
 import numpy as np
 from wien2k.errors import UnexpectedFileFormat
 
-skip_lines = 11
-# A string that denotes the line before the symmetry matrices
-matrix_header_test_string = 'SYMMETRY MATRIX NR.' 
-# A string that denotes the line before the rectangular lattice vectors
-rec_lattice_vectors_header_test_string = 'G1        G2        G3'
+fmt = {
+    # Skip these line until find out what they are
+    'skip_lines' : 11,
+    # A string that denotes the line before the symmetry matrices
+    'matrix_header_test_string' : 'SYMMETRY MATRIX NR.',
+    # A string that denotes the line before the rectangular lattice vectors
+    'rec_lattice_vectors_header_test_string' : 'G1        G2        G3'
+}
+
+ 
+
 
 class OutputkgenReader(object):
     '''A class which reads from the .outputkgen file which contains symmetry vectors'''
     def __init__(self, filename):
         self.filename = filename
         self.symmetry_matrices = []
-        self.rec_lattice_vectors = []
+        self.rectangular_lattice_vectors = []
         # Read in the symmetry matrices
         file_handle = open(filename, 'r')
         line_num = 0
@@ -31,10 +37,10 @@ class OutputkgenReader(object):
             if line == '':
                 break
             # Skip a certain number of lines - first row of matrices contain unknown data
-            if line_num < skip_lines:
+            if line_num < fmt['skip_lines']:
                 continue
             # Test to see if a set of matrices is coming up
-            if line.strip().startswith(matrix_header_test_string):
+            if line.strip().startswith(fmt['matrix_header_test_string']):
                 tmp_matrices = []
                 # Read the matrices off the next three lines into a buffer
                 for i in [1,2,3]:
@@ -55,8 +61,10 @@ class OutputkgenReader(object):
                     else:
                         self.symmetry_matrices.append(tmp_matrix)
             # Test to see if is line preceding the rectangular lattice vectors
-            if line.strip().startswith(rec_lattice_vectors_header_test_string):
-                tmp_vectors = [[],[],[]]
+            if line.strip().startswith(fmt['rec_lattice_vectors_header_test_string']):
+                g1 = []
+                g2 = []
+                g3 = []
                 for i in [1,2,3]:
                     line_num = line_num + 1
                     line = file_handle.readline()
@@ -72,4 +80,5 @@ class OutputkgenReader(object):
                 self.rectangular_lattice_vectors.append(np.array(g3))
                 # Only take the first set of lattice vectors (second set is just 2*pi*a)
                 break
+            # TODO: Parse out other values
         file_handle.close()
