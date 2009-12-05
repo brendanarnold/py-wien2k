@@ -9,11 +9,20 @@ __all__ = ['EnergyReader']
 import re
 import numpy as np
 from wien2k.Band import Band
+from wien2k.Kpoint import Kpoint
 from wien2k.errors import UnexpectedFileFormat
 
 fmt = {
+    # Begins with expansions energy (E_J) for atom 'I'
+    # WRITE(11,'(100(f9.5))') (E(J,I),J=1,LMAX)
+    # Also has expansion energy for local orbitals (ELO_J) fro atom 'I'
+    # WRITE(11,'(100(f9.5))') ((ELO(J,k,I),J=0,LOMAX),k=1,nloat)
+    
     # k Point line contains details on kpoint and is of format,
     # 0.000000000000E+00 0.000000000000E+00 0.000000000000E+00         1   455    50  1.0
+    # Actual format is
+    # WRITE(11,'(3e19.12,a10,2i6,f5.1,a3)') SX, SY, SZ, KNAME, NV, NE, WEIGHT, IPGR
+    # From line 46 of tapewf.f in SRC_lapw1
     'kpoint_line_lengths' : (85, 88),
     'num_kpoint_vals' : 7,
     'kpoint_line' : re.compile('''
@@ -22,13 +31,16 @@ fmt = {
         \s+(-?[-+E\d\.]+)   # j
         \s+(-?[-+E\d\.]+)   # k
         \s+(-?[-+E\d\.]+)   # k point id
-        \s+(-?[-+E\d\.]+)   # Unknown
+        \s+(-?[-+E\d\.]+)   # Number plane waves (tot num considered recip. latt. vecs.) plus number of local orbitals
         \s+(-?[-+E\d\.]+)   # Number of bands
         \s+(-?[-+E\d\.]+)   # Weight
-        \s*
+        \s*                 # Point group (not captured)
     ''', re.VERBOSE),
     # Band line contains details on band energy at a particular k point and is of format,
     #           3  -3.30918392086173
+    # Actual format is
+    # WRITE(11,*) I, E(I)
+    # From line 50 of tapewf.f in SRC_lapw1
     'band_line_length' : 37,
     'num_band_vals' : 2,
     'band_line' : re.compile('''
@@ -56,6 +68,7 @@ class EnergyReader(object):
         self.filename = filename
         self.spin_orbit_direction = spin_orbit_direction
         self.bands = []
+        self.kpoints = []
         tmp_bands = []
         file_handle = open(filename, 'r')
         line_num = 0
@@ -65,29 +78,29 @@ class EnergyReader(object):
                 try:
                     kpoint_vals = fmt['kpoint_line'].match(line).groups()
                     if len(kpoint_vals) != fmt['num_kpoint_vals']:
-                        raise Exception
-                    i, j, k, k_id, unknown, num_bands, k_weight = [float(x.strip()) for x in kpoint_vals]
+                        raise UnexpectedFileFormat('The specified number of values was not parsed from the k point line (line: %d)' % line_num)
+                    i, j, k, kpoint_id, unknown, num_bands, k_weight = [float(x.strip()) for x in kpoint_vals]
                     num_bands = int(num_bands)
-                    k_id = int(k_id)
+                    kpoint_id = int(kpoint_id)
                 except:
                     raise UnexpectedFileFormat('A non-float was parsed from a line identified as a k-point line (line: %d)' % line_num)
+                self.kpoints.append(Kpoint(kpoint_id, i, j, k))
             elif len(line) == fmt['band_line_length']:
                 try:
                     band_vals = fmt['band_line'].match(line).groups()
                     if len(band_vals) != fmt['num_band_vals']:
                         raise Exception
-                    band_num_id, energy = band_vals
+                    band_id, energy = band_vals
                     energy = float(energy)
-                    band_num_id = int(band_num_id)
+                    band_id = int(band_id)
                 except:
                     raise UnexpectedFileFormat('A non-number was parsed from a line identified as a band energy line (line: %d)' % line_num)
-                while band_num_id > len(tmp_bands):
+                while band_id > len(tmp_bands):
                     tmp_bands.append([])
-                tmp_bands[band_num_id - 1].append([i, j, k, energy])
+                tmp_bands[band_id - 1].append([kpoint_id, i, j, k, energy])
         file_handle.close()
 
         # Now cast into Band objects
         for i in range(len(tmp_bands)):
-            self.bands.append(Band(str(i)))
-            self.bands[i].data = np.array(tmp_bands[i])
+            self.bands.append(Band(id=i+1, data=np.array(tmp_bands[i])))
         del tmp_bands # Frees up memory?

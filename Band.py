@@ -3,46 +3,55 @@
 A class representing an energy band
 '''
 
+import numpy as np
+
 class Band(object):
     '''An object representing the bands in the calculation
     '''
-    def __init__(self, name='', character=''):
-        self.name = name
+    def __init__(self, id=None, character='', data=None):
+        self.id = id
         self.character = character
-        self.data = None
+        self.data = data
         
     def kpoints(self):
         if self.data is not None:
-            # This slice notation is rubbish - means columns 1-3 (whereas [:,3] means column 4)
-            return self.data[:,:3] 
+            # This slice notation is rubbish - [:,:4] means columns 1-3 (whereas [:,4] means column 5!
+            return self.data[:,:4]
         else:
             return None
-        
+
+    def kpoint_ids(self):
+        if self.data is not None:
+            return np.array(self.data[:,0], dtype=int)
+        else:
+            return None
+
     def i_vals(self):
         if self.data is not None:
-            return self.data[:,0]
+            return self.data[:,1]
         else:
             return None
     def j_vals(self):
         if self.data is not None:
-            return self.data[:,1]
+            return self.data[:,2]
         else:
             return None
         
     def k_vals(self):
         if self.data is not None:
-            return self.data[:,2]
+            return self.data[:,3]
         else:
             return None
 
     def energies(self):
         if self.data is not None:
-            return self.data[:,3] # This means column 4
+            return self.data[:,4]
         else:
             return None
 
     # Overwrite the function labels with properties
     kpoints = property(kpoints)
+    kpoint_ids = property(kpoint_ids)
     i_vals = property(i_vals)
     j_vals = property(j_vals)
     k_vals = property(k_vals)
