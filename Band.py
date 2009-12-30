@@ -31,6 +31,7 @@ class Band(object):
             return self.data[:,1]
         else:
             return None
+        
     def j_vals(self):
         if self.data is not None:
             return self.data[:,2]

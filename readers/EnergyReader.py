@@ -89,7 +89,7 @@ class EnergyReader(object):
                 try:
                     band_vals = fmt['band_line'].match(line).groups()
                     if len(band_vals) != fmt['num_band_vals']:
-                        raise Exception
+                        raise UnexpectedFileFormat('A line describing a band contains less values than expected (line: %d)' % line_num)
                     band_id, energy = band_vals
                     energy = float(energy)
                     band_id = int(band_id)
