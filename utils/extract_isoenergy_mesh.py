@@ -3,7 +3,7 @@ extract_isoenergy_mesh.py
 
 Pass in a Kmesh object and an energy
 
-Returns a Nx3 array of i, j, k values corresponding to the closest kpoints the
+Returns a Nx3 array of i, j, k values corresponding to the closest k points the
 the iso-energy surface. Also returns the mean energy for the points and the standard deviation
 
 No interpolation at present
@@ -59,4 +59,5 @@ def extract_isoenergy_mesh(kmesh, energy):
 ##     ]
 
 if __name__ == '__main__':
-    pass
+    import wien2k.Kmesh as Kmesh
+

@@ -13,14 +13,14 @@ class Band(object):
         self.character = character
         self.data = data
         
-    def kpoints(self):
+    def k_points(self):
         if self.data is not None:
             # This slice notation is rubbish - [:,:4] means columns 1-3 (whereas [:,4] means column 5!
             return self.data[:,:4]
         else:
             return None
 
-    def kpoint_ids(self):
+    def k_point_ids(self):
         if self.data is not None:
             return np.array(self.data[:,0], dtype=int)
         else:
@@ -51,8 +51,8 @@ class Band(object):
             return None
 
     # Overwrite the function labels with properties
-    kpoints = property(kpoints)
-    kpoint_ids = property(kpoint_ids)
+    k_points = property(k_points)
+    k_point_ids = property(k_point_ids)
     i_vals = property(i_vals)
     j_vals = property(j_vals)
     k_vals = property(k_vals)

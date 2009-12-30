@@ -40,8 +40,8 @@ fmt = {
     #         2         1         1         0        21  4.0
     # FORTRAN format statement found in main.f on line 285
     # FORMAT(I10,4I10,f5.1)
-    'num_kpoint_vals' : 6,   # Number of values read from k point line - used to check parsing successful
-    'kpoint_line' : re.compile(r'''
+    'num_k_point_vals' : 6,   # Number of values read from k point line - used to check parsing successful
+    'k_point_line' : re.compile(r'''
         \s+(-?[\d\.]+) # k point id
         \s+(-?[\d\.]+) # i' value
         \s+(-?[\d\.]+) # j' value
@@ -87,11 +87,11 @@ class KlistReader(object):
             # Otherwise parse out the k point line
             else:
                 # Extract all the matches to the regular expression
-                kpoint_vals = fmt['kpoint_line'].match(line).groups()
-                if len(kpoint_vals) != fmt['num_kpoint_vals']:
+                k_point_vals = fmt['k_point_line'].match(line).groups()
+                if len(k_point_vals) != fmt['num_k_point_vals']:
                     raise UnexpectedFileFormat('k point line parsed wrong number of elements - check that the file is correct or update format (line: %d))' % line_num)
                 # i', j', k', denominator, weight
-                tmp_data.append([float(x) for x in kpoint_vals[:6]])
+                tmp_data.append([float(x) for x in k_point_vals[:6]])
         self.data = np.array(tmp_data)
         file_handle.close()
 

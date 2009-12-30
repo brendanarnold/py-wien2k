@@ -18,14 +18,14 @@ fmt = {
     # Also has expansion energy for local orbitals (ELO_J) fro atom 'I'
     # WRITE(11,'(100(f9.5))') ((ELO(J,k,I),J=0,LOMAX),k=1,nloat)
     
-    # k Point line contains details on kpoint and is of format,
+    # k Point line contains details on k_point and is of format,
     # 0.000000000000E+00 0.000000000000E+00 0.000000000000E+00         1   455    50  1.0
     # Actual format is
     # WRITE(11,'(3e19.12,a10,2i6,f5.1,a3)') SX, SY, SZ, KNAME, NV, NE, WEIGHT, IPGR
     # From line 46 of tapewf.f in SRC_lapw1
-    'kpoint_line_lengths' : (85, 88),
-    'num_kpoint_vals' : 7,
-    'kpoint_line' : re.compile('''
+    'k_point_line_lengths' : (85, 88),
+    'num_k_point_vals' : 7,
+    'k_point_line' : re.compile('''
         \s*
         (-?[-+E\d\.]+)      # i
         \s+(-?[-+E\d\.]+)   # j
@@ -68,23 +68,23 @@ class EnergyReader(object):
         self.filename = filename
         self.spin_orbit_direction = spin_orbit_direction
         self.bands = []
-        self.kpoints = []
+        self.k_points = []
         tmp_bands = []
         file_handle = open(filename, 'r')
         line_num = 0
         for line in file_handle:
             line_num = line_num + 1
-            if len(line) in fmt['kpoint_line_lengths']:
+            if len(line) in fmt['k_point_line_lengths']:
                 try:
-                    kpoint_vals = fmt['kpoint_line'].match(line).groups()
-                    if len(kpoint_vals) != fmt['num_kpoint_vals']:
+                    k_point_vals = fmt['k_point_line'].match(line).groups()
+                    if len(k_point_vals) != fmt['num_k_point_vals']:
                         raise UnexpectedFileFormat('The specified number of values was not parsed from the k point line (line: %d)' % line_num)
-                    i, j, k, kpoint_id, unknown, num_bands, k_weight = [float(x.strip()) for x in kpoint_vals]
+                    i, j, k, k_point_id, unknown, num_bands, k_weight = [float(x.strip()) for x in k_point_vals]
                     num_bands = int(num_bands)
-                    kpoint_id = int(kpoint_id)
+                    k_point_id = int(k_point_id)
                 except:
                     raise UnexpectedFileFormat('A non-float was parsed from a line identified as a k-point line (line: %d)' % line_num)
-                self.kpoints.append(Kpoint(kpoint_id, i, j, k))
+                self.k_points.append(Kpoint(k_point_id, i, j, k))
             elif len(line) == fmt['band_line_length']:
                 try:
                     band_vals = fmt['band_line'].match(line).groups()
@@ -97,7 +97,7 @@ class EnergyReader(object):
                     raise UnexpectedFileFormat('A non-number was parsed from a line identified as a band energy line (line: %d)' % line_num)
                 while band_id > len(tmp_bands):
                     tmp_bands.append([])
-                tmp_bands[band_id - 1].append([kpoint_id, i, j, k, energy])
+                tmp_bands[band_id - 1].append([k_point_id, i, j, k, energy])
         file_handle.close()
 
         # Now cast into Band objects
