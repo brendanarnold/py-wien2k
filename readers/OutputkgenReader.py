@@ -8,6 +8,7 @@ __all__ = ['OutputkgenReader']
 
 import numpy as np
 from wien2k.errors import UnexpectedFileFormat
+from wien2k.SymmetryMatrix import SymmetryMatrix
 
 fmt = {
     # Skip these line until find out what they are
@@ -59,7 +60,7 @@ class OutputkgenReader(object):
                     if np.linalg.det(tmp_matrix) == 0:
                         continue
                     else:
-                        self.symmetry_matrices.append(tmp_matrix)
+                        self.symmetry_matrices.append(SymmetryMatrix(matrix = tmp_matrix))
             # Test to see if is line preceding the rectangular lattice vectors
             if line.strip().startswith(fmt['rec_lattice_vectors_header_test_string']):
                 g1 = []
