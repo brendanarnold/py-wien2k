@@ -4,6 +4,8 @@ SymmetryMatrix.py
 An object to store symmetry matrix data
 '''
 
+__all__ = ['SymmetryMatrix']
+
 import numpy as np
 
 class SymmetryMatrix(object):

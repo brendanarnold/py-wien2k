@@ -1,3 +1,5 @@
+__all__ = ['EnergyReader', 'StructReader', 'Scf2Reader', 'OutputkgenReader', 'KlistReader', 'Output2Reader']
+
 from EnergyReader import EnergyReader
 from StructReader import StructReader
 from Scf2Reader import Scf2Reader

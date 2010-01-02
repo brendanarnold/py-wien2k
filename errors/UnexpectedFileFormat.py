@@ -1,3 +1,5 @@
+__all__ = ['UnexpectedFileFormat']
+
 class UnexpectedFileFormat(Exception):
     def __init__(self, text=None):
         self.text = text

@@ -12,6 +12,8 @@ RETURNS:
   (<Nx3 array i,j,k values>, mean_energy, stadard_deviation_energy)
 '''
 
+__all__ = ['extract_isoenergy_mesh']
+
 import numpy as np
 
 def extract_isoenergy_mesh(kmesh, energy):

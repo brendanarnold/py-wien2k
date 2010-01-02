@@ -1,6 +1,9 @@
 '''
 Module containg the Kmesh class
 '''
+
+__all__ = ['Kmesh']
+
 import numpy as np
 
 class Kmesh(object):

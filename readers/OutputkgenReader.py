@@ -34,8 +34,8 @@ class OutputkgenReader(object):
     '''A class which reads from the .outputkgen file which contains symmetry vectors'''
     def __init__(self, filename):
         self.filename = filename
-        self.reciprocal_lattice_vectors = []
-        self.reciprocal_lattice_vectors_by_2pi = []
+        self.reciprocal_lattice_vectors = None
+        self.reciprocal_lattice_vectors_by_2pi = None
         self.symmetry_matrices = []
         self.point_group_symmetry_matrices = []
         self.bloch_vectors = None
@@ -73,34 +73,23 @@ class OutputkgenReader(object):
                 self.symmetry_matrices.extend(self._read_symmetry_matrices())
 
             elif line.startswith(fmt['reciprocal_lattice_vectors_header_line_startswith']):
-                g1 = []
-                g2 = []
-                g3 = []
-                for i in [1,2,3]:
+                tmp_vectors = np.zeros((3,3))
+                for i in [0,1,2]:
                     self._line_num = self._line_num + 1
                     try:
                         line = self._file_handle.next()
                     except StopIteration:
-                        raise UnexpectedFileFormat('Less than 3 lines were specified for the reciporcal lattice vectors (line: %d)' % self._line_num)
+                        raise UnexpectedFileFormat('Less than 3 lines were specified for the reciprocal lattice vectors (line: %d)' % self._line_num)
                     try:
-                        vals = [float(x.strip()) for x in line.split(' ') if x.strip() != '']
-                        g1.append(vals[0])
-                        g2.append(vals[1])
-                        g3.append(vals[2])
+                        tmp_vectors[:,i] = [float(x.strip()) for x in line.split(' ') if x.strip() != '']
                     except:
                         raise UnexpectedFileFormat('Could not parse reciprocal lattice vectors from line (line: %d)' % self._line_num)
                 # First set of reciprocal lattic vetors is followed by an
                 # identical set multiplied by 2*pi
-                if len(self.reciprocal_lattice_vectors) != 3:
-                    self.reciprocal_lattice_vectors.append(np.array(g1))
-                    self.reciprocal_lattice_vectors.append(np.array(g2))
-                    self.reciprocal_lattice_vectors.append(np.array(g3))
+                if self.reciprocal_lattice_vectors == None:
+                    self.reciprocal_lattice_vectors = tmp_vectors.copy()
                 else:
-                    self.reciprocal_lattice_vectors_by_2pi.append(np.array(g1))
-                    self.reciprocal_lattice_vectors_by_2pi.append(np.array(g2))
-                    self.reciprocal_lattice_vectors_by_2pi.append(np.array(g3))
-
-                # Only take the first set of lattice vectors (second set is just 2*pi*a)
+                    self.reciprocal_lattice_vectors_by_2pi = tmp_vectors.copy()
 
             elif line.startswith(fmt['length_reciprocal_lattice_vectors_line_startswith']):
                 #TODO

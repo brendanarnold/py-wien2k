@@ -1,4 +1,8 @@
+
+__all__ = ['expand_irreducible_brillouin_zone']
+
 import numpy as np
+
 
 def expand_irreducible_brillouin_zone(symmetry_matrices, k_points):
     tot_k_points = []

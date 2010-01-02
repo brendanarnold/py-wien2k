@@ -3,6 +3,8 @@
 A class representing an energy band
 '''
 
+__all__ = ['Band']
+
 import numpy as np
 
 class Band(object):
