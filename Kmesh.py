@@ -5,12 +5,13 @@ Module containg the Kmesh class
 __all__ = ['Kmesh']
 
 import numpy as np
+import wien2k
 
 class Kmesh(object):
     '''
-    Pass in a band_data array (an Nx5 array of id, i, j, k, energy values, as
-    from a Band object) containing k points evenly spaced over a Cartesian grid
-    (although points may be missing)
+    Pass in a band istance or a band_data array (an Nx5 array of id, i, j, k,
+    energy values, as from a Band object) containing k points evenly spaced
+    over a Cartesian grid (although points may be missing)
 
     A full cubic 3D mesh of energies is created (missing points are 'masked')
     correspdonging i, j and k values are also created.
@@ -22,6 +23,9 @@ class Kmesh(object):
         self.i_series_offset = None
         self.j_series_offset = None
         self.k_series_offset = None
+        # Allow a band to be passed in
+        if isinstance(band_data, wien2k.Band):
+            band_data = band_data.data
         self._build_mesh(band_data)
 
     def i_vals(self):
