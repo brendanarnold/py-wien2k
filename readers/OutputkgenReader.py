@@ -9,6 +9,7 @@ __all__ = ['OutputkgenReader']
 import numpy as np
 from wien2k.errors import UnexpectedFileFormat
 from wien2k.SymmetryMatrix import SymmetryMatrix
+import wien2k.CONSTANTS as CNST
 
 fmt = {
     'ortho_line_num' : 1,
@@ -31,11 +32,17 @@ fmt = {
 }
 
 class OutputkgenReader(object):
-    '''A class which reads from the .outputkgen file which contains symmetry vectors'''
+    '''
+    A class which reads from the .outputkgen file which contains symmetry vectors
+
+    symmetry_matrices:         A set of symmetry matrices that 
+    '''
+
     def __init__(self, filename):
         self.filename = filename
         self.reciprocal_lattice_vectors = None
         self.reciprocal_lattice_vectors_by_2pi = None
+        self.reciprocal_lattice_vectors_in_inv_angs = None
         self.symmetry_matrices = []
         self.point_group_symmetry_matrices = []
         self.bloch_vectors = None
@@ -88,6 +95,7 @@ class OutputkgenReader(object):
                 # identical set multiplied by 2*pi
                 if self.reciprocal_lattice_vectors == None:
                     self.reciprocal_lattice_vectors = tmp_vectors.copy()
+                    self.reciprocal_lattice_vectors_in_inv_angs = self.reciprocal_lattice_vectors * (2. * np.pi / CNST.BOHR_RADIUS_IN_ANGSTROM)
                 else:
                     self.reciprocal_lattice_vectors_by_2pi = tmp_vectors.copy()
 

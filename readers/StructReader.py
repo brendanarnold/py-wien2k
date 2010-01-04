@@ -46,7 +46,9 @@ class StructReader(object):
         beta:                  Lattice beta angle in deg.
         gamma:                 Lattice gamma angle in deg.
         is_relativistic:       True if relativistic calcs. used, False otherwise (from 'RELA' or 'NREL')
-        symmetry_matrices:     A list of symmetry matrices
+        symmetry_matrices:     A list of symmetry matrices that map irreducible
+                               points in the rectangular cell to a full
+                               rectangular cell
     '''
 
     def __init__(self, filename):
