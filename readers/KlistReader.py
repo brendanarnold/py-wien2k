@@ -103,19 +103,19 @@ class KlistReader(object):
 
     def i_vals(self):
         if self.data != None:
-            return self.data[:,1]/self.data[:,4]
+            return self.data[:,1]
         else:
             return None
     
     def j_vals(self):
         if self.data != None:
-            return self.data[:,2]/self.data[:,4]
+            return self.data[:,2]
         else:
             return None
     
     def k_vals(self):
         if self.data != None:
-            return self.data[:,3]/self.data[:,4]
+            return self.data[:,3]
         else:
             return None
     
@@ -132,7 +132,7 @@ class KlistReader(object):
             return None
 
     def k_points(self):
-        return np.column_stack((self.ids, self.i_vals, self.j_vals, self.k_vals))
+        return self.data[:,4]
     
     # Overwrite the function labels with properties
     ids = property(ids)

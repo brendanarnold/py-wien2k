@@ -6,6 +6,7 @@ A class representing an energy band
 __all__ = ['Band']
 
 import numpy as np
+from wien2k.utils import map_band_coords
 
 class Band(object):
     '''An object representing the bands in the calculation
@@ -59,3 +60,9 @@ class Band(object):
     k_vals = property(k_vals)
     energies = property(energies)
     
+    def map_coords(self, new_coords):
+        '''
+        Given an array of form Nx(id,kx,ky,kz[, ...]) will exchange the band
+        objects coordinate system
+        '''
+        self.data = map_band_coords(self, new_coords)
