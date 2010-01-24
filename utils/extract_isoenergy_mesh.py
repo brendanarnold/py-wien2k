@@ -18,28 +18,28 @@ import numpy as np
 
 def extract_isoenergy_mesh(kmesh, energy):
     '''Returns a list of i, j, k values that map a surface'''
-    isoenergy_3d_mesh = kmesh > energy
+    isoenergy_3d_mesh = kmesh.mesh > energy
     marching_cube_indexes = \
-          np.array(isoenergy_3d_mesh[:-1,:-1,:-1], dtype=int) * 1 \
-        + np.array(isoenergy_3d_mesh[:-1,:-1:,1:], dtype=int) * 2 \
-        + np.array(isoenergy_3d_mesh[:-1,1:,:-1], dtype=int) * 4  \
-        + np.array(isoenergy_3d_mesh[:-1,1:,1:], dtype=int) * 8   \
-        + np.array(isoenergy_3d_mesh[1:,:-1,:-1], dtype=int) * 16 \
-        + np.array(isoenergy_3d_mesh[1:,:-1,:1:], dtype=int) * 32 \
-        + np.array(isoenergy_3d_mesh[1:,1:,:-1], dtype=int) * 64  \
-        + np.array(isoenergy_3d_mesh[1:,1:,1:], dtype=int) * 128
+          np.ma.array(isoenergy_3d_mesh[:-1,:-1,:-1], dtype=int) * 1 \
+        + np.ma.array(isoenergy_3d_mesh[:-1,:-1:,1:], dtype=int) * 2 \
+        + np.ma.array(isoenergy_3d_mesh[:-1,1:,:-1], dtype=int) * 4  \
+        + np.ma.array(isoenergy_3d_mesh[:-1,1:,1:], dtype=int) * 8   \
+        + np.ma.array(isoenergy_3d_mesh[1:,:-1,:-1], dtype=int) * 16 \
+        + np.ma.array(isoenergy_3d_mesh[1:,:-1,:1:], dtype=int) * 32 \
+        + np.ma.array(isoenergy_3d_mesh[1:,1:,:-1], dtype=int) * 64  \
+        + np.ma.array(isoenergy_3d_mesh[1:,1:,1:], dtype=int) * 128
     del(isoenergy_3d_mesh)
-    kmesh = kmesh[:-1,:-1,:-1]
-    kmesh.mask = marching_cube_indexes.mask | (marching_cube_indexes == 0) | (marching_cube_indexes == 255)
+    kmesh.mesh = kmesh.mesh[:-1,:-1,:-1]
+    kmesh.mesh.mask = marching_cube_indexes | (marching_cube_indexes == 0) | (marching_cube_indexes == 255)
     a_i = kmesh.i_series_offset + 0.5*kmesh.i_series_spacing
     a_j = kmesh.j_series_offset + 0.5*kmesh.j_series_spacing
     a_k = kmesh.k_series_offset + 0.5*kmesh.k_series_spacing
     b_i = kmesh.i_series_spacing
     b_j = kmesh.j_series_spacing
     b_k = kmesh.k_series_spacing
-    standard_deviation_energy = kmesh.ravel().std()
-    mean_energy = kmesh.ravel().mean()
-    i_indexes, j_indexes, k_indexes = np.where(kmesh.mask == False)
+    standard_deviation_energy = kmesh.mesh.ravel().std()
+    mean_energy = kmesh.mesh.ravel().mean()
+    i_indexes, j_indexes, k_indexes = np.where(kmesh.mesh.mask == False)
     del(kmesh)
     i_vals = a_i + i_indexes * b_i
     j_vals = a_j + j_indexes * b_j

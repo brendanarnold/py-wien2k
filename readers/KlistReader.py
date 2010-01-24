@@ -132,7 +132,7 @@ class KlistReader(object):
             return None
 
     def k_points(self):
-        return self.data[:,4]
+        return self.data[:,:4]
     
     # Overwrite the function labels with properties
     ids = property(ids)
