@@ -29,15 +29,18 @@ class Kmesh(object):
         self._build_mesh(band_data)
 
     def i_vals(self):
-        return np.arange(self.mesh.shape[0]) * self.i_series_spacing + self.i_series_offset
+        return np.arange(self.mesh.shape[0]) * \
+          self.i_series_spacing + self.i_series_offset
     i_vals = property(i_vals)
 
     def j_vals(self):
-        return np.arange(self.mesh.shape[1]) * self.j_series_spacing + self.k_series_offset
+        return np.arange(self.mesh.shape[1]) * \
+          self.j_series_spacing + self.k_series_offset
     j_vals = property(j_vals)
 
     def k_vals(self):
-        return np.arange(self.mesh.shape[2]) * self.j_series_spacing + self.k_series_offset
+        return np.arange(self.mesh.shape[2]) * \
+          self.j_series_spacing + self.k_series_offset
     k_vals = property(k_vals)
 
     def centre_point(self):
@@ -72,9 +75,12 @@ class Kmesh(object):
         self.mesh = np.ma.zeros((i_dimension, j_dimension, k_dimension))
         self.mesh.mask = True
         k_point_indexes = np.zeros((band_data.shape[0], 4))
-        k_point_indexes[:,0] = (band_data[:,1] - self.i_series_offset) / self.i_series_spacing
-        k_point_indexes[:,1] = (band_data[:,2] - self.j_series_offset) / self.j_series_spacing
-        k_point_indexes[:,2] = (band_data[:,3] - self.k_series_offset) / self.k_series_spacing
+        k_point_indexes[:,0] = (band_data[:,1] - self.i_series_offset) / \
+          self.i_series_spacing
+        k_point_indexes[:,1] = (band_data[:,2] - self.j_series_offset) / \
+          self.j_series_spacing
+        k_point_indexes[:,2] = (band_data[:,3] - self.k_series_offset) / \
+          self.k_series_spacing
         k_point_indexes[:,3] = band_data[:,4]
         for k in k_point_indexes:
             x_ind, y_ind, z_ind = (int(val) for val in k[:3])

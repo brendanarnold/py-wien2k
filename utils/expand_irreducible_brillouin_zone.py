@@ -40,7 +40,7 @@ def expand_irreducible_brillouin_zone(klist_rdr=None, \
     if klist_rdr != None:
         ibz_data = ibz_data or klist_rdr.data
         klist_denominator = klist_denominator or \
-                np.unique(klist_rdr.denominators)
+                np.unique(klist_rdr.denominators)[0]
     if struct_rdr != None:
         symmetry_matrices = symmetry_matrices or struct_rdr.symmetry_matrices
 ##     if band != None:

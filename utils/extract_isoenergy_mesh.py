@@ -17,9 +17,13 @@ __all__ = ['extract_isoenergy_mesh']
 import numpy as np
 from scipy.interpolate import Rbf
 import sys
+import copy
+import pdb
 
-def extract_isoenergy_mesh(kmesh, energy, precision=sys.float_info.epsilon):
+def extract_isoenergy_mesh(orig_kmesh, energy, precision=sys.float_info.epsilon):
     '''Returns a list of i, j, k values that map a surface'''
+    #pdb.set_trace()
+    kmesh = copy.deepcopy(orig_kmesh)
     isoenergy_3d_mesh = kmesh.mesh > energy
     marching_cube_indexes = \
           np.ma.array(isoenergy_3d_mesh[:-1,:-1,:-1], dtype=int) * 1 \
@@ -32,13 +36,13 @@ def extract_isoenergy_mesh(kmesh, energy, precision=sys.float_info.epsilon):
         + np.ma.array(isoenergy_3d_mesh[1:,1:,1:], dtype=int) * 128
     del(isoenergy_3d_mesh)
     kmesh.mesh = kmesh.mesh[:-1,:-1,:-1]
-    kmesh.mesh.mask = marching_cube_indexes | (marching_cube_indexes == 0) | (marching_cube_indexes == 255)
+    kmesh.mesh.mask = (marching_cube_indexes == 0) | (marching_cube_indexes == 255)
     i_indexes, j_indexes, k_indexes = np.where(kmesh.mesh.mask == False)
 
     # == Interpolate and bisect to find energy surface ==
     # Use the radial basis function from Scipy to obtain better values
     # TODO: Find out exactly what radial basis functions actually does ...
-    rbf_energy_function = Rbf(i_indexes, j_indexes, k_indexes, kmesh.kmesh[i_indexes, j_indexes, k_indexes])
+    rbf_energy_function = Rbf(i_indexes, j_indexes, k_indexes, kmesh.mesh[i_indexes, j_indexes, k_indexes])
     surface_i_vals = np.array([])
     surface_j_vals = np.array([])
     surface_k_vals = np.array([])
@@ -48,7 +52,7 @@ def extract_isoenergy_mesh(kmesh, energy, precision=sys.float_info.epsilon):
             + (marching_cube_indexes & 16)) == 1)
     tmp_i_vals, tmp_j_vals, tmp_k_vals = _bisect_along_line(rbf_energy_function, \
             tmp_i_vals, tmp_j_vals, tmp_k_vals, direction='i', reverse=False, \
-            energy, precision)
+            energy=energy, precision=precision)
     surface_i_vals = np.append(surface_i_vals, tmp_i_vals)
     surface_j_vals = np.append(surface_j_vals, tmp_j_vals)
     surface_k_vals = np.append(surface_k_vals, tmp_k_vals)
@@ -58,7 +62,7 @@ def extract_isoenergy_mesh(kmesh, energy, precision=sys.float_info.epsilon):
             + (marching_cube_indexes & 16)) == 16)
     tmp_i_vals, tmp_j_vals, tmp_k_vals = _bisect_along_line(rbf_energy_function, \
             tmp_i_vals, tmp_j_vals, tmp_k_vals, direction='i', reverse=True, \
-            energy, precision)
+            energy=energy, precision=precision)
     surface_i_vals = np.append(surface_i_vals, tmp_i_vals)
     surface_j_vals = np.append(surface_j_vals, tmp_j_vals)
     surface_k_vals = np.append(surface_k_vals, tmp_k_vals)
@@ -68,7 +72,7 @@ def extract_isoenergy_mesh(kmesh, energy, precision=sys.float_info.epsilon):
             + (marching_cube_indexes & 4)) == 1)
     tmp_i_vals, tmp_j_vals, tmp_k_vals = _bisect_along_line(rbf_energy_function, \
             tmp_i_vals, tmp_j_vals, tmp_k_vals, direction='j', reverse=False, \
-            energy, precision)
+            energy=energy, precision=precision)
     surface_i_vals = np.append(surface_i_vals, tmp_i_vals)
     surface_j_vals = np.append(surface_j_vals, tmp_j_vals)
     surface_k_vals = np.append(surface_k_vals, tmp_k_vals)
@@ -78,7 +82,7 @@ def extract_isoenergy_mesh(kmesh, energy, precision=sys.float_info.epsilon):
             + (marching_cube_indexes & 4)) == 4)
     tmp_i_vals, tmp_j_vals, tmp_k_vals = _bisect_along_line(rbf_energy_function, \
             tmp_i_vals, tmp_j_vals, tmp_k_vals, direction='j', reverse=True, \
-            energy, precision)
+            energy=energy, precision=precision)
     surface_i_vals = np.append(surface_i_vals, tmp_i_vals)
     surface_j_vals = np.append(surface_j_vals, tmp_j_vals)
     surface_k_vals = np.append(surface_k_vals, tmp_k_vals)
@@ -88,7 +92,7 @@ def extract_isoenergy_mesh(kmesh, energy, precision=sys.float_info.epsilon):
             + (marching_cube_indexes & 2)) == 1)
     tmp_i_vals, tmp_j_vals, tmp_k_vals = _bisect_along_line(rbf_energy_function, \
             tmp_i_vals, tmp_j_vals, tmp_k_vals, direction='k', reverse=False, \
-            energy, precision)
+            energy=energy, precision=precision)
     surface_i_vals = np.append(surface_i_vals, tmp_i_vals)
     surface_j_vals = np.append(surface_j_vals, tmp_j_vals)
     surface_k_vals = np.append(surface_k_vals, tmp_k_vals)
@@ -98,7 +102,7 @@ def extract_isoenergy_mesh(kmesh, energy, precision=sys.float_info.epsilon):
             + (marching_cube_indexes & 2)) == 2)
     tmp_i_vals, tmp_j_vals, tmp_k_vals = _bisect_along_line(rbf_energy_function, \
             tmp_i_vals, tmp_j_vals, tmp_k_vals, direction='k', reverse=True, \
-            energy, precision)
+            energy=energy, precision=precision)
     surface_i_vals = np.append(surface_i_vals, tmp_i_vals)
     surface_j_vals = np.append(surface_j_vals, tmp_j_vals)
     surface_k_vals = np.append(surface_k_vals, tmp_k_vals)
@@ -119,17 +123,20 @@ def extract_isoenergy_mesh(kmesh, energy, precision=sys.float_info.epsilon):
 
 
     
-def _bisect_along_line(fn, i_vals, j_vals, k_vals, direction, reverse, energy, precision):
+def _bisect_along_line(fn, i_vals, j_vals, k_vals, direction='i', reverse=False, energy=0.0, precision=sys.float_info.epsilon):
     '''This helper routine adjusts co-ordinates along a certain direction using
     bisection until the lie within precision*2 of the value'''
     # Each line is unit distance so begin with half unit step
     delta = 0.5
     if direction == 'i':
         adjusted_i_vals = np.ma.array(i_vals)
+        increments = np.ma.zeros(adjusted_i_vals.shape)
     elif direction == 'j':
         adjusted_j_vals = np.ma.array(j_vals)
+        increments = np.ma.zeros(adjusted_j_vals.shape)
     elif direction == 'k':
         adjusted_k_vals = np.ma.array(k_vals)
+        increments = np.ma.zeros(adjusted_k_vals.shape)
     while delta > precision:
         if direction == 'i':
             energies = fn(adjusted_i_vals + delta, j_vals, k_vals)
