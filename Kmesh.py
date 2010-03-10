@@ -48,7 +48,8 @@ class Kmesh(object):
         Returns an Nx4 array of the i,j,k,energy values as indexes
         '''
         ind_list = np.array([ind + (en,) for ind, en in np.ndenumerate(self.mesh)])
-        return ind_list
+        ids = np.array([id for ind, id in np.ndenumerate(self.mesh_ids)])
+        return np.concatenate((ids.reshape((ids.shape[0], 1)), ind_list), axis=1)
     indexes = property(indexes)
 
     def kpoints(self):
@@ -56,9 +57,9 @@ class Kmesh(object):
         Returns an Nx4 array of the i,j,k,energy values as k values
         '''
         ind_list = self.indexes
-        ind_list[:,0] = ind_list[:,0] * self.i_series_spacing + self.i_series_offset
-        ind_list[:,1] = ind_list[:,1] * self.j_series_spacing + self.j_series_offset
-        ind_list[:,2] = ind_list[:,2] * self.k_series_spacing + self.k_series_offset
+        ind_list[:,1] = ind_list[:,1] * self.i_series_spacing + self.i_series_offset
+        ind_list[:,2] = ind_list[:,2] * self.j_series_spacing + self.j_series_offset
+        ind_list[:,3] = ind_list[:,3] * self.k_series_spacing + self.k_series_offset
         return ind_list
     kpoints = property(kpoints)
 
@@ -92,19 +93,24 @@ class Kmesh(object):
 ##         j_dimension = int((j_vals - self.j_series_offset) / self.j_series_spacing)
 ##         k_dimension = int((k_vals - self.k_series_offset) / self.k_series_spacing)
         self.mesh = np.ma.zeros((i_dimension, j_dimension, k_dimension))
+        self.mesh_ids = np.ma.zeros((i_dimension, j_dimension, k_dimension))
         self.mesh.mask = True
-        k_point_indexes = np.zeros((band_data.shape[0], 4))
-        k_point_indexes[:,0] = (band_data[:,1] - self.i_series_offset) / \
+        self.mesh_ids.mask = True
+        k_point_indexes = np.zeros((band_data.shape[0], 5))
+        k_point_indexes[:,0] = band_data[:,0]
+        k_point_indexes[:,1] = (band_data[:,1] - self.i_series_offset) / \
           self.i_series_spacing
-        k_point_indexes[:,1] = (band_data[:,2] - self.j_series_offset) / \
+        k_point_indexes[:,2] = (band_data[:,2] - self.j_series_offset) / \
           self.j_series_spacing
-        k_point_indexes[:,2] = (band_data[:,3] - self.k_series_offset) / \
+        k_point_indexes[:,3] = (band_data[:,3] - self.k_series_offset) / \
           self.k_series_spacing
-        k_point_indexes[:,3] = band_data[:,4]
+        k_point_indexes[:,4] = band_data[:,4]
         for k in k_point_indexes:
-            x_ind, y_ind, z_ind = (int(val) for val in k[:3])
-            self.mesh[k[0], k[1], k[2]] = k[3]
-            self.mesh.mask[k[0], k[1], k[2]] = False
+            id, x_ind, y_ind, z_ind = (int(val) for val in k[:4])
+            self.mesh[x_ind, y_ind, z_ind] = k[4]
+            self.mesh_ids[x_ind, y_ind, z_ind] = id
+            self.mesh.mask[x_ind, y_ind, z_ind] = False
+            self.mesh_ids.mask[x_ind, y_ind, z_ind] = False
 
     def _find_arithmetic_series_formula(self, series):
         '''Returns the formula for an incomplete arithmetic progression
