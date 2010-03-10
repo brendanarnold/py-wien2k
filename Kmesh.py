@@ -43,6 +43,25 @@ class Kmesh(object):
           self.j_series_spacing + self.k_series_offset
     k_vals = property(k_vals)
 
+    def indexes(self):
+        '''
+        Returns an Nx4 array of the i,j,k,energy values as indexes
+        '''
+        ind_list = np.array([ind + (en,) for ind, en in np.ndenumerate(self.mesh)])
+        return ind_list
+    indexes = property(indexes)
+
+    def kpoints(self):
+        '''
+        Returns an Nx4 array of the i,j,k,energy values as k values
+        '''
+        ind_list = self.indexes
+        ind_list[:,0] = ind_list[:,0] * self.i_series_spacing + self.i_series_offset
+        ind_list[:,1] = ind_list[:,1] * self.j_series_spacing + self.j_series_offset
+        ind_list[:,2] = ind_list[:,2] * self.k_series_spacing + self.k_series_offset
+        return ind_list
+    kpoints = property(kpoints)
+
     def centre_point(self):
         ''' Returns the cente point of the zone '''
         i_centre = (self.i_vals.max() - self.i_vals.min()) / 2.0

@@ -20,11 +20,13 @@ import sys
 import copy
 import pdb
 
-def extract_isoenergy_mesh(orig_kmesh, energy, precision=sys.float_info.epsilon):
+def extract_isoenergy_mesh(orig_kmesh, energy, precision=sys.float_info.epsilon, verbose=False):
     '''Returns a list of i, j, k values that map a surface'''
     #pdb.set_trace()
     kmesh = copy.deepcopy(orig_kmesh)
     isoenergy_3d_mesh = kmesh.mesh > energy
+    if verbose == True:
+        print 'Building marching cube indexes ...'
     marching_cube_indexes = \
           np.ma.array(isoenergy_3d_mesh[:-1,:-1,:-1], dtype=int) * 1 \
         + np.ma.array(isoenergy_3d_mesh[:-1,:-1:,1:], dtype=int) * 2 \
@@ -36,23 +38,27 @@ def extract_isoenergy_mesh(orig_kmesh, energy, precision=sys.float_info.epsilon)
         + np.ma.array(isoenergy_3d_mesh[1:,1:,1:], dtype=int) * 128
     del(isoenergy_3d_mesh)
     kmesh.mesh = kmesh.mesh[:-1,:-1,:-1]
-    kmesh.mesh.mask = (marching_cube_indexes == 0) | (marching_cube_indexes == 255)
+##     pdb.set_trace()
     i_indexes, j_indexes, k_indexes = np.where(kmesh.mesh.mask == False)
-
     # == Interpolate and bisect to find energy surface ==
     # Use the radial basis function from Scipy to obtain better values
     # TODO: Find out exactly what radial basis functions actually does ...
+    if verbose == True:
+        print 'Generating Radial Basis Function for interpolation ...'
     rbf_energy_function = Rbf(i_indexes, j_indexes, k_indexes, kmesh.mesh[i_indexes, j_indexes, k_indexes])
+    kmesh.mesh.mask = kmesh.mesh.mask | (marching_cube_indexes == 0) | (marching_cube_indexes == 255)
     surface_i_vals = np.array([])
     surface_j_vals = np.array([])
     surface_k_vals = np.array([])
     # Pick out points where corner 1 is inside surface but corner 16 is not,
     # then bisect 1->16
+    if verbose == True:
+        print 'Interpolating along i direction ...'
     tmp_i_vals, tmp_j_vals, tmp_k_vals = np.where(((marching_cube_indexes & 1) \
             + (marching_cube_indexes & 16)) == 1)
     tmp_i_vals, tmp_j_vals, tmp_k_vals = _bisect_along_line(rbf_energy_function, \
             tmp_i_vals, tmp_j_vals, tmp_k_vals, direction='i', reverse=False, \
-            energy=energy, precision=precision)
+            energy=energy, precision=precision, verbose=verbose)
     surface_i_vals = np.append(surface_i_vals, tmp_i_vals)
     surface_j_vals = np.append(surface_j_vals, tmp_j_vals)
     surface_k_vals = np.append(surface_k_vals, tmp_k_vals)
@@ -62,17 +68,19 @@ def extract_isoenergy_mesh(orig_kmesh, energy, precision=sys.float_info.epsilon)
             + (marching_cube_indexes & 16)) == 16)
     tmp_i_vals, tmp_j_vals, tmp_k_vals = _bisect_along_line(rbf_energy_function, \
             tmp_i_vals, tmp_j_vals, tmp_k_vals, direction='i', reverse=True, \
-            energy=energy, precision=precision)
+            energy=energy, precision=precision, verbose=verbose)
     surface_i_vals = np.append(surface_i_vals, tmp_i_vals)
     surface_j_vals = np.append(surface_j_vals, tmp_j_vals)
     surface_k_vals = np.append(surface_k_vals, tmp_k_vals)
     # Pick out points where corner 1 is inside surface but corner 4 is not,
     # then bisect 1->4
+    if verbose == True:
+        print 'Interpolating along j direction ...'
     tmp_i_vals, tmp_j_vals, tmp_k_vals = np.where(((marching_cube_indexes & 1) \
             + (marching_cube_indexes & 4)) == 1)
     tmp_i_vals, tmp_j_vals, tmp_k_vals = _bisect_along_line(rbf_energy_function, \
             tmp_i_vals, tmp_j_vals, tmp_k_vals, direction='j', reverse=False, \
-            energy=energy, precision=precision)
+            energy=energy, precision=precision, verbose=verbose)
     surface_i_vals = np.append(surface_i_vals, tmp_i_vals)
     surface_j_vals = np.append(surface_j_vals, tmp_j_vals)
     surface_k_vals = np.append(surface_k_vals, tmp_k_vals)
@@ -82,17 +90,19 @@ def extract_isoenergy_mesh(orig_kmesh, energy, precision=sys.float_info.epsilon)
             + (marching_cube_indexes & 4)) == 4)
     tmp_i_vals, tmp_j_vals, tmp_k_vals = _bisect_along_line(rbf_energy_function, \
             tmp_i_vals, tmp_j_vals, tmp_k_vals, direction='j', reverse=True, \
-            energy=energy, precision=precision)
+            energy=energy, precision=precision, verbose=verbose)
     surface_i_vals = np.append(surface_i_vals, tmp_i_vals)
     surface_j_vals = np.append(surface_j_vals, tmp_j_vals)
     surface_k_vals = np.append(surface_k_vals, tmp_k_vals)
     # Pick out points where corner 1 is inside surface but corner 2 is not,
     # then bisect 1->2
+    if verbose == True:
+        print 'Interpolating along k direction ...'
     tmp_i_vals, tmp_j_vals, tmp_k_vals = np.where(((marching_cube_indexes & 1) \
             + (marching_cube_indexes & 2)) == 1)
     tmp_i_vals, tmp_j_vals, tmp_k_vals = _bisect_along_line(rbf_energy_function, \
             tmp_i_vals, tmp_j_vals, tmp_k_vals, direction='k', reverse=False, \
-            energy=energy, precision=precision)
+            energy=energy, precision=precision, verbose=verbose)
     surface_i_vals = np.append(surface_i_vals, tmp_i_vals)
     surface_j_vals = np.append(surface_j_vals, tmp_j_vals)
     surface_k_vals = np.append(surface_k_vals, tmp_k_vals)
@@ -102,12 +112,14 @@ def extract_isoenergy_mesh(orig_kmesh, energy, precision=sys.float_info.epsilon)
             + (marching_cube_indexes & 2)) == 2)
     tmp_i_vals, tmp_j_vals, tmp_k_vals = _bisect_along_line(rbf_energy_function, \
             tmp_i_vals, tmp_j_vals, tmp_k_vals, direction='k', reverse=True, \
-            energy=energy, precision=precision)
+            energy=energy, precision=precision, verbose=verbose)
     surface_i_vals = np.append(surface_i_vals, tmp_i_vals)
     surface_j_vals = np.append(surface_j_vals, tmp_j_vals)
     surface_k_vals = np.append(surface_k_vals, tmp_k_vals)
 
     # == Convert to real co-ordinates ==
+    if verbose == True:
+        print 'Converting back to real co-ordinates ...'
     a_i = kmesh.i_series_offset + 0.5*kmesh.i_series_spacing
     a_j = kmesh.j_series_offset + 0.5*kmesh.j_series_spacing
     a_k = kmesh.k_series_offset + 0.5*kmesh.k_series_spacing
@@ -123,7 +135,7 @@ def extract_isoenergy_mesh(orig_kmesh, energy, precision=sys.float_info.epsilon)
 
 
     
-def _bisect_along_line(fn, i_vals, j_vals, k_vals, direction='i', reverse=False, energy=0.0, precision=sys.float_info.epsilon):
+def _bisect_along_line(fn, i_vals, j_vals, k_vals, direction='i', reverse=False, energy=0.0, precision=sys.float_info.epsilon, verbose=False):
     '''This helper routine adjusts co-ordinates along a certain direction using
     bisection until the lie within precision*2 of the value'''
     # Each line is unit distance so begin with half unit step
@@ -138,6 +150,8 @@ def _bisect_along_line(fn, i_vals, j_vals, k_vals, direction='i', reverse=False,
         adjusted_k_vals = np.ma.array(k_vals)
         increments = np.ma.zeros(adjusted_k_vals.shape)
     while delta > precision:
+        if verbose == True:
+            print 'Interpolated within %e' % delta
         if direction == 'i':
             energies = fn(adjusted_i_vals + delta, j_vals, k_vals)
         elif direction == 'j':
