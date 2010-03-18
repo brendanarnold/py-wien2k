@@ -87,23 +87,39 @@ class Kmesh(object):
             self._find_arithmetic_series_formula(k_vals)
         # Find the dimensions of the 3D array - bearing in mind that there may
         # not be a point at every spacing
-        i_dimension = int((i_vals.max() - i_vals.min()) / self.i_series_spacing) + 1
-        j_dimension = int((j_vals.max() - j_vals.min()) / self.j_series_spacing) + 1
-        k_dimension = int((k_vals.max() - k_vals.min()) / self.k_series_spacing) + 1
-##         j_dimension = int((j_vals - self.j_series_offset) / self.j_series_spacing)
-##         k_dimension = int((k_vals - self.k_series_offset) / self.k_series_spacing)
+        if self.i_series_spacing != 0.0:
+            i_dimension = int((i_vals.max() - i_vals.min()) / self.i_series_spacing) + 1
+        else:
+            i_dimension = 1
+        if self.j_series_spacing != 0.0:
+            j_dimension = int((j_vals.max() - j_vals.min()) / self.j_series_spacing) + 1
+        else:
+            j_dimension = 1
+        if self.k_series_spacing != 0.0:
+            k_dimension = int((k_vals.max() - k_vals.min()) / self.k_series_spacing) + 1
+        else:
+            k_dimension = 1
         self.mesh = np.ma.zeros((i_dimension, j_dimension, k_dimension))
         self.mesh_ids = np.ma.zeros((i_dimension, j_dimension, k_dimension))
         self.mesh.mask = True
         self.mesh_ids.mask = True
-        k_point_indexes = np.zeros((band_data.shape[0], 5))
+        k_point_indexes = np.zeros((len(band_data), 5))
         k_point_indexes[:,0] = band_data[:,0]
-        k_point_indexes[:,1] = (band_data[:,1] - self.i_series_offset) / \
-          self.i_series_spacing
-        k_point_indexes[:,2] = (band_data[:,2] - self.j_series_offset) / \
-          self.j_series_spacing
-        k_point_indexes[:,3] = (band_data[:,3] - self.k_series_offset) / \
-          self.k_series_spacing
+        if self.i_series_spacing != 0.0:
+            k_point_indexes[:,1] = (band_data[:,1] - self.i_series_offset) / \
+              self.i_series_spacing
+        else:
+            k_point_indexes[:,1] = 0
+        if self.j_series_spacing != 0.0:
+            k_point_indexes[:,2] = (band_data[:,2] - self.j_series_offset) / \
+              self.j_series_spacing
+        else:
+            k_point_indexes[:,2] = 0
+        if self.k_series_spacing != 0.0:
+            k_point_indexes[:,3] = (band_data[:,3] - self.k_series_offset) / \
+              self.k_series_spacing
+        else:
+            k_point_indexes[:,3] = 0
         k_point_indexes[:,4] = band_data[:,4]
         for k in k_point_indexes:
             id, x_ind, y_ind, z_ind = (int(val) for val in k[:4])
@@ -120,7 +136,7 @@ class Kmesh(object):
         if len(copy_series) > 1:
             differences = copy_series[1:] - copy_series[:-1]
         else:
-            differences = 0.0
+            differences = np.array([0.0])
         a = copy_series[0]
         b = differences.min()
         return (a, b)
