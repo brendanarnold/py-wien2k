@@ -117,7 +117,10 @@ class Kmesh(object):
         i.e. returns a and b for x_n = a + b*n'''
         copy_series = np.unique(series[:])
         copy_series.sort()
-        differences = copy_series[1:] - copy_series[:-1]
+        if len(copy_series) > 1:
+            differences = copy_series[1:] - copy_series[:-1]
+        else:
+            differences = 0.0
         a = copy_series[0]
         b = differences.min()
         return (a, b)
