@@ -26,15 +26,15 @@ fmt = {
     'k_point_line_lengths' : (85, 88),
     'num_k_point_vals' : 7,
     'k_point_line' : re.compile('''
+        ([-+EDed\d\.\s]{19})   # i
+        ([-+EDed\d\.\s]{19})   # j
+        ([-+EDed\d\.\s]{19})   # k
+        (.{10})                # k point name (i.e. 'GAMMA')
+        ([-+\d\.\s]{6})        # Number plane waves (tot num considered recip. latt. vecs.) plus number of local orbitals
+        ([-+\d\.\s]{6})        # Number of bands
+        ([-+EDed\d\.\s]{5})    # Weight
+        .{3}
         \s*
-        (-?[-+E\d\.]+)      # i
-        \s+(-?[-+E\d\.]+)   # j
-        \s+(-?[-+E\d\.]+)   # k
-        \s+(-?[-+E\d\.]+)   # k point id
-        \s+(-?[-+E\d\.]+)   # Number plane waves (tot num considered recip. latt. vecs.) plus number of local orbitals
-        \s+(-?[-+E\d\.]+)   # Number of bands
-        \s+(-?[-+E\d\.]+)   # Weight
-        \s*                 # Point group (not captured)
     ''', re.VERBOSE),
     # Band line contains details on band energy at a particular k point and is of format,
     #           3  -3.30918392086173
@@ -68,7 +68,6 @@ class EnergyReader(object):
         self.filename = filename
         self.spin_orbit_direction = spin_orbit_direction
         self.bands = []
-        self.k_points = []
         tmp_bands = []
         file_handle = open(filename, 'r')
         line_num = 0
@@ -79,12 +78,17 @@ class EnergyReader(object):
                     k_point_vals = fmt['k_point_line'].match(line).groups()
                     if len(k_point_vals) != fmt['num_k_point_vals']:
                         raise UnexpectedFileFormat('The specified number of values was not parsed from the k point line (line: %d)' % line_num)
-                    i, j, k, k_point_id, unknown, num_bands, k_weight = [float(x.strip()) for x in k_point_vals]
+                    i, j, k, k_point_name, unknown, num_bands, k_weight = [x.strip() for x in k_point_vals]
+                    i, j, k, k_weight = [float(x) for x in (i, j, k, k_weight)] 
                     num_bands = int(num_bands)
-                    k_point_id = int(k_point_id)
-                except:
+                except ValueError:
                     raise UnexpectedFileFormat('A non-float was parsed from a line identified as a k-point line (line: %d)' % line_num)
-                self.k_points.append(Kpoint(k_point_id, i, j, k))
+                try:
+                    # For .klist_band files, k_point_name is a name, for
+                    # others it is a unique integer
+                    k_point_id = int(k_point_name)
+                except ValueError:
+                    k_point_id = 0
             elif len(line) == fmt['band_line_length']:
                 try:
                     band_vals = fmt['band_line'].match(line).groups()
