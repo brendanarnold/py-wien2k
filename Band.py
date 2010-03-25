@@ -6,7 +6,6 @@ A class representing an energy band
 __all__ = ['Band']
 
 import numpy as np
-from wien2k.utils import map_band_coords
 
 class Band(object):
     '''An object representing the bands in the calculation
@@ -65,4 +64,11 @@ class Band(object):
         Given an array of form Nx(id,kx,ky,kz[, ...]) will exchange the band
         objects coordinate system
         '''
-        self.data = map_band_coords(self, new_coords)
+        new_coords = new_coords[:,:4]
+        ids = new_coords[:,0]
+        # Have to cast to a list to sort whilst preserving rows - stupid
+        energy_lookup = band.data[:,(0,4)].tolist()
+        energy_lookup.sort()
+        energy_lookup = np.array(energy_lookup)
+        indexes = np.searchsorted(energy_lookup[:,0], ids)
+        self.data = np.column_stack((new_coords, energy_lookup[indexes,1]))

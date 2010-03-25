@@ -55,18 +55,18 @@ class EnergyReader(object):
     '''An object which reads WIEN2k .energy files and
     places the energies into bands
 
-    Paramters,
+    Parameters,
 
     filename:               The filename of the .energy(so) file to parse
-    spin_orbit_direction:   If is a spin orbit calculation, specify either 'up' or 'down' - default: None
+    spin_orb_dirn:          If is a spin orbit calculation, specify either 'up' or 'down' - default: None
     
     Results in,
     
     bands:                  A list of Band objects for this energy file
     '''
-    def __init__(self, filename, spin_orbit_direction=None):
+    def __init__(self, filename, spin_orb_dirn=None):
         self.filename = filename
-        self.spin_orbit_direction = spin_orbit_direction
+        self.spin_orb_dirn = spin_orb_dirn
         self.bands = []
         tmp_bands = []
         file_handle = open(filename, 'r')

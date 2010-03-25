@@ -7,7 +7,7 @@ Reads a WIEN2k .struct file into an object
 __all__ = ['StructReader']
 
 from wien2k.errors import UnexpectedFileFormat
-from wien2k.SymmetryMatrix import SymmetryMatrix
+from wien2k.SymMat import SymMat
 import numpy as np
 
 # n.b. FORMATS specified in WIEN2K user guides (2001 & 2009) don't match up to actual .struct spec!
@@ -46,7 +46,7 @@ class StructReader(object):
         beta:                  Lattice beta angle in deg.
         gamma:                 Lattice gamma angle in deg.
         is_relativistic:       True if relativistic calcs. used, False otherwise (from 'RELA' or 'NREL')
-        symmetry_matrices:     A list of symmetry matrices that map irreducible
+        sym_mats:     A list of symmetry matrices that map irreducible
                                points in the rectangular cell to a full
                                rectangular cell
     '''
@@ -54,7 +54,7 @@ class StructReader(object):
     def __init__(self, filename):
         self.filename = filename
         self.inequivelant_atoms = []
-        self.symmetry_matrices = []
+        self.sym_mats = []
         self._load_values()
 
     def _load_values(self):
@@ -110,11 +110,11 @@ class StructReader(object):
                 pass
 
             elif line_len == fmt['len_num_symmetry_operations_line']:
-                # Redundant, can use len(self.symmetry_matrices)
+                # Redundant, can use len(self.sym_mats)
                 pass
 
             elif line_len == fmt['len_symmetry_matrix_line']:
-                sm = SymmetryMatrix()
+                sm = SymMat()
                 line1 = line
                 try:
                     line2 = file_handle.next()
@@ -128,13 +128,13 @@ class StructReader(object):
                     break
                 except ValueError:
                     raise UnexpectedFileFormat('Could not parse the symmetry matrix from file (line: %d)' % line_num)
-                self.symmetry_matrices.append(sm)
+                self.sym_mats.append(sm)
 
             elif line_len == fmt['len_symmetry_matrix_index_line']:
                 try:
                     # If a symmetry matrix id is found, append it to the last
                     # stored symmetry matrix
-                    self.symmetry_matrices[-1].id = int(line.strip())
+                    self.sym_mats[-1].id = int(line.strip())
                 except:
                     pass
 

@@ -32,7 +32,7 @@ class KlistWriter(object):
         self.filename = filename
         self.data = None
         self.total_number_k_points = 0
-        self.number_points_along_rlvs = []
+        self.num_rlv_points = []
         self.is_bandlist = False
 
     def write(self):
@@ -41,23 +41,23 @@ class KlistWriter(object):
             for line_num, k in enumerate(self.data):
                 if self.is_bandlist == True:
                     if line_num == 0:
-                        if self.number_points_along_rlvs == []:
-                            number_points_along_rlvs = [0, 0, 0]
+                        if self.num_rlv_points == []:
+                            num_rlv_points = [0, 0, 0]
                         else:
-                            number_points_along_rlvs = self.number_points_along_rlvs
+                            num_rlv_points = self.num_rlv_points
                         filehandle.write('          %5d%5d%5d%5d%5.1f%5.1f%5.1f%s\n' % \
                             (k[1], k[2], k[3], k[4], k[5], -8.0, 8.0, GENERATED_BY_TAG))
                     else:
                         filehandle.write('          %5d%5d%5d%5d%5.1f\n' % (k[1], k[2], k[3], k[4], k[5]))
                 else:
                     if line_num == 0:
-                        if self.number_points_along_rlvs == []:
-                            number_points_along_rlvs = [0, 0, 0]
+                        if self.num_rlv_points == []:
+                            num_rlv_points = [0, 0, 0]
                         else:
-                            number_points_along_rlvs = self.number_points_along_rlvs
+                            num_rlv_points = self.num_rlv_points
                         filehandle.write('%10d%10d%10d%10d%10d%5.1f%5.1f%5.1f    %6d k, div: (%3d%3d%3d)\n' % \
                             (k[0], k[1], k[2], k[3], k[4], k[5], -7.0, 1.5, self.total_number_k_points, \
-                            number_points_along_rlvs[0], number_points_along_rlvs[1], number_points_along_rlvs[2]))
+                            num_rlv_points[0], num_rlv_points[1], num_rlv_points[2]))
                     else:
                         filehandle.write('%10d%10d%10d%10d%10d%5.1f\n' % (k[0], k[1], k[2], k[3], k[4], k[5]))
         filehandle.write('END\n')

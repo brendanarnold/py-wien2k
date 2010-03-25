@@ -73,6 +73,7 @@ class Kmesh(object):
 
     def _build_mesh(self, band_data):
         '''Builds a 3D array of energies'''
+        band_data = band_data.copy()
         i_vals = np.unique(band_data[:,1])
         j_vals = np.unique(band_data[:,2])
         k_vals = np.unique(band_data[:,3])
@@ -103,30 +104,42 @@ class Kmesh(object):
         self.mesh_ids = np.ma.zeros((i_dimension, j_dimension, k_dimension))
         self.mesh.mask = True
         self.mesh_ids.mask = True
-        k_point_indexes = np.zeros((len(band_data), 5))
-        k_point_indexes[:,0] = band_data[:,0]
-        if self.i_series_spacing != 0.0:
-            k_point_indexes[:,1] = (band_data[:,1] - self.i_series_offset) / \
-              self.i_series_spacing
-        else:
-            k_point_indexes[:,1] = 0
-        if self.j_series_spacing != 0.0:
-            k_point_indexes[:,2] = (band_data[:,2] - self.j_series_offset) / \
-              self.j_series_spacing
-        else:
-            k_point_indexes[:,2] = 0
-        if self.k_series_spacing != 0.0:
-            k_point_indexes[:,3] = (band_data[:,3] - self.k_series_offset) / \
-              self.k_series_spacing
-        else:
-            k_point_indexes[:,3] = 0
-        k_point_indexes[:,4] = band_data[:,4]
-        for k in k_point_indexes:
-            id, x_ind, y_ind, z_ind = (int(val) for val in k[:4])
-            self.mesh[x_ind, y_ind, z_ind] = k[4]
-            self.mesh_ids[x_ind, y_ind, z_ind] = id
-            self.mesh.mask[x_ind, y_ind, z_ind] = False
-            self.mesh_ids.mask[x_ind, y_ind, z_ind] = False
+        # Convert the band_data co-ordinates to indexes
+##         if self.i_series_spacing == 0:
+##             band_data[:,1] = 0
+##         else:
+##             band_data[:,1] = (band_data[:,1]-self.i_series_offset)/self.i_series_spacing
+##         if self.j_series_spacing == 0:
+##             band_data[:,2] = 0
+##         else:
+##             band_data[:,2] = (band_data[:,2]-self.j_series_offset)/self.j_series_spacing
+##         if self.k_series_spacing == 0:
+##             band_data[:,3] = 0
+##         else:
+##             band_data[:,3] = (band_data[:,3]-self.k_series_offset)/self.k_series_spacing
+        # Now populate the mesh
+        for k in band_data:
+            id, i, j, k, energy = k
+            if self.i_series_spacing == 0:
+                i = 0
+            else:
+                i = (i-self.i_series_offset)/self.i_series_spacing
+            if self.j_series_spacing == 0:
+                j = 0
+            else:
+                j = (j-self.j_series_offset)/self.j_series_spacing
+            if self.k_series_spacing == 0:
+                k = 0
+            else:
+                k = (k-self.k_series_offset)/self.k_series_spacing
+            id = int(id)
+            i = int(i)
+            j = int(j)
+            k = int(k)
+            self.mesh[i, j, k] = energy
+            self.mesh_ids[i, j, k] = id
+            self.mesh.mask[i, j, k] = False
+            self.mesh_ids.mask[i, j, k] = False
 
     def _find_arithmetic_series_formula(self, series):
         '''Returns the formula for an incomplete arithmetic progression

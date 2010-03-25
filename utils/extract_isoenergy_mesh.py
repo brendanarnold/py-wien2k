@@ -225,13 +225,13 @@ def _bisect_along_line(fn, i_vals, j_vals, k_vals, direction='i', reverse=False,
     delta = 0.5
     if direction == 'i':
         adjusted_i_vals = np.ma.array(i_vals)
-        increments = np.ma.zeros(adjusted_i_vals.shape)
+        increments = np.ma.zeros_like(adjusted_i_vals)
     elif direction == 'j':
         adjusted_j_vals = np.ma.array(j_vals)
-        increments = np.ma.zeros(adjusted_j_vals.shape)
+        increments = np.ma.zeros_like(adjusted_j_vals)
     elif direction == 'k':
         adjusted_k_vals = np.ma.array(k_vals)
-        increments = np.ma.zeros(adjusted_k_vals.shape)
+        increments = np.ma.zeros_like(adjusted_k_vals)
     while delta > precision:
         if verbose == True:
             print 'Interpolated within %e' % delta

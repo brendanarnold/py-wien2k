@@ -8,7 +8,7 @@ __all__ = ['OutputkgenReader']
 
 import numpy as np
 from wien2k.errors import UnexpectedFileFormat
-from wien2k.SymmetryMatrix import SymmetryMatrix
+from wien2k.SymMat import SymMat
 import wien2k.CONSTANTS as CNST
 
 fmt = {
@@ -17,8 +17,8 @@ fmt = {
     'iarb_line_num' : 5,
     'point_group_symmetries_line_num' : 6,
     'symmetry_matrix_header_line_startswith' : 'SYMMETRY MATRIX NR.',
-    'reciprocal_lattice_vectors_header_line_startswith' : 'G1        G2        G3',
-    'length_reciprocal_lattice_vectors_line_startswith' : 'length of reciprocal lattice vectors:',
+    'rlvs_header_line_startswith' : 'G1        G2        G3',
+    'length_rlvs_line_startswith' : 'length of reciprocal lattice vectors:',
     'submesh_shift_line_startswith' : 'SUBMESH SHIFTED; SHIFT:',
     'number_mesh_points_line_startswith' : 'NO. OF MESH POINTS IN THE BRILLOUIN ZONE =',
     'reciprocal_lattice_vector_intervals_line_startswith' : 'DIVISION OF RECIPROCAL LATTICE VECTORS (INTERVALS)=',
@@ -35,16 +35,22 @@ class OutputkgenReader(object):
     '''
     A class which reads from the .outputkgen file which contains symmetry vectors
 
-    symmetry_matrices:         A set of symmetry matrices that 
+    sym_mats:           A set of symmetry matrices
+    rlvs:               The reciprocal lattice vectors
+    rlvs_by_2pi:        The reciprocal lattice vectors divided by 2pi
+    rlvs_in_inv_ang:    The reciprocal lattice vectors in inverse Angstroms
+    point_group_sym_mats: The points group symmetry matrices
+    bloch_vectors:
+    tetrahedra:
     '''
 
     def __init__(self, filename):
         self.filename = filename
-        self.reciprocal_lattice_vectors = None
-        self.reciprocal_lattice_vectors_by_2pi = None
-        self.reciprocal_lattice_vectors_in_inv_angs = None
-        self.symmetry_matrices = []
-        self.point_group_symmetry_matrices = []
+        self.rlvs = None
+        self.rlvs_by_2pi = None
+        self.rlvs_in_inv_angs = None
+        self.sym_mats = []
+        self.point_group_sym_mats = []
         self.bloch_vectors = None
         self.tetrahedra = None
         self._load_values()
@@ -73,13 +79,13 @@ class OutputkgenReader(object):
             elif self._line_num == fmt['point_group_symmetries_line_num']:
                 #TODO read in number of point group symmetry matrices
                 self._file_handle.next() # Throw away a buffer line
-                self.point_group_symmetry_matrices.extend(self._read_symmetry_matrices())
+                self.point_group_sym_mats.extend(self._read_sym_mats())
                 pass
 
             elif line.startswith(fmt['symmetry_matrix_header_line_startswith']):
-                self.symmetry_matrices.extend(self._read_symmetry_matrices())
+                self.sym_mats.extend(self._read_sym_mats())
 
-            elif line.startswith(fmt['reciprocal_lattice_vectors_header_line_startswith']):
+            elif line.startswith(fmt['rlvs_header_line_startswith']):
                 tmp_vectors = np.zeros((3,3))
                 for i in [0,1,2]:
                     self._line_num = self._line_num + 1
@@ -93,13 +99,13 @@ class OutputkgenReader(object):
                         raise UnexpectedFileFormat('Could not parse reciprocal lattice vectors from line (line: %d)' % self._line_num)
                 # First set of reciprocal lattic vetors is followed by an
                 # identical set multiplied by 2*pi
-                if self.reciprocal_lattice_vectors == None:
-                    self.reciprocal_lattice_vectors = tmp_vectors.copy()
-                    self.reciprocal_lattice_vectors_in_inv_angs = self.reciprocal_lattice_vectors * (2. * np.pi / CNST.BOHR_RADIUS_IN_ANGSTROM)
+                if self.rlvs == None:
+                    self.rlvs = tmp_vectors.copy()
+                    self.rlvs_in_inv_angs = self.rlvs * (2. * np.pi / CNST.BOHR_RADIUS_IN_ANGSTROM)
                 else:
-                    self.reciprocal_lattice_vectors_by_2pi = tmp_vectors.copy()
+                    self.rlvs_by_2pi = tmp_vectors.copy()
 
-            elif line.startswith(fmt['length_reciprocal_lattice_vectors_line_startswith']):
+            elif line.startswith(fmt['length_rlvs_line_startswith']):
                 #TODO
                 pass
 
@@ -139,7 +145,7 @@ class OutputkgenReader(object):
 
         self._file_handle.close()
 
-    def _read_symmetry_matrices(self):
+    def _read_sym_mats(self):
         tmp_matrices = []
         # Read the matrices off the next three lines into a buffer
         for i in [1,2,3]:
@@ -163,5 +169,5 @@ class OutputkgenReader(object):
             if np.linalg.det(tmp_matrix) == 0:
                 continue
             else:
-                returned_matrices.append(SymmetryMatrix(matrix = tmp_matrix))
+                returned_matrices.append(SymMat(matrix = tmp_matrix))
         return returned_matrices

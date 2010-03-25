@@ -2,7 +2,7 @@ __all__ = ['remove_duplicates']
 
 import numpy as np
 
-def remove_duplicates(data, cols=(1,2,3), tolerance=None):
+def remove_duplicates(data, cols=[1,2,3], tolerance=None):
     '''
     Removes duplicate vectors from a list of data points
     Parameters:
@@ -10,7 +10,7 @@ def remove_duplicates(data, cols=(1,2,3), tolerance=None):
         cols        An iterable of the columns that must match 
                     in order to constitute a duplicate 
                     (default: 1,2,3 for typical Klist data array) 
-        tolerance   An iterable of three tolerances or a single 
+        FIXME: tolerance   An iterable of three tolerances or a single 
                     tolerance for each dimension (default: 0)
     Returns:
         MxI Array   An array of I vectors (minus the 
@@ -39,3 +39,5 @@ def remove_duplicates(data, cols=(1,2,3), tolerance=None):
             else:
                 unique_kpts.append(data[i,:].tolist())    
     return np.array(unique_kpts)
+
+

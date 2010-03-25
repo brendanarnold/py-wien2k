@@ -1,5 +1,5 @@
-__all__ = ['expand_irreducible_brillouin_zone', 'extract_isoenergy_mesh', 'map_band_coords']
-from expand_irreducible_brillouin_zone import expand_irreducible_brillouin_zone
+__all__ = ['expand_ibz', 'extract_isoenergy_mesh', 'remove_duplicates', 'generate_cartesian_klist']
+from expand_ibz import expand_ibz
 from extract_isoenergy_mesh import extract_isoenergy_mesh
-from map_band_coords import map_band_coords
 from remove_duplicates import remove_duplicates
+from generate_cartesian_klist import generate_cartesian_klist
