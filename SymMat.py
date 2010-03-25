@@ -43,7 +43,7 @@ class SymMat(object):
     def __mul__(self, other):
         '''Allows for easy combining of matrix operations'''
         if type(other) is SymMat:
-            return np.dot(self.matrix, other.matrix)
+            return SymMat(np.dot(self.matrix, other.matrix))
         elif (type(other) is numpy.ndarray) and \
           (other.ndims == 2) and (other.shape[1] > 3):
             return self.map(other)
