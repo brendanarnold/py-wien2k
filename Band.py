@@ -67,7 +67,7 @@ class Band(object):
         new_coords = new_coords[:,:4]
         ids = new_coords[:,0]
         # Have to cast to a list to sort whilst preserving rows - stupid
-        energy_lookup = band.data[:,(0,4)].tolist()
+        energy_lookup = self.data[:,(0,4)].tolist()
         energy_lookup.sort()
         energy_lookup = np.array(energy_lookup)
         indexes = np.searchsorted(energy_lookup[:,0], ids)

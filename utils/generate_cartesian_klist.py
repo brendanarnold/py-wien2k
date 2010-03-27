@@ -33,9 +33,8 @@ def generate_cartesian_klist(points, sym_mats=None, reduce_to_ibz=True, outfile=
         if verbose == True:
             print 'Reducing to irreducible Brillouin zone ...'
         klist = reduce_ibz(klist, sym_mats=sym_mats)
-    
-    if verbose == True:
-        print '%d points will be written to file' % len(klist)
+        if verbose == True:
+            print '%d points in reduced zone ...' % len(klist)
 
     # Generate the ids and add the ids
     if verbose == True:

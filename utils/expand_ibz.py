@@ -1,12 +1,13 @@
 
 __all__ = ['expand_ibz']
 
+import sys
 import numpy as np
 from wien2k.utils.remove_duplicates import remove_duplicates
 
 def expand_ibz(klist_rdr=None, \
         struct_rdr=None, sym_mats=None, band=None, sort_by=None, \
-        ibz_data=None, bz_dims=None, constrain_to_bz=True, cols=[1,2,3]):
+        ibz_data=None, bz_dims=None, bz_centre=None, constrain_to_bz=True, cols=[1,2,3]):
     '''
     Expands a data set containing irreducible k points into a full Brillouin
     zone of k points
@@ -31,6 +32,8 @@ def expand_ibz(klist_rdr=None, \
                         constraining the zone, if not specified this
                         will be read from the KlistReader or the
                         ibz_data, if not included will raise a ValueError
+    bz_centre           The co-ordinates of the Brillouin zone centre in 
+                        terms of the bz_dims (default: Half the bz_dims values)
     sort_by             A list of columns to sort by in order (default: None)
 
     The above can be covered with the following objects,
@@ -58,8 +61,8 @@ def expand_ibz(klist_rdr=None, \
     ...   [8,1,1,1,1.0]])
     >>> sms = [wien2k.SymMat(matrix=np.identity(3))]
     >>> bz_dims = [1,1,1]
-    >>> expand_ibz(sym_mats=sms, \
-        bz_dims=bz_dims, ibz_data=ibz_data, sort_by=[0])
+    >>> expand_ibz(sym_mats=sms, bz_dims=bz_dims, \
+        ibz_data=ibz_data, sort_by=[0])
     array([[ 1. ,  0. ,  0. ,  0. ,  1.1],
            [ 2. ,  0. ,  0. ,  1. ,  1.2],
            [ 3. ,  0. ,  1. ,  0. ,  1. ],
@@ -98,6 +101,8 @@ def expand_ibz(klist_rdr=None, \
     if band is not None:
         # Don't check for ibz_data as Klist may have set it
         ibz_data = band.data
+    if (bz_centre is None) and (bz_dims is not None):
+        bz_centre = [bz_dims[0]/2.0, bz_dims[1]/2.0, bz_dims[2]/2.0]
 
 ##     if band != None:
 ##         ibz_data = ibz_data or band.data
@@ -127,13 +132,37 @@ def expand_ibz(klist_rdr=None, \
         kpoints_buffer = symmetry_matrix.map(ibz_data, cols=cols)
         # Map transforms back into the unit cell if required
         if constrain_to_bz == True:
+            # Some outliers on the edge of the cells may be
+            # inadvertently mapped inside due to reounding errors,
+            # introduce a tolerance
+##             tolerance = sys.float_info.epsilon * 1e1
             i_col, j_col, k_col = kpoints_buffer[:,cols].transpose()
-            while i_col.max() > bz_dims[0]:
-                i_col[i_col > bz_dims[0]] -= bz_dims[0]
-            while j_col.max() > bz_dims[1]:
-                j_col[j_col > bz_dims[1]] -= bz_dims[1]
-            while k_col.max() > bz_dims[0]:
-                k_col[k_col > bz_dims[2]] -= bz_dims[2]
+            max_i = bz_dims[0]/2.0 + bz_centre[0] 
+            max_j = bz_dims[1]/2.0 + bz_centre[1]
+            max_k = bz_dims[2]/2.0 + bz_centre[2]
+            min_i = bz_centre[0] - bz_dims[0]/2.0
+            min_j = bz_centre[1] - bz_dims[1]/2.0
+            min_k = bz_centre[2] - bz_dims[2]/2.0
+            # Map coords that are too big inside Brillouin zone
+            while i_col.max() > max_i:
+##                 i_col[(i_col < (max_i + tolerance)) & (i_col > max_i)] = max_i
+                i_col[i_col > max_i] -= bz_dims[0]
+            while j_col.max() > max_j:
+##                 j_col[(j_col < (max_j + tolerance)) & (j_col > max_j)] = max_j
+                j_col[j_col > max_j] -= bz_dims[1]
+            while k_col.max() > max_k:
+##                 k_col[(k_col < (max_k + tolerance)) & (k_col > max_k)] = max_k
+                k_col[k_col > max_k] -= bz_dims[2]
+            # Map coords that are too small inside Brillouin zone
+            while i_col.min() < min_i:
+##                 i_col[(i_col > (min_i - tolerance)) & (i_col < min_i)] = min_i
+                i_col[i_col < min_i] += bz_dims[0]
+            while j_col.min() < min_j:
+##                 j_col[(j_col > (min_j - tolerance)) & (j_col < min_j)] = min_j
+                j_col[j_col < min_j] += bz_dims[1]
+            while k_col.min() < min_k:
+##                 k_col[(k_col > (min_k - tolerance)) & (k_col < min_k)] = min_k
+                k_col[k_col < min_k] += bz_dims[2]
             kpoints_buffer[:,cols[0]] = i_col
             kpoints_buffer[:,cols[1]] = j_col
             kpoints_buffer[:,cols[2]] = k_col

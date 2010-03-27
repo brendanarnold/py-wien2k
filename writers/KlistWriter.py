@@ -39,17 +39,18 @@ class KlistWriter(object):
         filehandle = open(self.filename, 'w')
         if self.data != None:
             for line_num, k in enumerate(self.data):
+                k = k.round()
                 if self.is_bandlist == True:
+                    # Write a .klist file in the style of an XCrysden
+                    # .klist_band file
                     if line_num == 0:
-                        if self.num_rlv_points == []:
-                            num_rlv_points = [0, 0, 0]
-                        else:
-                            num_rlv_points = self.num_rlv_points
                         filehandle.write('          %5d%5d%5d%5d%5.1f%5.1f%5.1f%s\n' % \
+                            
                             (k[1], k[2], k[3], k[4], k[5], -8.0, 8.0, GENERATED_BY_TAG))
                     else:
                         filehandle.write('          %5d%5d%5d%5d%5.1f\n' % (k[1], k[2], k[3], k[4], k[5]))
                 else:
+                    # Write a .klist file in the style of WIEN2k kgen
                     if line_num == 0:
                         if self.num_rlv_points == []:
                             num_rlv_points = [0, 0, 0]
