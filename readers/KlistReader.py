@@ -33,9 +33,9 @@ fmt = {
         \s+(-?[\d\.]+)      # Unknown number (i.e. '1.5') - actually hardcoded!
         \s+(-?[\d\.]+)      # 'Number of k points in whole cell' (i.e. '10000') - poss. IBZ points expanded equals this number
         .*                  # Unknown string (i.e. 'k, div:')
-        \(\s*(-?[\d\.]+)    # The number to divide the x recip. latt. vec. by to get the spacings of the mesh points in x dirn.
-        \s+(-?[\d\.]+)      # The number to divide the y recip. latt. vec. by to get the spacings of the mesh points in y dirn
-        \s+(-?[\d\.]+)\s*\) # The number to divide the z recip. latt. vec. by to get the spacings of the mesh points in z dirn
+        \(\s*([\d\s]{3})    # The number to divide the x recip. latt. vec. by to get the spacings of the mesh points in x dirn.
+        \s*([\d\s]{3})      # The number to divide the y recip. latt. vec. by to get the spacings of the mesh points in y dirn
+        \s*([\d\s]{3})\s*\) # The number to divide the z recip. latt. vec. by to get the spacings of the mesh points in z dirn
         .*
     ''', re.VERBOSE),
     # K point line typically looks like

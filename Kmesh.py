@@ -65,9 +65,9 @@ class Kmesh(object):
 
     def centre_point(self):
         ''' Returns the cente point of the zone '''
-        i_centre = (self.i_vals.max() - self.i_vals.min()) / 2.0
-        j_centre = (self.j_vals.max() - self.j_vals.min()) / 2.0
-        k_centre = (self.k_vals.max() - self.k_vals.min()) / 2.0
+        i_centre = (self.i_vals.max() + self.i_vals.min()) / 2.0
+        j_centre = (self.j_vals.max() + self.j_vals.min()) / 2.0
+        k_centre = (self.k_vals.max() + self.k_vals.min()) / 2.0
         return np.array([i_centre, j_centre, k_centre])
     centre_point = property(centre_point)
 

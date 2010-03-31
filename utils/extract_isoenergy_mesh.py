@@ -101,10 +101,12 @@ def _interp_linear(kmesh, marching_cube_indexes, verbose, energy):
     surface_k_vals = np.array([])
     if verbose == True:
         print 'Interpolating along i direction ...'
-    i_ind, j_ind, k_ind = np.where( \
-      (((marching_cube_indexes & 1) + (marching_cube_indexes & 16)) == 1) | \
-      (((marching_cube_indexes & 1) + (marching_cube_indexes & 16)) == 16) \
-    )
+    # Create ugly looking mask due bug in Numpy
+    # (http://projects.scipy.org/numpy/ticket/1440)
+    mask = ~marching_cube_indexes.mask & \
+      ((((marching_cube_indexes & 1) + (marching_cube_indexes & 16)) == 1) | \
+      (((marching_cube_indexes & 1) + (marching_cube_indexes & 16)) == 16))
+    i_ind, j_ind, k_ind = np.where(np.array(mask, dtype=bool))
     new_i_vals = _linear_equation(i_ind, i_ind+1, \
       kmesh.mesh[i_ind, j_ind, k_ind], kmesh.mesh[i_ind+1, j_ind, k_ind], energy)
     surface_i_vals = np.append(surface_i_vals, new_i_vals)
@@ -112,10 +114,11 @@ def _interp_linear(kmesh, marching_cube_indexes, verbose, energy):
     surface_k_vals = np.append(surface_k_vals, k_ind)
     if verbose == True:
         print 'Interpolating along j direction ...'
-    i_ind, j_ind, k_ind = np.where( \
-      (((marching_cube_indexes & 1) + (marching_cube_indexes & 4)) == 1) | \
-      (((marching_cube_indexes & 1) + (marching_cube_indexes & 4)) == 4) \
-    )
+    # Create mask due bug in Numpy
+    mask = ~marching_cube_indexes.mask & \
+      ((((marching_cube_indexes & 1) + (marching_cube_indexes & 4)) == 1) | \
+      (((marching_cube_indexes & 1) + (marching_cube_indexes & 4)) == 4))
+    i_ind, j_ind, k_ind = np.where(np.array(mask, dtype=bool))
     new_j_vals = _linear_equation(j_ind, j_ind+1, \
       kmesh.mesh[i_ind, j_ind, k_ind], kmesh.mesh[i_ind, j_ind+1, k_ind], energy)
     surface_i_vals = np.append(surface_i_vals, i_ind)
@@ -123,10 +126,11 @@ def _interp_linear(kmesh, marching_cube_indexes, verbose, energy):
     surface_k_vals = np.append(surface_k_vals, k_ind)
     if verbose == True:
         print 'Interpolating along k direction ...'
-    i_ind, j_ind, k_ind = np.where( \
-      (((marching_cube_indexes & 1) + (marching_cube_indexes & 2)) == 1) | \
-      (((marching_cube_indexes & 1) + (marching_cube_indexes & 2)) == 2) \
-    )
+    # Create mask due bug in Numpy
+    mask = ~marching_cube_indexes.mask & \
+      ((((marching_cube_indexes & 1) + (marching_cube_indexes & 2)) == 1) | \
+      (((marching_cube_indexes & 1) + (marching_cube_indexes & 2)) == 2))
+    i_ind, j_ind, k_ind = np.where(np.array(mask, dtype=bool))
     new_k_vals = _linear_equation(k_ind, k_ind+1, \
       kmesh.mesh[i_ind, j_ind, k_ind], kmesh.mesh[i_ind, j_ind, k_ind+1], energy)
     surface_i_vals = np.append(surface_i_vals, i_ind)

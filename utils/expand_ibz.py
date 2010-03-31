@@ -91,7 +91,7 @@ def expand_ibz(klist_rdr=None, \
         if ibz_data is None:
             ibz_data = klist_rdr.data
         if bz_dims is None:
-            klist_denom = np.unique(klist_rdr.denominators)[0]
+            klist_denominator = np.unique(klist_rdr.denominators)[0]
             bz_dims = 3*[klist_denominator]
     if struct_rdr is not None:
         if sym_mats is not None:
