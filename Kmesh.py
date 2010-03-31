@@ -43,6 +43,43 @@ class Kmesh(object):
           self.k_series_spacing + self.k_series_offset
     k_vals = property(k_vals)
 
+    def shift_centre(self, shift_by, rel=True):
+        '''
+        Makes the assumption that the mesh is a repeating cell and moves
+        the values over by a specified amount
+
+        INPUT:
+
+        shift_by    An iterable containing the i, j,k values that define
+                    the shift vector
+        rel         Use normalised units if True (i.e. 0.5 moves the
+                    centre to one edge of the cell), otherwise use k
+                    values (default: True)
+
+        BEWARE: This is limited by the fineness of the mesh, it will
+        round to the nearest appropriate mesh point, i.e. if the centre is
+        shifted by half and there are an odd number of points in the mesh then
+        the choice of the centre point will be always rounded up
+        '''
+        if self.mesh.shape != self.mesh_ids.shape:
+            raise ValueError('Energy mesh and id mesh do not match in size! Cannot shift ...')
+        spacings = np.array([self.i_series_spacing, self.j_series_spacing, self.k_series_spacing])
+        if rel == True:
+            shift_places = np.ceil(np.array(shift_by) * (np.array(self.mesh.shape)-1)).astype(int)
+        else:
+            shift_places = np.ceil(np.array(shift_by) / spacings).astype(int)
+        # Roll the matrices around
+        self.mesh = np.roll(self.mesh, shift_places[0], axis=0)
+        self.mesh = np.roll(self.mesh, shift_places[1], axis=1)
+        self.mesh = np.roll(self.mesh, shift_places[2], axis=2)
+        self.mesh_ids = np.roll(self.mesh_ids, shift_places[0], axis=0)
+        self.mesh_ids = np.roll(self.mesh_ids, shift_places[1], axis=1)
+        self.mesh_ids = np.roll(self.mesh_ids, shift_places[2], axis=2)
+        # Adjust the offsets
+        self.i_series_offset = self.i_series_offset + shift_places[0] * self.i_series_spacing
+        self.j_series_offset = self.j_series_offset + shift_places[1] * self.j_series_spacing
+        self.k_series_offset = self.k_series_offset + shift_places[2] * self.k_series_spacing
+
     def indexes(self):
         '''
         Returns an Nx4 array of the i,j,k,energy values as indexes
