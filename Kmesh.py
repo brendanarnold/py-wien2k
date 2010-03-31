@@ -35,12 +35,12 @@ class Kmesh(object):
 
     def j_vals(self):
         return np.arange(self.mesh.shape[1]) * \
-          self.j_series_spacing + self.k_series_offset
+          self.j_series_spacing + self.j_series_offset
     j_vals = property(j_vals)
 
     def k_vals(self):
         return np.arange(self.mesh.shape[2]) * \
-          self.j_series_spacing + self.k_series_offset
+          self.k_series_spacing + self.k_series_offset
     k_vals = property(k_vals)
 
     def indexes(self):
