@@ -16,7 +16,7 @@ class Kmesh(object):
     A full cubic 3D mesh of energies is created (missing points are 'masked')
     correspdonging i, j and k values are also created.
     '''
-    def __init__(self, band_data):
+    def __init__(self, band_data=None):
         self.i_series_spacing = None
         self.j_series_spacing = None
         self.k_series_spacing = None
@@ -24,9 +24,13 @@ class Kmesh(object):
         self.j_series_offset = None
         self.k_series_offset = None
         # Allow a band to be passed in
-        if isinstance(band_data, wien2k.Band):
-            band_data = band_data.data
-        self._build_mesh(band_data)
+        if band_data is not None:
+            if isinstance(band_data, wien2k.Band):
+                band_data = band_data.data
+            self._build_mesh(band_data)
+        else:
+            self.mesh = None
+            self.mesh_ids = None
 
     def i_vals(self):
         return np.arange(self.mesh.shape[0]) * \
@@ -82,16 +86,16 @@ class Kmesh(object):
 
     def indexes(self):
         '''
-        Returns an Nx4 array of the i,j,k,energy values as indexes
+        Returns an Nx4 array of the id,i,j,k,energy values as indexes
         '''
-        ind_list = np.array([ind + (en,) for ind, en in np.ndenumerate(self.mesh)])
-        ids = np.array([id for ind, id in np.ndenumerate(self.mesh_ids)])
+        ind_list = np.array([ind + (en,) for ind, en in np.ndenumerate(self.mesh) if (self.mesh.mask[ind] == False)])
+        ids = np.array([id for ind, id in np.ndenumerate(self.mesh_ids) if (self.mesh_ids.mask[ind] == False)])
         return np.concatenate((ids.reshape((ids.shape[0], 1)), ind_list), axis=1)
     indexes = property(indexes)
 
     def kpoints(self):
         '''
-        Returns an Nx4 array of the i,j,k,energy values as k values
+        Returns an Nx4 array of the id,i,j,k,energy values as k values
         '''
         ind_list = self.indexes
         ind_list[:,1] = ind_list[:,1] * self.i_series_spacing + self.i_series_offset
@@ -181,6 +185,11 @@ class Kmesh(object):
     def _find_arithmetic_series_formula(self, series):
         '''Returns the formula for an incomplete arithmetic progression
         i.e. returns a and b for x_n = a + b*n'''
+        # Test if series is iterable, if not then cast as np array
+        try:
+            tst = iter(series)
+        except TypeError:
+            series = np.array([series])
         copy_series = np.unique(series[:])
         copy_series.sort()
         if len(copy_series) > 1:
@@ -190,3 +199,38 @@ class Kmesh(object):
         a = copy_series[0]
         b = differences.min()
         return (a, b)
+
+    def shape(self):
+        return self.mesh.shape
+    shape = property(shape)
+
+    def __len__(self):
+        return len(self.mesh)
+
+    def __getitem__(self, *args):
+        '''
+        Allow Kmesh objects to be generated from slices called on the
+        object itself (raw data can be got from the attributes directly)
+        '''
+        slices = args[0]
+        new_km = Kmesh()
+        # Copy across the meshes
+        new_km.mesh = self.mesh[slices].copy()
+        new_km.mesh_ids = self.mesh_ids[slices].copy()
+        # Redefine the spacings and offsets
+        if type(slices) != tuple:
+            slices = tuple([slices])
+        if len(slices) > 0:
+            i_vals = self.i_vals
+            i_vals = i_vals[slices[0]]
+            new_km.i_series_offset, new_km.i_series_spacing = self._find_arithmetic_series_formula(i_vals)
+        if len(slices) > 1:
+            j_vals = self.j_vals
+            j_vals = j_vals[slices[1]]
+            new_km.j_series_offset, new_km.j_series_spacing = self._find_arithmetic_series_formula(j_vals)
+        if len(slices) > 2:
+            k_vals = self.k_vals
+            k_vals = k_vals[slices[0]]
+            new_km.k_series_offset, new_km.k_series_spacing = self._find_arithmetic_series_formula(k_vals)
+        return new_km
+
