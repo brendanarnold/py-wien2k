@@ -1,0 +1,9 @@
+5 ,'TiC.in5', 'old',    'formatted',0
+6 ,'TiC.output5',   'unknown','formatted',0
+8 ,'TiC.struct',    'old',    'formatted',0
+9 ,'TiC.clmval',    'old',    'formatted',0
+10,'TiC.tmp',       'unknown','unformatted',0
+11,'TiC.clmvaldn',  'unknown','formatted',0
+12,'TiC.sigma',     'unknown','formatted',0
+20,'TiC.rho_onedim','unknown','formatted',0
+21,'TiC.rho',       'unknown','formatted',0

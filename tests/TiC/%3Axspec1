@@ -1,0 +1,14 @@
+show all
+set terminal png
+set output '/home/ba1224/.w2web/vienna.phy.bris.ac.uk/tmp/239224-17513.png'
+set title '/home/ba1224/Calculations/TiC/TiC.xspec'
+set data style lines
+set xlabel "eV"
+set ylabel "   (broadened)"
+set xrange [-2:14]
+set yrange [:]
+set yzeroaxis
+plot '/home/ba1224/Calculations/TiC/TiC.xspec' using 1:2 title '  (broadened)'
+set terminal postscript
+set output '/home/ba1224/.w2web/vienna.phy.bris.ac.uk/tmp/239224-17513.ps'
+replot

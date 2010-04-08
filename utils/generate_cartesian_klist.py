@@ -75,7 +75,7 @@ def generate_cartesian_klist(points, sym_mats=None, reduce_to_ibz=True, outfile=
             print 'Building the .klist file ...'
         kw = wien2k.KlistWriter(outfile)
         kw.total_number_k_points = tot_points
-        kw.num_rlv_points = [points[0], points[1], points[2]]
+        kw.bz_shape = [points[0], points[1], points[2]]
         if verbose == True:
             print 'Writing the .klist file ...'
         kw.data = klist

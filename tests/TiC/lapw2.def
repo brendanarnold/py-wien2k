@@ -1,0 +1,26 @@
+ 2,'TiC.nsh',    'unknown','formatted',0
+ 3,'TiC.in1',   'unknown','formatted',0
+ 4,'TiC.inso',           'unknown','formatted',0
+ 5,'TiC.in2',   'old',    'formatted',0
+ 6,'TiC.output2','unknown','formatted',0
+ 8,'TiC.clmval','unknown','formatted',0
+10,'./TiC.vector', 'unknown','unformatted',9000
+11,'TiC.weight',    'unknown','formatted',0
+13,'TiC.recprlist',      'unknown','unformatted',9000
+14,'TiC.kgen',        'unknown','formatted',0
+15,'TiC.tmp',       'unknown','formatted',0
+16,'TiC.qtl',       'unknown','formatted',0
+17,'TiC.weightaver','unknown','formatted',0
+18,'TiC.vsp',       'old',    'formatted',0
+19,'TiC.vns',       'unknown','formatted',0
+20,'TiC.struct',         'old',    'formatted',0
+21,'TiC.scf2',   'unknown','formatted',0
+22,'TiC.rotlm',   'unknown',    'formatted',0
+23,'TiC.radwf',   'unknown',    'formatted',0
+24,'TiC.almblm',   'unknown',    'formatted',0
+26,'TiC.weigh',   'unknown','unformatted',0
+27,'TiC.weighdn',   'unknown','unformatted',0
+28,'TiC.vrespval',   'unknown','formatted',0
+29,'TiC.energydn','unknown','formatted',0
+30,'TiC.energy', 'unknown','formatted',0
+31,'./TiC.help', 'unknown','formatted',0

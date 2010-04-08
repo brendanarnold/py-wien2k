@@ -1,0 +1,1975 @@
+
+
+            ---------
+:ITE001:  1. ITERATION
+            ---------
+
+       NUMBER OF ATOMS IN UNITCELL  =   2
+       SUBSTANCE: TiC                                                         
+
+       LATTICE                      = F   
+:POT  : POTENTIAL OPTION   13
+:LAT  : LATTICE CONSTANTS=  8.17874  8.17874  8.17874    1.571    1.571    1.571
+:VOL  : UNIT CELL VOLUME =     136.77254
+       MODE OF CALCULATION IS       = RELA
+       NON-SPINPOLARIZED CALCULATION
+:IFFT  : FFT-parameters:   40   40   40 Factor: 2.00
+       ATOMNUMBER=  1 TiTi       VCOUL-ZERO =  0.41325E+00
+       ATOMNUMBER=  2 C C        VCOUL-ZERO =  0.52778E+00
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.3547825E-02
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.3547825E-02
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.2306074E-02
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.2306074E-02
+:DEN  : DENSITY INTEGRALS =            -757.210757   (Ry)
+       ELS_POTENTIAL_AT Z=0 and Z=0.5:  -3.03912  -3.03912
+       ELS_POTENTIAL_AT Y=0 and Y=0.5:   0.00000   0.00000
+:VZERO:v0,v0c,v0x  -4.28790  -3.03912  -1.24879 v5,v5c,v5x  -4.28790  -3.03912  -1.24879
+:VZERY:v0,v0c,v0x  -0.87941   0.00000  -0.87941 v5,v5c,v5x  -0.87941   0.00000  -0.87941
+:VZERX:v0,v0c,v0x  -0.87941   0.00000  -0.87941 v5,v5c,v5x  -0.87941   0.00000  -0.87941
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  TiTi      
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=    0.3000
+             APW+lo
+          E( 0)=   -3.2875   E(BOTTOM)=   -3.520   E(TOP)=   -3.055
+             LOCAL ORBITAL
+          E( 1)=   -1.5600   E(BOTTOM)=   -1.930   E(TOP)=   -1.190
+             APW+lo
+          E( 1)=    0.3000
+             LOCAL ORBITAL
+          E( 2)=    0.4300   E(BOTTOM)=    0.430   E(TOP)= -200.000
+             APW+lo
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  C C       
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=   -0.7800   E(BOTTOM)=   -1.090   E(TOP)= -200.000
+             APW+lo
+          E( 0)=    0.3000
+             LOCAL ORBITAL
+          E( 1)=    0.3000
+             APW+lo
+
+       K=   0.00000   0.00000   0.00000            1
+:RKM  : MATRIX SIZE  155LOs:  18  RKM= 6.96  WEIGHT= 1.00  PGR:    
+       EIGENVALUES ARE:
+        -3.2519770   -1.5006530   -1.5006530   -1.5006530   -0.2467179
+         0.7416977    0.7416977    0.7416977    0.8791177    0.8791177
+         0.8791177    0.9704988    0.9704988    1.4416881    1.7625206
+
+       ********************************************************
+
+       NUMBER OF K-POINTS:          47
+:GMA  : POTENTIAL AND CHARGE CUT-OFF  12.00 Ry**.5
+         Bandranges (emin - emax):
+:BAND   :   1   -3.251977   -3.243295
+:BAND   :   2   -1.546601   -1.500653
+:BAND   :   3   -1.528633   -1.500653
+:BAND   :   4   -1.516522   -1.500653
+:BAND   :   5   -0.246718   -0.008409
+:BAND   :   6    0.270412    0.741698
+:BAND   :   7    0.455639    0.741698
+:BAND   :   8    0.491660    0.741698
+:BAND   :   9    0.676120    1.076234
+:BAND   :  10    0.879118    1.112088
+:BAND   :  11    0.879118    1.135467
+:BAND   :  12    0.970499    1.351853
+:BAND   :  13    0.970499    1.389331
+:BAND   :  14    1.383501    1.753450
+        Energy to separate low and high energystates:    0.22041
+
+
+:NOE  : NUMBER OF ELECTRONS          =  16.000
+
+:FER  : F E R M I - ENERGY(TETRAH.M.)=   0.71116
+
+
+
+
+:POS001: AT.NR.   1 POSITION = 0.00000 0.00000 0.00000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA001: TOTAL CHARGE INSIDE SPHERE   1 =     9.062116
+:PCS001: PARTIAL CHARGES SPHERE =  1 S,P,D,F,      D-EG,D-T2G 
+:QTL001: 2.0940 6.0038 0.9313 0.0279 0.0000 0.0000 0.0000 0.5914 0.3399 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL001:  2.0137 -3.1786    5.8163 -1.4990    0.0746 -0.0682    0.0044 -0.0964
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH001:  0.0803  0.3925    0.1875  0.4904    0.8567  0.5072    0.0234  0.5489
+
+
+
+
+:POS002: AT.NR.   2 POSITION = 0.50000 0.50000 0.50000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA002: TOTAL CHARGE INSIDE SPHERE   2 =     4.276772
+:PCS002: PARTIAL CHARGES SPHERE =  2 S,P,D,F,      D-EG,D-T2G 
+:QTL002: 1.3325 2.9136 0.0242 0.0049 0.0000 0.0000 0.0000 0.0096 0.0146 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL002:  1.2882 -0.0947    0.0283 -1.0743    0.0069 -1.5414    0.0023 -1.5887
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH002:  0.0443  0.4342    2.8853  0.5026    0.0174  0.5277    0.0026  0.4975
+
+:CHA  : TOTAL CHARGE INSIDE UNIT CELL =      15.999886
+
+:SUM  : SUM OF EIGENVALUES =         -12.792343361
+
+
+        1.ATOM      TiTi                  4 CORE STATES
+:1S 001: 1S                -356.386138628 Ry
+:2S 001: 2S                 -38.046525706 Ry
+:2PP001: 2P*                -31.517622302 Ry
+:2P 001: 2P                 -31.093411882 Ry
+
+        2.ATOM      C C                   1 CORE STATES
+:1S 002: 1S                 -18.923488639 Ry
+
+       DENSITY AT NUCLEUS
+        JATOM    VALENCE       SEMI-CORE            CORE           TOTAL
+
+:RTO001:   1       96.309875        0.000000     8474.082304     8570.392179
+:RTO002:   2        5.567678        0.000000      123.700042      129.267720
+     
+       CHARGES OF NEW CHARGE DENSITY
+:NTO  : TOTAL   INTERSTITIAL CHARGE=  2.6609927
+:NTO001: TOTAL   CHARGE IN SPHERE  1 = 19.0621161
+:NTO002: TOTAL   CHARGE IN SPHERE  2 =  6.2767696
+
+:NEC01: NUCLEAR AND ELECTRONIC CHARGE   28.00000  27.99988   1.00000
+     
+       CHARGES OF OLD CHARGE DENSITY
+:OTO  : TOTAL   INTERSTITIAL CHARGE=  2.7496826
+:OTO001: TOTAL   CHARGE IN SPHERE  1 = 20.0711698
+:OTO002: TOTAL   CHARGE IN SPHERE  2 =  5.1792489
+
+:NEC02: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00010   1.00000
+     
+       CONVERGENCE TEST
+:DTO001: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  1 =  0.7793263
+:DTO002: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  2 =  0.9250635
+
+:DIS  :  CHARGE DISTANCE       0.8521949
+:BIG check (qbig,qrms,qtot)    0.308D+00   0.605D+00   0.852D+00
+:REDuction and QMX before broyd:    1.4747    1.4747    0.0760
+:PLANE:  INTERSTITAL DISTANCE  0.2492922
+ :Pratt iteration over-ride, DMIX   7.603154140902325E-002
+       BROYD MIXING SCHEME WITH 0.076
+     
+       CHARGES OF MIXED CHARGE DENSITY
+:CTO  : TOTAL   INTERSTITIAL CHARGE=  2.7428550
+:CTO001: TOTAL   CHARGE IN SPHERE  1 = 19.9944499
+:CTO002: TOTAL   CHARGE IN SPHERE  2 =  5.2626951
+
+:NEC03: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+
+
+:ENE  : ********** TOTAL ENERGY IN Ry =        -1784.124298
+
+
+
+            ---------
+:ITE002:  2. ITERATION
+            ---------
+
+       NUMBER OF ATOMS IN UNITCELL  =   2
+       SUBSTANCE: TiC                                                         
+
+       LATTICE                      = F   
+:POT  : POTENTIAL OPTION   13
+:LAT  : LATTICE CONSTANTS=  8.17874  8.17874  8.17874    1.571    1.571    1.571
+:VOL  : UNIT CELL VOLUME =     136.77254
+       MODE OF CALCULATION IS       = RELA
+       NON-SPINPOLARIZED CALCULATION
+:IFFT  : FFT-parameters:   40   40   40 Factor: 2.00
+       ATOMNUMBER=  1 TiTi       VCOUL-ZERO =  0.40460E+00
+       ATOMNUMBER=  2 C C        VCOUL-ZERO =  0.54897E+00
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.4795213E-02
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.4795213E-02
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.2135454E-02
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.2135454E-02
+:DEN  : DENSITY INTEGRALS =            -756.138521   (Ry)
+       ELS_POTENTIAL_AT Z=0 and Z=0.5:  -3.03405  -3.03405
+       ELS_POTENTIAL_AT Y=0 and Y=0.5:   0.00000   0.00000
+:VZERO:v0,v0c,v0x  -4.28801  -3.03405  -1.25396 v5,v5c,v5x  -4.28801  -3.03405  -1.25396
+:VZERY:v0,v0c,v0x  -0.87916   0.00000  -0.87916 v5,v5c,v5x  -0.87916   0.00000  -0.87916
+:VZERX:v0,v0c,v0x  -0.87916   0.00000  -0.87916 v5,v5c,v5x  -0.87916   0.00000  -0.87916
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  TiTi      
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=    0.3000
+             APW+lo
+          E( 0)=   -3.3425   E(BOTTOM)=   -3.570   E(TOP)=   -3.115
+             LOCAL ORBITAL
+          E( 1)=   -1.6150   E(BOTTOM)=   -1.980   E(TOP)=   -1.250
+             APW+lo
+          E( 1)=    0.3000
+             LOCAL ORBITAL
+          E( 2)=    0.3900   E(BOTTOM)=    0.390   E(TOP)= -200.000
+             APW+lo
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  C C       
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=   -0.7800   E(BOTTOM)=   -1.050   E(TOP)= -200.000
+             APW+lo
+          E( 0)=    0.3000
+             LOCAL ORBITAL
+          E( 1)=    0.3000
+             APW+lo
+
+       K=   0.00000   0.00000   0.00000            1
+:RKM  : MATRIX SIZE  155LOs:  18  RKM= 6.96  WEIGHT= 1.00  PGR:    
+       EIGENVALUES ARE:
+        -3.3074062   -1.5527469   -1.5527469   -1.5527469   -0.2251166
+         0.7790953    0.7790953    0.7790953    0.8493285    0.8493285
+         0.8493285    0.9361312    0.9361312    1.4605585    1.7618998
+
+       ********************************************************
+
+       NUMBER OF K-POINTS:          47
+:GMA  : POTENTIAL AND CHARGE CUT-OFF  12.00 Ry**.5
+         Bandranges (emin - emax):
+:BAND   :   1   -3.307406   -3.299192
+:BAND   :   2   -1.595511   -1.552747
+:BAND   :   3   -1.578905   -1.552747
+:BAND   :   4   -1.567590   -1.552747
+:BAND   :   5   -0.225117    0.018928
+:BAND   :   6    0.281877    0.779095
+:BAND   :   7    0.469416    0.779095
+:BAND   :   8    0.504542    0.779095
+:BAND   :   9    0.669828    1.036373
+:BAND   :  10    0.849329    1.077590
+:BAND   :  11    0.849329    1.095328
+:BAND   :  12    0.936131    1.335478
+:BAND   :  13    0.936131    1.371824
+:BAND   :  14    1.371824    1.759240
+        Energy to separate low and high energystates:    0.23188
+
+
+:NOE  : NUMBER OF ELECTRONS          =  16.000
+
+:FER  : F E R M I - ENERGY(TETRAH.M.)=   0.72036
+
+
+
+
+:POS001: AT.NR.   1 POSITION = 0.00000 0.00000 0.00000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA001: TOTAL CHARGE INSIDE SPHERE   1 =     9.254689
+:PCS001: PARTIAL CHARGES SPHERE =  1 S,P,D,F,      D-EG,D-T2G 
+:QTL001: 2.0975 6.0119 1.1143 0.0263 0.0000 0.0000 0.0000 0.6807 0.4336 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL001:  2.0171 -3.2291    5.8281 -1.5496    0.0818 -0.0404    0.0043 -0.0673
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH001:  0.0804  0.4062    0.1838  0.5039    1.0325  0.5257    0.0219  0.5629
+
+
+
+
+:POS002: AT.NR.   2 POSITION = 0.50000 0.50000 0.50000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA002: TOTAL CHARGE INSIDE SPHERE   2 =     4.031346
+:PCS002: PARTIAL CHARGES SPHERE =  2 S,P,D,F,      D-EG,D-T2G 
+:QTL002: 1.3060 2.6910 0.0275 0.0052 0.0000 0.0000 0.0000 0.0100 0.0175 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL002:  1.2601 -0.0676    0.0273 -1.0385    0.0066 -1.5697    0.0023 -1.6212
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH002:  0.0459  0.4486    2.6637  0.5163    0.0209  0.5480    0.0030  0.5148
+
+:CHA  : TOTAL CHARGE INSIDE UNIT CELL =      16.000000
+
+:SUM  : SUM OF EIGENVALUES =         -13.068584850
+
+
+        1.ATOM      TiTi                  4 CORE STATES
+:1S 001: 1S                -356.477486163 Ry
+:2S 001: 2S                 -38.134739773 Ry
+:2PP001: 2P*                -31.606539992 Ry
+:2P 001: 2P                 -31.182266977 Ry
+
+        2.ATOM      C C                   1 CORE STATES
+:1S 002: 1S                 -18.832004684 Ry
+
+       DENSITY AT NUCLEUS
+        JATOM    VALENCE       SEMI-CORE            CORE           TOTAL
+
+:RTO001:   1       96.835625        0.000000     8474.187161     8571.022786
+:RTO002:   2        5.376866        0.000000      123.669671      129.046537
+     
+       CHARGES OF NEW CHARGE DENSITY
+:NTO  : TOTAL   INTERSTITIAL CHARGE=  2.7139610
+:NTO001: TOTAL   CHARGE IN SPHERE  1 = 19.2546891
+:NTO002: TOTAL   CHARGE IN SPHERE  2 =  6.0313431
+
+:NEC01: NUCLEAR AND ELECTRONIC CHARGE   28.00000  27.99999   1.00000
+     
+       CHARGES OF OLD CHARGE DENSITY
+:OTO  : TOTAL   INTERSTITIAL CHARGE=  2.7428550
+:OTO001: TOTAL   CHARGE IN SPHERE  1 = 19.9944499
+:OTO002: TOTAL   CHARGE IN SPHERE  2 =  5.2626951
+
+:NEC02: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+     
+       CONVERGENCE TEST
+:DTO001: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  1 =  0.5729650
+:DTO002: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  2 =  0.6557824
+
+:DIS  :  CHARGE DISTANCE       0.6143737
+:BIG check (qbig,qrms,qtot)    0.219D+00   0.435D+00   0.614D+00
+:REDuction and QMX before broyd:    1.4418    1.4418    0.0982
+:PLANE:  INTERSTITAL DISTANCE  0.2102778
+:DIRB :  |BROYD|= 0.182D+01 |PRATT|= 0.631D+00 ANGLE=   0.6 DEGREES
+       BROYD MIXING SCHEME WITH 0.087
+     
+       CHARGES OF MIXED CHARGE DENSITY
+:CTO  : TOTAL   INTERSTITIAL CHARGE=  2.7368017
+:CTO001: TOTAL   CHARGE IN SPHERE  1 = 19.8072956
+:CTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4559027
+
+:NEC03: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+
+
+:ENE  : ********** TOTAL ENERGY IN Ry =        -1784.037715
+
+
+
+            ---------
+:ITE003:  3. ITERATION
+            ---------
+
+       NUMBER OF ATOMS IN UNITCELL  =   2
+       SUBSTANCE: TiC                                                         
+
+       LATTICE                      = F   
+:POT  : POTENTIAL OPTION   13
+:LAT  : LATTICE CONSTANTS=  8.17874  8.17874  8.17874    1.571    1.571    1.571
+:VOL  : UNIT CELL VOLUME =     136.77254
+       MODE OF CALCULATION IS       = RELA
+       NON-SPINPOLARIZED CALCULATION
+:IFFT  : FFT-parameters:   40   40   40 Factor: 2.00
+       ATOMNUMBER=  1 TiTi       VCOUL-ZERO =  0.38468E+00
+       ATOMNUMBER=  2 C C        VCOUL-ZERO =  0.60086E+00
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.8729300E-02
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.8729300E-02
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.1675414E-02
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.1675414E-02
+:DEN  : DENSITY INTEGRALS =            -753.630951   (Ry)
+       ELS_POTENTIAL_AT Z=0 and Z=0.5:  -3.02486  -3.02486
+       ELS_POTENTIAL_AT Y=0 and Y=0.5:   0.00000   0.00000
+:VZERO:v0,v0c,v0x  -4.29200  -3.02486  -1.26715 v5,v5c,v5x  -4.29200  -3.02486  -1.26715
+:VZERY:v0,v0c,v0x  -0.87864   0.00000  -0.87864 v5,v5c,v5x  -0.87864   0.00000  -0.87864
+:VZERX:v0,v0c,v0x  -0.87864   0.00000  -0.87864 v5,v5c,v5x  -0.87864   0.00000  -0.87864
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  TiTi      
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=    0.3000
+             APW+lo
+          E( 0)=   -3.4750   E(BOTTOM)=   -3.695   E(TOP)=   -3.255
+             LOCAL ORBITAL
+          E( 1)=   -1.7400   E(BOTTOM)=   -2.090   E(TOP)=   -1.390
+             APW+lo
+          E( 1)=    0.3000
+             LOCAL ORBITAL
+          E( 2)=    0.3000   E(BOTTOM)=    0.290   E(TOP)= -200.000
+             APW+lo
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  C C       
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=   -0.7800   E(BOTTOM)=   -0.960   E(TOP)= -200.000
+             APW+lo
+          E( 0)=    0.3000
+             LOCAL ORBITAL
+          E( 1)=    0.3000
+             APW+lo
+
+       K=   0.00000   0.00000   0.00000            1
+:RKM  : MATRIX SIZE  155LOs:  18  RKM= 6.96  WEIGHT= 1.00  PGR:    
+       EIGENVALUES ARE:
+        -3.4391110   -1.6767285   -1.6767285   -1.6767285   -0.1782077
+         0.7744588    0.7744588    0.7744588    0.8509439    0.8509439
+         0.8630172    0.8630172    0.8630172    1.5063395    1.7614584
+
+       ********************************************************
+
+       NUMBER OF K-POINTS:          47
+:GMA  : POTENTIAL AND CHARGE CUT-OFF  12.00 Ry**.5
+         Bandranges (emin - emax):
+:BAND   :   1   -3.439111   -3.431886
+:BAND   :   2   -1.713057   -1.676728
+:BAND   :   3   -1.699160   -1.676728
+:BAND   :   4   -1.689484   -1.676728
+:BAND   :   5   -0.178208    0.080048
+:BAND   :   6    0.301823    0.774459
+:BAND   :   7    0.492977    0.774459
+:BAND   :   8    0.519080    0.774459
+:BAND   :   9    0.704644    0.938791
+:BAND   :  10    0.801256    0.981251
+:BAND   :  11    0.863017    1.029453
+:BAND   :  12    0.863017    1.335033
+:BAND   :  13    0.863017    1.338907
+:BAND   :  14    1.338907    1.771137
+        Energy to separate low and high energystates:    0.25182
+
+
+:NOE  : NUMBER OF ELECTRONS          =  16.000
+
+:FER  : F E R M I - ENERGY(TETRAH.M.)=   0.73353
+
+
+
+
+:POS001: AT.NR.   1 POSITION = 0.00000 0.00000 0.00000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA001: TOTAL CHARGE INSIDE SPHERE   1 =     9.836424
+:PCS001: PARTIAL CHARGES SPHERE =  1 S,P,D,F,      D-EG,D-T2G 
+:QTL001: 2.1026 6.0205 1.6882 0.0213 0.0000 0.0000 0.0000 0.9472 0.7410 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL001:  2.0252 -3.3478    5.8532 -1.6700    0.1039  0.0196    0.0041 -0.0043
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH001:  0.0774  0.4268    0.1673  0.5194    1.5843  0.5512    0.0172  0.5769
+
+
+
+
+:POS002: AT.NR.   2 POSITION = 0.50000 0.50000 0.50000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA002: TOTAL CHARGE INSIDE SPHERE   2 =     3.392801
+:PCS002: PARTIAL CHARGES SPHERE =  2 S,P,D,F,      D-EG,D-T2G 
+:QTL002: 1.2366 2.1131 0.0353 0.0060 0.0000 0.0000 0.0000 0.0113 0.0239 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL002:  1.1899 -0.0091    0.0259 -0.9326    0.0060 -1.6227    0.0021 -1.6860
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH002:  0.0468  0.4686    2.0872  0.5313    0.0293  0.5700    0.0039  0.5389
+
+:CHA  : TOTAL CHARGE INSIDE UNIT CELL =      16.000000
+
+:SUM  : SUM OF EIGENVALUES =         -13.829610674
+
+
+
+   QTL-B VALUE .EQ.    2.11743   in Band of energy    0.77446   ATOM=    1   L=  2
+    Most likely no ghostbands, but adjust Energy-parameters or use -in1new
+
+
+:WARN : QTL-B value eq.   2.12  in Band of energy   0.77446   ATOM=    1   L=  2
+:WARN : You should change the E-parameter in case.in1 or use -in1new switch
+
+        1.ATOM      TiTi                  4 CORE STATES
+:1S 001: 1S                -356.686014389 Ry
+:2S 001: 2S                 -38.340645652 Ry
+:2PP001: 2P*                -31.813552624 Ry
+:2P 001: 2P                 -31.389168907 Ry
+
+        2.ATOM      C C                   1 CORE STATES
+:1S 002: 1S                 -18.632477261 Ry
+
+       DENSITY AT NUCLEUS
+        JATOM    VALENCE       SEMI-CORE            CORE           TOTAL
+
+:RTO001:   1       97.962643        0.000000     8474.375212     8572.337856
+:RTO002:   2        4.910781        0.000000      123.622366      128.533147
+     
+       CHARGES OF NEW CHARGE DENSITY
+:NTO  : TOTAL   INTERSTITIAL CHARGE=  2.7707706
+:NTO001: TOTAL   CHARGE IN SPHERE  1 = 19.8364244
+:NTO002: TOTAL   CHARGE IN SPHERE  2 =  5.3927988
+
+:NEC01: NUCLEAR AND ELECTRONIC CHARGE   28.00000  27.99999   1.00000
+     
+       CHARGES OF OLD CHARGE DENSITY
+:OTO  : TOTAL   INTERSTITIAL CHARGE=  2.7368017
+:OTO001: TOTAL   CHARGE IN SPHERE  1 = 19.8072956
+:OTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4559027
+
+:NEC02: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+     
+       CONVERGENCE TEST
+:DTO001: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  1 =  0.0984159
+:DTO002: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  2 =  0.1327225
+
+:DIS  :  CHARGE DISTANCE       0.1155692
+:BIG check (qbig,qrms,qtot)    0.442D-01   0.826D-01   0.116D+00
+:REDuction and QMX before broyd:    1.1663    1.1663    0.2535
+:PLANE:  INTERSTITAL DISTANCE  0.1410049
+:DIRB :  |BROYD|= 0.283D+00 |PRATT|= 0.277D+00 ANGLE=  14.8 DEGREES
+       BROYD MIXING SCHEME WITH 0.170
+     
+       CHARGES OF MIXED CHARGE DENSITY
+:CTO  : TOTAL   INTERSTITIAL CHARGE=  2.7421134
+:CTO001: TOTAL   CHARGE IN SPHERE  1 = 19.8196802
+:CTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4382064
+
+:NEC03: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+
+
+:ENE  : *WARNING** TOTAL ENERGY IN Ry =        -1783.962617
+
+
+
+            ---------
+:ITE004:  4. ITERATION
+            ---------
+
+       NUMBER OF ATOMS IN UNITCELL  =   2
+       SUBSTANCE: TiC                                                         
+
+       LATTICE                      = F   
+:POT  : POTENTIAL OPTION   13
+:LAT  : LATTICE CONSTANTS=  8.17874  8.17874  8.17874    1.571    1.571    1.571
+:VOL  : UNIT CELL VOLUME =     136.77254
+       MODE OF CALCULATION IS       = RELA
+       NON-SPINPOLARIZED CALCULATION
+:IFFT  : FFT-parameters:   40   40   40 Factor: 2.00
+       ATOMNUMBER=  1 TiTi       VCOUL-ZERO =  0.38635E+00
+       ATOMNUMBER=  2 C C        VCOUL-ZERO =  0.59894E+00
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.9215390E-02
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.9215390E-02
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.1604592E-02
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.1604592E-02
+:DEN  : DENSITY INTEGRALS =            -753.983456   (Ry)
+       ELS_POTENTIAL_AT Z=0 and Z=0.5:  -3.02223  -3.02223
+       ELS_POTENTIAL_AT Y=0 and Y=0.5:   0.00000   0.00000
+:VZERO:v0,v0c,v0x  -4.29019  -3.02223  -1.26797 v5,v5c,v5x  -4.29019  -3.02223  -1.26797
+:VZERY:v0,v0c,v0x  -0.87845   0.00000  -0.87845 v5,v5c,v5x  -0.87845   0.00000  -0.87845
+:VZERX:v0,v0c,v0x  -0.87845   0.00000  -0.87845 v5,v5c,v5x  -0.87845   0.00000  -0.87845
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  TiTi      
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=    0.3000
+             APW+lo
+          E( 0)=   -3.4600   E(BOTTOM)=   -3.680   E(TOP)=   -3.240
+             LOCAL ORBITAL
+          E( 1)=   -1.7250   E(BOTTOM)=   -2.080   E(TOP)=   -1.370
+             APW+lo
+          E( 1)=    0.3000
+             LOCAL ORBITAL
+          E( 2)=    0.3100   E(BOTTOM)=    0.310   E(TOP)= -200.000
+             APW+lo
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  C C       
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=   -0.7800   E(BOTTOM)=   -0.970   E(TOP)= -200.000
+             APW+lo
+          E( 0)=    0.3000
+             LOCAL ORBITAL
+          E( 1)=    0.3000
+             APW+lo
+
+       K=   0.00000   0.00000   0.00000            1
+:RKM  : MATRIX SIZE  155LOs:  18  RKM= 6.96  WEIGHT= 1.00  PGR:    
+       EIGENVALUES ARE:
+        -3.4233879   -1.6619159   -1.6619159   -1.6619159   -0.1834634
+         0.7835895    0.7835895    0.7835895    0.8531673    0.8531673
+         0.8531673    0.8610735    0.8610735    1.5011239    1.7617612
+
+       ********************************************************
+
+       NUMBER OF K-POINTS:          47
+:GMA  : POTENTIAL AND CHARGE CUT-OFF  12.00 Ry**.5
+         Bandranges (emin - emax):
+:BAND   :   1   -3.423388   -3.416050
+:BAND   :   2   -1.698954   -1.661916
+:BAND   :   3   -1.684761   -1.661916
+:BAND   :   4   -1.674903   -1.661916
+:BAND   :   5   -0.183463    0.073117
+:BAND   :   6    0.299927    0.783589
+:BAND   :   7    0.490856    0.783589
+:BAND   :   8    0.518303    0.783589
+:BAND   :   9    0.701403    0.950528
+:BAND   :  10    0.809328    0.992907
+:BAND   :  11    0.853167    1.037518
+:BAND   :  12    0.861074    1.333479
+:BAND   :  13    0.861074    1.342072
+:BAND   :  14    1.342072    1.773218
+        Energy to separate low and high energystates:    0.24993
+
+
+:NOE  : NUMBER OF ELECTRONS          =  16.000
+
+:FER  : F E R M I - ENERGY(TETRAH.M.)=   0.73373
+
+
+
+
+:POS001: AT.NR.   1 POSITION = 0.00000 0.00000 0.00000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA001: TOTAL CHARGE INSIDE SPHERE   1 =     9.756365
+:PCS001: PARTIAL CHARGES SPHERE =  1 S,P,D,F,      D-EG,D-T2G 
+:QTL001: 2.1022 6.0204 1.6078 0.0220 0.0000 0.0000 0.0000 0.9119 0.6959 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL001:  2.0242 -3.3337    5.8504 -1.6556    0.1009  0.0129    0.0041 -0.0115
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH001:  0.0780  0.4252    0.1700  0.5190    1.5069  0.5492    0.0179  0.5770
+
+
+
+
+:POS002: AT.NR.   2 POSITION = 0.50000 0.50000 0.50000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA002: TOTAL CHARGE INSIDE SPHERE   2 =     3.473681
+:PCS002: PARTIAL CHARGES SPHERE =  2 S,P,D,F,      D-EG,D-T2G 
+:QTL002: 1.2452 2.1866 0.0343 0.0059 0.0000 0.0000 0.0000 0.0112 0.0231 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL002:  1.1983 -0.0157    0.0260 -0.9465    0.0061 -1.6175    0.0021 -1.6793
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH002:  0.0469  0.4673    2.1605  0.5309    0.0282  0.5683    0.0037  0.5373
+
+:CHA  : TOTAL CHARGE INSIDE UNIT CELL =      16.000000
+
+:SUM  : SUM OF EIGENVALUES =         -13.731452674
+
+
+
+   QTL-B VALUE .EQ.    2.07901   in Band of energy    0.78359   ATOM=    1   L=  2
+    Most likely no ghostbands, but adjust Energy-parameters or use -in1new
+
+
+:WARN : QTL-B value eq.   2.08  in Band of energy   0.78359   ATOM=    1   L=  2
+:WARN : You should change the E-parameter in case.in1 or use -in1new switch
+
+        1.ATOM      TiTi                  4 CORE STATES
+:1S 001: 1S                -356.647536589 Ry
+:2S 001: 2S                 -38.310085701 Ry
+:2PP001: 2P*                -31.781941767 Ry
+:2P 001: 2P                 -31.357632947 Ry
+
+        2.ATOM      C C                   1 CORE STATES
+:1S 002: 1S                 -18.668486685 Ry
+
+       DENSITY AT NUCLEUS
+        JATOM    VALENCE       SEMI-CORE            CORE           TOTAL
+
+:RTO001:   1       97.810975        0.000000     8474.256017     8572.066992
+:RTO002:   2        4.966517        0.000000      123.660656      128.627173
+     
+       CHARGES OF NEW CHARGE DENSITY
+:NTO  : TOTAL   INTERSTITIAL CHARGE=  2.7699507
+:NTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7563648
+:NTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4736782
+
+:NEC01: NUCLEAR AND ELECTRONIC CHARGE   28.00000  27.99999   1.00000
+     
+       CHARGES OF OLD CHARGE DENSITY
+:OTO  : TOTAL   INTERSTITIAL CHARGE=  2.7421134
+:OTO001: TOTAL   CHARGE IN SPHERE  1 = 19.8196802
+:OTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4382064
+
+:NEC02: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+     
+       CONVERGENCE TEST
+:DTO001: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  1 =  0.0840188
+:DTO002: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  2 =  0.1077652
+
+:DIS  :  CHARGE DISTANCE       0.0958920
+:BIG check (qbig,qrms,qtot)    0.359D-01   0.683D-01   0.959D-01
+:REDuction and QMX before broyd:    1.1426    1.1426    0.2704
+:PLANE:  INTERSTITAL DISTANCE  0.1202853
+:DIRB :  |BROYD|= 0.277D+00 |PRATT|= 0.253D+00 ANGLE=   0.3 DEGREES
+       BROYD MIXING SCHEME WITH 0.220
+     
+       CHARGES OF MIXED CHARGE DENSITY
+:CTO  : TOTAL   INTERSTITIAL CHARGE=  2.7488300
+:CTO001: TOTAL   CHARGE IN SPHERE  1 = 19.8042612
+:CTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4469088
+
+:NEC03: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+
+
+:ENE  : *WARNING** TOTAL ENERGY IN Ry =        -1783.961542
+
+
+
+            ---------
+:ITE005:  5. ITERATION
+            ---------
+
+       NUMBER OF ATOMS IN UNITCELL  =   2
+       SUBSTANCE: TiC                                                         
+
+       LATTICE                      = F   
+:POT  : POTENTIAL OPTION   13
+:LAT  : LATTICE CONSTANTS=  8.17874  8.17874  8.17874    1.571    1.571    1.571
+:VOL  : UNIT CELL VOLUME =     136.77254
+       MODE OF CALCULATION IS       = RELA
+       NON-SPINPOLARIZED CALCULATION
+:IFFT  : FFT-parameters:   40   40   40 Factor: 2.00
+       ATOMNUMBER=  1 TiTi       VCOUL-ZERO =  0.38533E+00
+       ATOMNUMBER=  2 C C        VCOUL-ZERO =  0.60483E+00
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.1043646E-01
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.1043646E-01
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.1459493E-02
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.1459493E-02
+:DEN  : DENSITY INTEGRALS =            -753.974296   (Ry)
+       ELS_POTENTIAL_AT Z=0 and Z=0.5:  -3.01878  -3.01878
+       ELS_POTENTIAL_AT Y=0 and Y=0.5:   0.00000   0.00000
+:VZERO:v0,v0c,v0x  -4.28959  -3.01878  -1.27081 v5,v5c,v5x  -4.28959  -3.01878  -1.27081
+:VZERY:v0,v0c,v0x  -0.87815   0.00000  -0.87815 v5,v5c,v5x  -0.87815   0.00000  -0.87815
+:VZERX:v0,v0c,v0x  -0.87815   0.00000  -0.87815 v5,v5c,v5x  -0.87815   0.00000  -0.87815
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  TiTi      
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=    0.3000
+             APW+lo
+          E( 0)=   -3.4625   E(BOTTOM)=   -3.685   E(TOP)=   -3.240
+             LOCAL ORBITAL
+          E( 1)=   -1.7250   E(BOTTOM)=   -2.080   E(TOP)=   -1.370
+             APW+lo
+          E( 1)=    0.3000
+             LOCAL ORBITAL
+          E( 2)=    0.3100   E(BOTTOM)=    0.310   E(TOP)= -200.000
+             APW+lo
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  C C       
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=   -0.7800   E(BOTTOM)=   -0.970   E(TOP)= -200.000
+             APW+lo
+          E( 0)=    0.3000
+             LOCAL ORBITAL
+          E( 1)=    0.3000
+             APW+lo
+
+       K=   0.00000   0.00000   0.00000            1
+:RKM  : MATRIX SIZE  155LOs:  18  RKM= 6.96  WEIGHT= 1.00  PGR:    
+       EIGENVALUES ARE:
+        -3.4265178   -1.6648553   -1.6648553   -1.6648553   -0.1825878
+         0.7817112    0.7817112    0.7817112    0.8544501    0.8544501
+         0.8544501    0.8587060    0.8587060    1.5023374    1.7622947
+
+       ********************************************************
+
+       NUMBER OF K-POINTS:          47
+:GMA  : POTENTIAL AND CHARGE CUT-OFF  12.00 Ry**.5
+         Bandranges (emin - emax):
+:BAND   :   1   -3.426518   -3.419200
+:BAND   :   2   -1.701767   -1.664855
+:BAND   :   3   -1.687627   -1.664855
+:BAND   :   4   -1.677802   -1.664855
+:BAND   :   5   -0.182588    0.074269
+:BAND   :   6    0.300146    0.781711
+:BAND   :   7    0.491120    0.781711
+:BAND   :   8    0.517970    0.781711
+:BAND   :   9    0.701681    0.948085
+:BAND   :  10    0.807540    0.990495
+:BAND   :  11    0.854450    1.035729
+:BAND   :  12    0.858706    1.334056
+:BAND   :  13    0.858706    1.341002
+:BAND   :  14    1.341002    1.772764
+        Energy to separate low and high energystates:    0.25015
+
+
+:NOE  : NUMBER OF ELECTRONS          =  16.000
+
+:FER  : F E R M I - ENERGY(TETRAH.M.)=   0.73342
+
+
+
+
+:POS001: AT.NR.   1 POSITION = 0.00000 0.00000 0.00000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA001: TOTAL CHARGE INSIDE SPHERE   1 =     9.770303
+:PCS001: PARTIAL CHARGES SPHERE =  1 S,P,D,F,      D-EG,D-T2G 
+:QTL001: 2.1022 6.0204 1.6218 0.0219 0.0000 0.0000 0.0000 0.9187 0.7031 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL001:  2.0244 -3.3366    5.8508 -1.6584    0.1016  0.0139    0.0041 -0.0107
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH001:  0.0779  0.4252    0.1696  0.5189    1.5202  0.5492    0.0178  0.5768
+
+
+
+
+:POS002: AT.NR.   2 POSITION = 0.50000 0.50000 0.50000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA002: TOTAL CHARGE INSIDE SPHERE   2 =     3.460208
+:PCS002: PARTIAL CHARGES SPHERE =  2 S,P,D,F,      D-EG,D-T2G 
+:QTL002: 1.2435 2.1746 0.0344 0.0059 0.0000 0.0000 0.0000 0.0112 0.0232 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL002:  1.1967 -0.0147    0.0260 -0.9446    0.0061 -1.6189    0.0021 -1.6808
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH002:  0.0468  0.4673    2.1486  0.5307    0.0284  0.5683    0.0038  0.5373
+
+:CHA  : TOTAL CHARGE INSIDE UNIT CELL =      16.000000
+
+:SUM  : SUM OF EIGENVALUES =         -13.753379827
+
+
+
+   QTL-B VALUE .EQ.    2.07080   in Band of energy    0.78171   ATOM=    1   L=  2
+    Most likely no ghostbands, but adjust Energy-parameters or use -in1new
+
+
+:WARN : QTL-B value eq.   2.07  in Band of energy   0.78171   ATOM=    1   L=  2
+:WARN : You should change the E-parameter in case.in1 or use -in1new switch
+
+        1.ATOM      TiTi                  4 CORE STATES
+:1S 001: 1S                -356.638099256 Ry
+:2S 001: 2S                 -38.308687177 Ry
+:2PP001: 2P*                -31.779590593 Ry
+:2P 001: 2P                 -31.355344648 Ry
+
+        2.ATOM      C C                   1 CORE STATES
+:1S 002: 1S                 -18.679831016 Ry
+
+       DENSITY AT NUCLEUS
+        JATOM    VALENCE       SEMI-CORE            CORE           TOTAL
+
+:RTO001:   1       97.814152        0.000000     8474.158638     8571.972791
+:RTO002:   2        4.956675        0.000000      123.696928      128.653602
+     
+       CHARGES OF NEW CHARGE DENSITY
+:NTO  : TOTAL   INTERSTITIAL CHARGE=  2.7694853
+:NTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7703034
+:NTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4602051
+
+:NEC01: NUCLEAR AND ELECTRONIC CHARGE   28.00000  27.99999   1.00000
+     
+       CHARGES OF OLD CHARGE DENSITY
+:OTO  : TOTAL   INTERSTITIAL CHARGE=  2.7488300
+:OTO001: TOTAL   CHARGE IN SPHERE  1 = 19.8042612
+:OTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4469088
+
+:NEC02: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+     
+       CONVERGENCE TEST
+:DTO001: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  1 =  0.0590558
+:DTO002: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  2 =  0.0793261
+
+:DIS  :  CHARGE DISTANCE       0.0691909
+:BIG check (qbig,qrms,qtot)    0.264D-01   0.494D-01   0.692D-01
+:REDuction and QMX before broyd:    1.1075    1.1075    0.2972
+:PLANE:  INTERSTITAL DISTANCE  0.0922762
+:DIRB :  |BROYD|= 0.709D+00 |PRATT|= 0.222D+00 ANGLE=   0.5 DEGREES
+       BROYD MIXING SCHEME WITH 0.259
+     
+       CHARGES OF MIXED CHARGE DENSITY
+:CTO  : TOTAL   INTERSTITIAL CHARGE=  2.7661766
+:CTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7754254
+:CTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4583981
+
+:NEC03: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+
+
+:ENE  : *WARNING** TOTAL ENERGY IN Ry =        -1783.961471
+
+
+
+            ---------
+:ITE006:  6. ITERATION
+            ---------
+
+       NUMBER OF ATOMS IN UNITCELL  =   2
+       SUBSTANCE: TiC                                                         
+
+       LATTICE                      = F   
+:POT  : POTENTIAL OPTION   13
+:LAT  : LATTICE CONSTANTS=  8.17874  8.17874  8.17874    1.571    1.571    1.571
+:VOL  : UNIT CELL VOLUME =     136.77254
+       MODE OF CALCULATION IS       = RELA
+       NON-SPINPOLARIZED CALCULATION
+:IFFT  : FFT-parameters:   40   40   40 Factor: 2.00
+       ATOMNUMBER=  1 TiTi       VCOUL-ZERO =  0.38380E+00
+       ATOMNUMBER=  2 C C        VCOUL-ZERO =  0.61739E+00
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.1352029E-01
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.1352029E-01
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.1111024E-02
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.1111024E-02
+:DEN  : DENSITY INTEGRALS =            -754.104006   (Ry)
+       ELS_POTENTIAL_AT Z=0 and Z=0.5:  -3.00900  -3.00900
+       ELS_POTENTIAL_AT Y=0 and Y=0.5:   0.00000   0.00000
+:VZERO:v0,v0c,v0x  -4.28626  -3.00900  -1.27726 v5,v5c,v5x  -4.28626  -3.00900  -1.27726
+:VZERY:v0,v0c,v0x  -0.87694   0.00000  -0.87694 v5,v5c,v5x  -0.87694   0.00000  -0.87694
+:VZERX:v0,v0c,v0x  -0.87694   0.00000  -0.87694 v5,v5c,v5x  -0.87694   0.00000  -0.87694
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  TiTi      
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=    0.3000
+             APW+lo
+          E( 0)=   -3.4625   E(BOTTOM)=   -3.685   E(TOP)=   -3.240
+             LOCAL ORBITAL
+          E( 1)=   -1.7250   E(BOTTOM)=   -2.080   E(TOP)=   -1.370
+             APW+lo
+          E( 1)=    0.3000
+             LOCAL ORBITAL
+          E( 2)=    0.3100   E(BOTTOM)=    0.310   E(TOP)= -200.000
+             APW+lo
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  C C       
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=   -0.7800   E(BOTTOM)=   -0.970   E(TOP)= -200.000
+             APW+lo
+          E( 0)=    0.3000
+             LOCAL ORBITAL
+          E( 1)=    0.3000
+             APW+lo
+
+       K=   0.00000   0.00000   0.00000            1
+:RKM  : MATRIX SIZE  155LOs:  18  RKM= 6.96  WEIGHT= 1.00  PGR:    
+       EIGENVALUES ARE:
+        -3.4262654   -1.6645860   -1.6645860   -1.6645860   -0.1828212
+         0.7818800    0.7818800    0.7818800    0.8529813    0.8529813
+         0.8529813    0.8581972    0.8581972    1.5030011    1.7640563
+
+       ********************************************************
+
+       NUMBER OF K-POINTS:          47
+:GMA  : POTENTIAL AND CHARGE CUT-OFF  12.00 Ry**.5
+         Bandranges (emin - emax):
+:BAND   :   1   -3.426265   -3.418941
+:BAND   :   2   -1.701534   -1.664586
+:BAND   :   3   -1.687377   -1.664586
+:BAND   :   4   -1.677545   -1.664586
+:BAND   :   5   -0.182821    0.073868
+:BAND   :   6    0.299969    0.781880
+:BAND   :   7    0.490913    0.781880
+:BAND   :   8    0.516991    0.781880
+:BAND   :   9    0.700908    0.948193
+:BAND   :  10    0.807442    0.990649
+:BAND   :  11    0.852981    1.035635
+:BAND   :  12    0.858197    1.334957
+:BAND   :  13    0.858197    1.340328
+:BAND   :  14    1.340328    1.773107
+        Energy to separate low and high energystates:    0.24997
+
+
+:NOE  : NUMBER OF ELECTRONS          =  16.000
+
+:FER  : F E R M I - ENERGY(TETRAH.M.)=   0.73287
+
+
+
+
+:POS001: AT.NR.   1 POSITION = 0.00000 0.00000 0.00000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA001: TOTAL CHARGE INSIDE SPHERE   1 =     9.766176
+:PCS001: PARTIAL CHARGES SPHERE =  1 S,P,D,F,      D-EG,D-T2G 
+:QTL001: 2.1021 6.0202 1.6179 0.0220 0.0000 0.0000 0.0000 0.9183 0.6996 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL001:  2.0243 -3.3364    5.8506 -1.6582    0.1017  0.0133    0.0041 -0.0119
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH001:  0.0779  0.4248    0.1696  0.5185    1.5161  0.5485    0.0178  0.5762
+
+
+
+
+:POS002: AT.NR.   2 POSITION = 0.50000 0.50000 0.50000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA002: TOTAL CHARGE INSIDE SPHERE   2 =     3.466069
+:PCS002: PARTIAL CHARGES SPHERE =  2 S,P,D,F,      D-EG,D-T2G 
+:QTL002: 1.2435 2.1805 0.0343 0.0059 0.0000 0.0000 0.0000 0.0112 0.0231 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL002:  1.1969 -0.0152    0.0260 -0.9463    0.0061 -1.6194    0.0021 -1.6809
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH002:  0.0467  0.4670    2.1545  0.5301    0.0283  0.5679    0.0038  0.5366
+
+:CHA  : TOTAL CHARGE INSIDE UNIT CELL =      16.000000
+
+:SUM  : SUM OF EIGENVALUES =         -13.755771474
+
+
+
+   QTL-B VALUE .EQ.    2.07044   in Band of energy    0.78188   ATOM=    1   L=  2
+    Most likely no ghostbands, but adjust Energy-parameters or use -in1new
+
+
+:WARN : QTL-B value eq.   2.07  in Band of energy   0.78188   ATOM=    1   L=  2
+:WARN : You should change the E-parameter in case.in1 or use -in1new switch
+
+        1.ATOM      TiTi                  4 CORE STATES
+:1S 001: 1S                -356.602149983 Ry
+:2S 001: 2S                 -38.292528226 Ry
+:2PP001: 2P*                -31.761019601 Ry
+:2P 001: 2P                 -31.336934605 Ry
+
+        2.ATOM      C C                   1 CORE STATES
+:1S 002: 1S                 -18.721233346 Ry
+
+       DENSITY AT NUCLEUS
+        JATOM    VALENCE       SEMI-CORE            CORE           TOTAL
+
+:RTO001:   1       97.750328        0.000000     8473.912706     8571.663034
+:RTO002:   2        4.960174        0.000000      123.793156      128.753330
+     
+       CHARGES OF NEW CHARGE DENSITY
+:NTO  : TOTAL   INTERSTITIAL CHARGE=  2.7677513
+:NTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7661763
+:NTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4660662
+
+:NEC01: NUCLEAR AND ELECTRONIC CHARGE   28.00000  27.99999   1.00000
+     
+       CHARGES OF OLD CHARGE DENSITY
+:OTO  : TOTAL   INTERSTITIAL CHARGE=  2.7661766
+:OTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7754254
+:OTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4583981
+
+:NEC02: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+     
+       CONVERGENCE TEST
+:DTO001: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  1 =  0.0094006
+:DTO002: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  2 =  0.0138914
+
+:DIS  :  CHARGE DISTANCE       0.0116460
+:BIG check (qbig,qrms,qtot)    0.463D-02   0.839D-02   0.116D-01
+:REDuction and QMX before broyd:    1.0037    1.0037    0.3780
+:PLANE:  INTERSTITAL DISTANCE  0.0179102
+:DIRB :  |BROYD|= 0.112D+00 |PRATT|= 0.416D-01 ANGLE=  20.8 DEGREES
+       BROYD MIXING SCHEME WITH 0.318
+     
+       CHARGES OF MIXED CHARGE DENSITY
+:CTO  : TOTAL   INTERSTITIAL CHARGE=  2.7684357
+:CTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7693420
+:CTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4622223
+
+:NEC03: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+
+
+:ENE  : *WARNING** TOTAL ENERGY IN Ry =        -1783.961378
+
+
+
+            ---------
+:ITE007:  7. ITERATION
+            ---------
+
+       NUMBER OF ATOMS IN UNITCELL  =   2
+       SUBSTANCE: TiC                                                         
+
+       LATTICE                      = F   
+:POT  : POTENTIAL OPTION   13
+:LAT  : LATTICE CONSTANTS=  8.17874  8.17874  8.17874    1.571    1.571    1.571
+:VOL  : UNIT CELL VOLUME =     136.77254
+       MODE OF CALCULATION IS       = RELA
+       NON-SPINPOLARIZED CALCULATION
+:IFFT  : FFT-parameters:   40   40   40 Factor: 2.00
+       ATOMNUMBER=  1 TiTi       VCOUL-ZERO =  0.38334E+00
+       ATOMNUMBER=  2 C C        VCOUL-ZERO =  0.61998E+00
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.1410594E-01
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.1410594E-01
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.1053523E-02
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.1053523E-02
+:DEN  : DENSITY INTEGRALS =            -754.079998   (Ry)
+       ELS_POTENTIAL_AT Z=0 and Z=0.5:  -3.00664  -3.00664
+       ELS_POTENTIAL_AT Y=0 and Y=0.5:   0.00000   0.00000
+:VZERO:v0,v0c,v0x  -4.28506  -3.00664  -1.27842 v5,v5c,v5x  -4.28506  -3.00664  -1.27842
+:VZERY:v0,v0c,v0x  -0.87661   0.00000  -0.87661 v5,v5c,v5x  -0.87661   0.00000  -0.87661
+:VZERX:v0,v0c,v0x  -0.87661   0.00000  -0.87661 v5,v5c,v5x  -0.87661   0.00000  -0.87661
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  TiTi      
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=    0.3000
+             APW+lo
+          E( 0)=   -3.4625   E(BOTTOM)=   -3.685   E(TOP)=   -3.240
+             LOCAL ORBITAL
+          E( 1)=   -1.7300   E(BOTTOM)=   -2.080   E(TOP)=   -1.380
+             APW+lo
+          E( 1)=    0.3000
+             LOCAL ORBITAL
+          E( 2)=    0.3100   E(BOTTOM)=    0.310   E(TOP)= -200.000
+             APW+lo
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  C C       
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=   -0.7800   E(BOTTOM)=   -0.970   E(TOP)= -200.000
+             APW+lo
+          E( 0)=    0.3000
+             LOCAL ORBITAL
+          E( 1)=    0.3000
+             APW+lo
+
+       K=   0.00000   0.00000   0.00000            1
+:RKM  : MATRIX SIZE  155LOs:  18  RKM= 6.96  WEIGHT= 1.00  PGR:    
+       EIGENVALUES ARE:
+        -3.4277203   -1.6659502   -1.6659502   -1.6659502   -0.1822982
+         0.7810901    0.7810901    0.7810901    0.8537568    0.8537568
+         0.8537568    0.8571766    0.8571766    1.5037733    1.7643960
+
+       ********************************************************
+
+       NUMBER OF K-POINTS:          47
+:GMA  : POTENTIAL AND CHARGE CUT-OFF  12.00 Ry**.5
+         Bandranges (emin - emax):
+:BAND   :   1   -3.427720   -3.420407
+:BAND   :   2   -1.702834   -1.665950
+:BAND   :   3   -1.688703   -1.665950
+:BAND   :   4   -1.678889   -1.665950
+:BAND   :   5   -0.182298    0.074548
+:BAND   :   6    0.300163    0.781090
+:BAND   :   7    0.491127    0.781090
+:BAND   :   8    0.516958    0.781090
+:BAND   :   9    0.701163    0.947145
+:BAND   :  10    0.806699    0.989616
+:BAND   :  11    0.853757    1.034912
+:BAND   :  12    0.857177    1.335323
+:BAND   :  13    0.857177    1.339969
+:BAND   :  14    1.339969    1.772986
+        Energy to separate low and high energystates:    0.25016
+
+
+:NOE  : NUMBER OF ELECTRONS          =  16.000
+
+:FER  : F E R M I - ENERGY(TETRAH.M.)=   0.73284
+
+
+
+
+:POS001: AT.NR.   1 POSITION = 0.00000 0.00000 0.00000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA001: TOTAL CHARGE INSIDE SPHERE   1 =     9.772995
+:PCS001: PARTIAL CHARGES SPHERE =  1 S,P,D,F,      D-EG,D-T2G 
+:QTL001: 2.1022 6.0203 1.6247 0.0219 0.0000 0.0000 0.0000 0.9216 0.7030 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL001:  2.0244 -3.3377    5.8508 -1.6595    0.1020  0.0140    0.0041 -0.0113
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH001:  0.0778  0.4249    0.1694  0.5186    1.5226  0.5486    0.0178  0.5762
+
+
+
+
+:POS002: AT.NR.   2 POSITION = 0.50000 0.50000 0.50000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA002: TOTAL CHARGE INSIDE SPHERE   2 =     3.459245
+:PCS002: PARTIAL CHARGES SPHERE =  2 S,P,D,F,      D-EG,D-T2G 
+:QTL002: 1.2426 2.1745 0.0344 0.0059 0.0000 0.0000 0.0000 0.0112 0.0232 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL002:  1.1960 -0.0146    0.0260 -0.9450    0.0061 -1.6199    0.0021 -1.6816
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH002:  0.0466  0.4672    2.1485  0.5302    0.0283  0.5680    0.0038  0.5367
+
+:CHA  : TOTAL CHARGE INSIDE UNIT CELL =      16.000000
+
+:SUM  : SUM OF EIGENVALUES =         -13.765000943
+
+
+
+   QTL-B VALUE .EQ.    2.06745   in Band of energy    0.78109   ATOM=    1   L=  2
+    Most likely no ghostbands, but adjust Energy-parameters or use -in1new
+
+
+:WARN : QTL-B value eq.   2.07  in Band of energy   0.78109   ATOM=    1   L=  2
+:WARN : You should change the E-parameter in case.in1 or use -in1new switch
+
+        1.ATOM      TiTi                  4 CORE STATES
+:1S 001: 1S                -356.602406553 Ry
+:2S 001: 2S                 -38.293647071 Ry
+:2PP001: 2P*                -31.762020847 Ry
+:2P 001: 2P                 -31.337942566 Ry
+
+        2.ATOM      C C                   1 CORE STATES
+:1S 002: 1S                 -18.724219663 Ry
+
+       DENSITY AT NUCLEUS
+        JATOM    VALENCE       SEMI-CORE            CORE           TOTAL
+
+:RTO001:   1       97.759602        0.000000     8473.907814     8571.667416
+:RTO002:   2        4.954805        0.000000      123.803287      128.758092
+     
+       CHARGES OF NEW CHARGE DENSITY
+:NTO  : TOTAL   INTERSTITIAL CHARGE=  2.7677563
+:NTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7729951
+:NTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4592425
+
+:NEC01: NUCLEAR AND ELECTRONIC CHARGE   28.00000  27.99999   1.00000
+     
+       CHARGES OF OLD CHARGE DENSITY
+:OTO  : TOTAL   INTERSTITIAL CHARGE=  2.7684357
+:OTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7693420
+:OTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4622223
+
+:NEC02: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+     
+       CONVERGENCE TEST
+:DTO001: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  1 =  0.0043136
+:DTO002: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  2 =  0.0041262
+
+:DIS  :  CHARGE DISTANCE       0.0042199
+:BIG check (qbig,qrms,qtot)    0.144D-02   0.298D-02   0.422D-02
+:REDuction and QMX before broyd:    1.0002    1.0002    0.3917
+:PLANE:  INTERSTITAL DISTANCE  0.0047396
+:DIRB :  |BROYD|= 0.193D-01 |PRATT|= 0.209D-01 ANGLE=  26.7 DEGREES
+       BROYD MIXING SCHEME WITH 0.355
+     
+       CHARGES OF MIXED CHARGE DENSITY
+:CTO  : TOTAL   INTERSTITIAL CHARGE=  2.7680296
+:CTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7707031
+:CTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4612674
+
+:NEC03: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+
+
+:ENE  : *WARNING** TOTAL ENERGY IN Ry =        -1783.961357
+
+
+
+            ---------
+:ITE008:  8. ITERATION
+            ---------
+
+       NUMBER OF ATOMS IN UNITCELL  =   2
+       SUBSTANCE: TiC                                                         
+
+       LATTICE                      = F   
+:POT  : POTENTIAL OPTION   13
+:LAT  : LATTICE CONSTANTS=  8.17874  8.17874  8.17874    1.571    1.571    1.571
+:VOL  : UNIT CELL VOLUME =     136.77254
+       MODE OF CALCULATION IS       = RELA
+       NON-SPINPOLARIZED CALCULATION
+:IFFT  : FFT-parameters:   40   40   40 Factor: 2.00
+       ATOMNUMBER=  1 TiTi       VCOUL-ZERO =  0.38343E+00
+       ATOMNUMBER=  2 C C        VCOUL-ZERO =  0.61971E+00
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.1411282E-01
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.1411282E-01
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.1055298E-02
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.1055298E-02
+:DEN  : DENSITY INTEGRALS =            -754.083200   (Ry)
+       ELS_POTENTIAL_AT Z=0 and Z=0.5:  -3.00616  -3.00616
+       ELS_POTENTIAL_AT Y=0 and Y=0.5:   0.00000   0.00000
+:VZERO:v0,v0c,v0x  -4.28453  -3.00616  -1.27837 v5,v5c,v5x  -4.28453  -3.00616  -1.27837
+:VZERY:v0,v0c,v0x  -0.87656   0.00000  -0.87656 v5,v5c,v5x  -0.87656   0.00000  -0.87656
+:VZERX:v0,v0c,v0x  -0.87656   0.00000  -0.87656 v5,v5c,v5x  -0.87656   0.00000  -0.87656
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  TiTi      
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=    0.3000
+             APW+lo
+          E( 0)=   -3.4625   E(BOTTOM)=   -3.685   E(TOP)=   -3.240
+             LOCAL ORBITAL
+          E( 1)=   -1.7250   E(BOTTOM)=   -2.080   E(TOP)=   -1.370
+             APW+lo
+          E( 1)=    0.3000
+             LOCAL ORBITAL
+          E( 2)=    0.3100   E(BOTTOM)=    0.310   E(TOP)= -200.000
+             APW+lo
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  C C       
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=   -0.7800   E(BOTTOM)=   -0.970   E(TOP)= -200.000
+             APW+lo
+          E( 0)=    0.3000
+             LOCAL ORBITAL
+          E( 1)=    0.3000
+             APW+lo
+
+       K=   0.00000   0.00000   0.00000            1
+:RKM  : MATRIX SIZE  155LOs:  18  RKM= 6.96  WEIGHT= 1.00  PGR:    
+       EIGENVALUES ARE:
+        -3.4270693   -1.6653388   -1.6653388   -1.6653388   -0.1824792
+         0.7814914    0.7814914    0.7814914    0.8534458    0.8534458
+         0.8534458    0.8576330    0.8576330    1.5036372    1.7643691
+
+       ********************************************************
+
+       NUMBER OF K-POINTS:          47
+:GMA  : POTENTIAL AND CHARGE CUT-OFF  12.00 Ry**.5
+         Bandranges (emin - emax):
+:BAND   :   1   -3.427069   -3.419751
+:BAND   :   2   -1.702251   -1.665339
+:BAND   :   3   -1.688108   -1.665339
+:BAND   :   4   -1.678286   -1.665339
+:BAND   :   5   -0.182479    0.074326
+:BAND   :   6    0.300101    0.781491
+:BAND   :   7    0.491058    0.781491
+:BAND   :   8    0.516978    0.781491
+:BAND   :   9    0.701078    0.947668
+:BAND   :  10    0.807069    0.990138
+:BAND   :  11    0.853446    1.035296
+:BAND   :  12    0.857633    1.335254
+:BAND   :  13    0.857633    1.340195
+:BAND   :  14    1.340195    1.773098
+        Energy to separate low and high energystates:    0.25010
+
+
+:NOE  : NUMBER OF ELECTRONS          =  16.000
+
+:FER  : F E R M I - ENERGY(TETRAH.M.)=   0.73289
+
+
+
+
+:POS001: AT.NR.   1 POSITION = 0.00000 0.00000 0.00000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA001: TOTAL CHARGE INSIDE SPHERE   1 =     9.769976
+:PCS001: PARTIAL CHARGES SPHERE =  1 S,P,D,F,      D-EG,D-T2G 
+:QTL001: 2.1022 6.0203 1.6216 0.0219 0.0000 0.0000 0.0000 0.9202 0.7014 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL001:  2.0243 -3.3371    5.8507 -1.6589    0.1019  0.0138    0.0041 -0.0116
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH001:  0.0778  0.4249    0.1695  0.5186    1.5197  0.5486    0.0178  0.5762
+
+
+
+
+:POS002: AT.NR.   2 POSITION = 0.50000 0.50000 0.50000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA002: TOTAL CHARGE INSIDE SPHERE   2 =     3.462078
+:PCS002: PARTIAL CHARGES SPHERE =  2 S,P,D,F,      D-EG,D-T2G 
+:QTL002: 1.2429 2.1771 0.0344 0.0059 0.0000 0.0000 0.0000 0.0112 0.0231 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL002:  1.1962 -0.0148    0.0260 -0.9454    0.0061 -1.6196    0.0021 -1.6812
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH002:  0.0466  0.4671    2.1511  0.5302    0.0283  0.5680    0.0038  0.5367
+
+:CHA  : TOTAL CHARGE INSIDE UNIT CELL =      16.000000
+
+:SUM  : SUM OF EIGENVALUES =         -13.760603353
+
+
+
+   QTL-B VALUE .EQ.    2.06917   in Band of energy    0.78149   ATOM=    1   L=  2
+    Most likely no ghostbands, but adjust Energy-parameters or use -in1new
+
+
+:WARN : QTL-B value eq.   2.07  in Band of energy   0.78149   ATOM=    1   L=  2
+:WARN : You should change the E-parameter in case.in1 or use -in1new switch
+
+        1.ATOM      TiTi                  4 CORE STATES
+:1S 001: 1S                -356.603563929 Ry
+:2S 001: 2S                 -38.293446363 Ry
+:2PP001: 2P*                -31.761969207 Ry
+:2P 001: 2P                 -31.337880747 Ry
+
+        2.ATOM      C C                   1 CORE STATES
+:1S 002: 1S                 -18.724035393 Ry
+
+       DENSITY AT NUCLEUS
+        JATOM    VALENCE       SEMI-CORE            CORE           TOTAL
+
+:RTO001:   1       97.754514        0.000000     8473.926269     8571.680783
+:RTO002:   2        4.956489        0.000000      123.800203      128.756691
+     
+       CHARGES OF NEW CHARGE DENSITY
+:NTO  : TOTAL   INTERSTITIAL CHARGE=  2.7679419
+:NTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7699764
+:NTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4620756
+
+:NEC01: NUCLEAR AND ELECTRONIC CHARGE   28.00000  27.99999   1.00000
+     
+       CHARGES OF OLD CHARGE DENSITY
+:OTO  : TOTAL   INTERSTITIAL CHARGE=  2.7680296
+:OTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7707031
+:OTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4612674
+
+:NEC02: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+     
+       CONVERGENCE TEST
+:DTO001: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  1 =  0.0016042
+:DTO002: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  2 =  0.0024425
+
+:DIS  :  CHARGE DISTANCE       0.0020233
+:BIG check (qbig,qrms,qtot)    0.814D-03   0.146D-02   0.202D-02
+:REDuction and QMX before broyd:    1.0000    1.0000    0.3960
+:PLANE:  INTERSTITAL DISTANCE  0.0040806
+:DIRB :  |BROYD|= 0.156D-01 |PRATT|= 0.109D-01 ANGLE=  13.1 DEGREES
+       BROYD MIXING SCHEME WITH 0.376
+     
+       CHARGES OF MIXED CHARGE DENSITY
+:CTO  : TOTAL   INTERSTITIAL CHARGE=  2.7680732
+:CTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7703274
+:CTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4615994
+
+:NEC03: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+
+
+:ENE  : *WARNING** TOTAL ENERGY IN Ry =        -1783.961356
+
+
+
+            ---------
+:ITE009:  9. ITERATION
+            ---------
+
+       NUMBER OF ATOMS IN UNITCELL  =   2
+       SUBSTANCE: TiC                                                         
+
+       LATTICE                      = F   
+:POT  : POTENTIAL OPTION   13
+:LAT  : LATTICE CONSTANTS=  8.17874  8.17874  8.17874    1.571    1.571    1.571
+:VOL  : UNIT CELL VOLUME =     136.77254
+       MODE OF CALCULATION IS       = RELA
+       NON-SPINPOLARIZED CALCULATION
+:IFFT  : FFT-parameters:   40   40   40 Factor: 2.00
+       ATOMNUMBER=  1 TiTi       VCOUL-ZERO =  0.38338E+00
+       ATOMNUMBER=  2 C C        VCOUL-ZERO =  0.62001E+00
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.1420818E-01
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.1420818E-01
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.1048655E-02
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.1048655E-02
+:DEN  : DENSITY INTEGRALS =            -754.073391   (Ry)
+       ELS_POTENTIAL_AT Z=0 and Z=0.5:  -3.00550  -3.00550
+       ELS_POTENTIAL_AT Y=0 and Y=0.5:   0.00000   0.00000
+:VZERO:v0,v0c,v0x  -4.28400  -3.00550  -1.27851 v5,v5c,v5x  -4.28400  -3.00550  -1.27851
+:VZERY:v0,v0c,v0x  -0.87648   0.00000  -0.87648 v5,v5c,v5x  -0.87648   0.00000  -0.87648
+:VZERX:v0,v0c,v0x  -0.87648   0.00000  -0.87648 v5,v5c,v5x  -0.87648   0.00000  -0.87648
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  TiTi      
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=    0.3000
+             APW+lo
+          E( 0)=   -3.4625   E(BOTTOM)=   -3.685   E(TOP)=   -3.240
+             LOCAL ORBITAL
+          E( 1)=   -1.7250   E(BOTTOM)=   -2.080   E(TOP)=   -1.370
+             APW+lo
+          E( 1)=    0.3000
+             LOCAL ORBITAL
+          E( 2)=    0.3100   E(BOTTOM)=    0.310   E(TOP)= -200.000
+             APW+lo
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  C C       
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=   -0.7800   E(BOTTOM)=   -0.970   E(TOP)= -200.000
+             APW+lo
+          E( 0)=    0.3000
+             LOCAL ORBITAL
+          E( 1)=    0.3000
+             APW+lo
+
+       K=   0.00000   0.00000   0.00000            1
+:RKM  : MATRIX SIZE  155LOs:  18  RKM= 6.96  WEIGHT= 1.00  PGR:    
+       EIGENVALUES ARE:
+        -3.4272303   -1.6654900   -1.6654900   -1.6654900   -0.1824043
+         0.7814230    0.7814230    0.7814230    0.8535723    0.8535723
+         0.8535723    0.8575382    0.8575382    1.5037876    1.7644050
+
+       ********************************************************
+
+       NUMBER OF K-POINTS:          47
+:GMA  : POTENTIAL AND CHARGE CUT-OFF  12.00 Ry**.5
+         Bandranges (emin - emax):
+:BAND   :   1   -3.427230   -3.419914
+:BAND   :   2   -1.702394   -1.665490
+:BAND   :   3   -1.688255   -1.665490
+:BAND   :   4   -1.678435   -1.665490
+:BAND   :   5   -0.182404    0.074434
+:BAND   :   6    0.300128    0.781423
+:BAND   :   7    0.491090    0.781423
+:BAND   :   8    0.516997    0.781423
+:BAND   :   9    0.701130    0.947578
+:BAND   :  10    0.807008    0.990050
+:BAND   :  11    0.853572    1.035247
+:BAND   :  12    0.857538    1.335303
+:BAND   :  13    0.857538    1.340201
+:BAND   :  14    1.340201    1.773095
+        Energy to separate low and high energystates:    0.25013
+
+
+:NOE  : NUMBER OF ELECTRONS          =  16.000
+
+:FER  : F E R M I - ENERGY(TETRAH.M.)=   0.73291
+
+
+
+
+:POS001: AT.NR.   1 POSITION = 0.00000 0.00000 0.00000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA001: TOTAL CHARGE INSIDE SPHERE   1 =     9.770783
+:PCS001: PARTIAL CHARGES SPHERE =  1 S,P,D,F,      D-EG,D-T2G 
+:QTL001: 2.1022 6.0203 1.6224 0.0219 0.0000 0.0000 0.0000 0.9206 0.7018 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL001:  2.0244 -3.3373    5.8508 -1.6591    0.1020  0.0139    0.0041 -0.0115
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH001:  0.0778  0.4249    0.1695  0.5186    1.5204  0.5486    0.0178  0.5762
+
+
+
+
+:POS002: AT.NR.   2 POSITION = 0.50000 0.50000 0.50000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA002: TOTAL CHARGE INSIDE SPHERE   2 =     3.461137
+:PCS002: PARTIAL CHARGES SPHERE =  2 S,P,D,F,      D-EG,D-T2G 
+:QTL002: 1.2427 2.1763 0.0344 0.0059 0.0000 0.0000 0.0000 0.0112 0.0231 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL002:  1.1961 -0.0147    0.0260 -0.9452    0.0061 -1.6197    0.0021 -1.6813
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH002:  0.0467  0.4672    2.1503  0.5302    0.0283  0.5680    0.0038  0.5367
+
+:CHA  : TOTAL CHARGE INSIDE UNIT CELL =      16.000000
+
+:SUM  : SUM OF EIGENVALUES =         -13.761463288
+
+
+
+   QTL-B VALUE .EQ.    2.06902   in Band of energy    0.78142   ATOM=    1   L=  2
+    Most likely no ghostbands, but adjust Energy-parameters or use -in1new
+
+
+:WARN : QTL-B value eq.   2.07  in Band of energy   0.78142   ATOM=    1   L=  2
+:WARN : You should change the E-parameter in case.in1 or use -in1new switch
+
+        1.ATOM      TiTi                  4 CORE STATES
+:1S 001: 1S                -356.605213065 Ry
+:2S 001: 2S                 -38.294189116 Ry
+:2PP001: 2P*                -31.762812260 Ry
+:2P 001: 2P                 -31.338716650 Ry
+
+        2.ATOM      C C                   1 CORE STATES
+:1S 002: 1S                 -18.723600932 Ry
+
+       DENSITY AT NUCLEUS
+        JATOM    VALENCE       SEMI-CORE            CORE           TOTAL
+
+:RTO001:   1       97.757044        0.000000     8473.940027     8571.697071
+:RTO002:   2        4.955525        0.000000      123.798813      128.754338
+     
+       CHARGES OF NEW CHARGE DENSITY
+:NTO  : TOTAL   INTERSTITIAL CHARGE=  2.7680762
+:NTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7707834
+:NTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4611342
+
+:NEC01: NUCLEAR AND ELECTRONIC CHARGE   28.00000  27.99999   1.00000
+     
+       CHARGES OF OLD CHARGE DENSITY
+:OTO  : TOTAL   INTERSTITIAL CHARGE=  2.7680732
+:OTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7703274
+:OTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4615994
+
+:NEC02: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+     
+       CONVERGENCE TEST
+:DTO001: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  1 =  0.0009378
+:DTO002: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  2 =  0.0012875
+
+:DIS  :  CHARGE DISTANCE       0.0011127
+:BIG check (qbig,qrms,qtot)    0.429D-03   0.796D-03   0.111D-02
+:REDuction and QMX before broyd:    1.0000    1.0000    0.3978
+:PLANE:  INTERSTITAL DISTANCE  0.0018935
+:DIRB :  |BROYD|= 0.124D-01 |PRATT|= 0.597D-02 ANGLE=  12.3 DEGREES
+       BROYD MIXING SCHEME WITH 0.387
+     
+       CHARGES OF MIXED CHARGE DENSITY
+:CTO  : TOTAL   INTERSTITIAL CHARGE=  2.7680978
+:CTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7704190
+:CTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4614832
+
+:NEC03: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+
+
+:ENE  : *WARNING** TOTAL ENERGY IN Ry =        -1783.961352
+
+
+
+            ---------
+:ITE010: 10. ITERATION
+            ---------
+
+       NUMBER OF ATOMS IN UNITCELL  =   2
+       SUBSTANCE: TiC                                                         
+
+       LATTICE                      = F   
+:POT  : POTENTIAL OPTION   13
+:LAT  : LATTICE CONSTANTS=  8.17874  8.17874  8.17874    1.571    1.571    1.571
+:VOL  : UNIT CELL VOLUME =     136.77254
+       MODE OF CALCULATION IS       = RELA
+       NON-SPINPOLARIZED CALCULATION
+:IFFT  : FFT-parameters:   40   40   40 Factor: 2.00
+       ATOMNUMBER=  1 TiTi       VCOUL-ZERO =  0.38338E+00
+       ATOMNUMBER=  2 C C        VCOUL-ZERO =  0.62013E+00
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.1427396E-01
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.1427396E-01
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.1044910E-02
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.1044910E-02
+:DEN  : DENSITY INTEGRALS =            -754.069789   (Ry)
+       ELS_POTENTIAL_AT Z=0 and Z=0.5:  -3.00499  -3.00499
+       ELS_POTENTIAL_AT Y=0 and Y=0.5:   0.00000   0.00000
+:VZERO:v0,v0c,v0x  -4.28355  -3.00499  -1.27856 v5,v5c,v5x  -4.28355  -3.00499  -1.27856
+:VZERY:v0,v0c,v0x  -0.87641   0.00000  -0.87641 v5,v5c,v5x  -0.87641   0.00000  -0.87641
+:VZERX:v0,v0c,v0x  -0.87641   0.00000  -0.87641 v5,v5c,v5x  -0.87641   0.00000  -0.87641
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  TiTi      
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=    0.3000
+             APW+lo
+          E( 0)=   -3.4625   E(BOTTOM)=   -3.685   E(TOP)=   -3.240
+             LOCAL ORBITAL
+          E( 1)=   -1.7250   E(BOTTOM)=   -2.080   E(TOP)=   -1.370
+             APW+lo
+          E( 1)=    0.3000
+             LOCAL ORBITAL
+          E( 2)=    0.3100   E(BOTTOM)=    0.310   E(TOP)= -200.000
+             APW+lo
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  C C       
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=   -0.7800   E(BOTTOM)=   -0.970   E(TOP)= -200.000
+             APW+lo
+          E( 0)=    0.3000
+             LOCAL ORBITAL
+          E( 1)=    0.3000
+             APW+lo
+
+       K=   0.00000   0.00000   0.00000            1
+:RKM  : MATRIX SIZE  155LOs:  18  RKM= 6.96  WEIGHT= 1.00  PGR:    
+       EIGENVALUES ARE:
+        -3.4271362   -1.6654008   -1.6654008   -1.6654008   -0.1824205
+         0.7814981    0.7814981    0.7814981    0.8535383    0.8535383
+         0.8535383    0.8576104    0.8576104    1.5038318    1.7644296
+
+       ********************************************************
+
+       NUMBER OF K-POINTS:          47
+:GMA  : POTENTIAL AND CHARGE CUT-OFF  12.00 Ry**.5
+         Bandranges (emin - emax):
+:BAND   :   1   -3.427136   -3.419819
+:BAND   :   2   -1.702308   -1.665401
+:BAND   :   3   -1.688168   -1.665401
+:BAND   :   4   -1.678347   -1.665401
+:BAND   :   5   -0.182420    0.074422
+:BAND   :   6    0.300122    0.781498
+:BAND   :   7    0.491083    0.781498
+:BAND   :   8    0.517004    0.781498
+:BAND   :   9    0.701125    0.947674
+:BAND   :  10    0.807076    0.990147
+:BAND   :  11    0.853538    1.035324
+:BAND   :  12    0.857610    1.335315
+:BAND   :  13    0.857610    1.340257
+:BAND   :  14    1.340257    1.773125
+        Energy to separate low and high energystates:    0.25012
+
+
+:NOE  : NUMBER OF ELECTRONS          =  16.000
+
+:FER  : F E R M I - ENERGY(TETRAH.M.)=   0.73293
+
+
+
+
+:POS001: AT.NR.   1 POSITION = 0.00000 0.00000 0.00000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA001: TOTAL CHARGE INSIDE SPHERE   1 =     9.770332
+:PCS001: PARTIAL CHARGES SPHERE =  1 S,P,D,F,      D-EG,D-T2G 
+:QTL001: 2.1022 6.0203 1.6219 0.0219 0.0000 0.0000 0.0000 0.9205 0.7015 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL001:  2.0244 -3.3372    5.8508 -1.6590    0.1020  0.0138    0.0041 -0.0115
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH001:  0.0778  0.4249    0.1695  0.5186    1.5200  0.5486    0.0178  0.5763
+
+
+
+
+:POS002: AT.NR.   2 POSITION = 0.50000 0.50000 0.50000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA002: TOTAL CHARGE INSIDE SPHERE   2 =     3.461485
+:PCS002: PARTIAL CHARGES SPHERE =  2 S,P,D,F,      D-EG,D-T2G 
+:QTL002: 1.2427 2.1767 0.0344 0.0059 0.0000 0.0000 0.0000 0.0112 0.0231 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL002:  1.1961 -0.0147    0.0260 -0.9452    0.0061 -1.6196    0.0021 -1.6812
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH002:  0.0467  0.4672    2.1506  0.5302    0.0283  0.5680    0.0038  0.5367
+
+:CHA  : TOTAL CHARGE INSIDE UNIT CELL =      16.000000
+
+:SUM  : SUM OF EIGENVALUES =         -13.760758255
+
+
+
+   QTL-B VALUE .EQ.    2.06943   in Band of energy    0.78150   ATOM=    1   L=  2
+    Most likely no ghostbands, but adjust Energy-parameters or use -in1new
+
+
+:WARN : QTL-B value eq.   2.07  in Band of energy   0.78150   ATOM=    1   L=  2
+:WARN : You should change the E-parameter in case.in1 or use -in1new switch
+
+        1.ATOM      TiTi                  4 CORE STATES
+:1S 001: 1S                -356.606209929 Ry
+:2S 001: 2S                 -38.294464094 Ry
+:2PP001: 2P*                -31.763166787 Ry
+:2P 001: 2P                 -31.339065571 Ry
+
+        2.ATOM      C C                   1 CORE STATES
+:1S 002: 1S                 -18.723428498 Ry
+
+       DENSITY AT NUCLEUS
+        JATOM    VALENCE       SEMI-CORE            CORE           TOTAL
+
+:RTO001:   1       97.756839        0.000000     8473.950674     8571.707513
+:RTO002:   2        4.955533        0.000000      123.797352      128.752885
+     
+       CHARGES OF NEW CHARGE DENSITY
+:NTO  : TOTAL   INTERSTITIAL CHARGE=  2.7681796
+:NTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7703320
+:NTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4614822
+
+:NEC01: NUCLEAR AND ELECTRONIC CHARGE   28.00000  27.99999   1.00000
+     
+       CHARGES OF OLD CHARGE DENSITY
+:OTO  : TOTAL   INTERSTITIAL CHARGE=  2.7680978
+:OTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7704190
+:OTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4614832
+
+:NEC02: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+     
+       CONVERGENCE TEST
+:DTO001: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  1 =  0.0001091
+:DTO002: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  2 =  0.0001904
+
+:DIS  :  CHARGE DISTANCE       0.0001497
+:BIG check (qbig,qrms,qtot)    0.635D-04   0.110D-03   0.150D-03
+:REDuction and QMX before broyd:    1.0000    1.0000    0.4000
+:PLANE:  INTERSTITAL DISTANCE  0.0002648
+:DIRB :  |BROYD|= 0.122D-02 |PRATT|= 0.838D-03 ANGLE=  24.5 DEGREES
+       BROYD MIXING SCHEME WITH 0.393
+     
+       CHARGES OF MIXED CHARGE DENSITY
+:CTO  : TOTAL   INTERSTITIAL CHARGE=  2.7681379
+:CTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7703874
+:CTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4614747
+
+:NEC03: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+
+
+:ENE  : *WARNING** TOTAL ENERGY IN Ry =        -1783.961348
+
+
+
+            ---------
+:ITE011: 11. ITERATION
+            ---------
+
+       NUMBER OF ATOMS IN UNITCELL  =   2
+       SUBSTANCE: TiC                                                         
+
+       LATTICE                      = F   
+:POT  : POTENTIAL OPTION   13
+:LAT  : LATTICE CONSTANTS=  8.17874  8.17874  8.17874    1.571    1.571    1.571
+:VOL  : UNIT CELL VOLUME =     136.77254
+       MODE OF CALCULATION IS       = RELA
+       NON-SPINPOLARIZED CALCULATION
+:IFFT  : FFT-parameters:   40   40   40 Factor: 2.00
+       ATOMNUMBER=  1 TiTi       VCOUL-ZERO =  0.38338E+00
+       ATOMNUMBER=  2 C C        VCOUL-ZERO =  0.62015E+00
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.1428182E-01
+:FIT001: SIGMA OF V-XC FIT FOR ATOM  1  0.1428182E-01
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.1044800E-02
+:FIT002: SIGMA OF V-XC FIT FOR ATOM  2  0.1044800E-02
+:DEN  : DENSITY INTEGRALS =            -754.069295   (Ry)
+       ELS_POTENTIAL_AT Z=0 and Z=0.5:  -3.00495  -3.00495
+       ELS_POTENTIAL_AT Y=0 and Y=0.5:   0.00000   0.00000
+:VZERO:v0,v0c,v0x  -4.28351  -3.00495  -1.27856 v5,v5c,v5x  -4.28351  -3.00495  -1.27856
+:VZERY:v0,v0c,v0x  -0.87640   0.00000  -0.87640 v5,v5c,v5x  -0.87640   0.00000  -0.87640
+:VZERX:v0,v0c,v0x  -0.87640   0.00000  -0.87640 v5,v5c,v5x  -0.87640   0.00000  -0.87640
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  TiTi      
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=    0.3000
+             APW+lo
+          E( 0)=   -3.4625   E(BOTTOM)=   -3.685   E(TOP)=   -3.240
+             LOCAL ORBITAL
+          E( 1)=   -1.7250   E(BOTTOM)=   -2.080   E(TOP)=   -1.370
+             APW+lo
+          E( 1)=    0.3000
+             LOCAL ORBITAL
+          E( 2)=    0.3100   E(BOTTOM)=    0.310   E(TOP)= -200.000
+             APW+lo
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  C C       
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=   -0.7800   E(BOTTOM)=   -0.970   E(TOP)= -200.000
+             APW+lo
+          E( 0)=    0.3000
+             LOCAL ORBITAL
+          E( 1)=    0.3000
+             APW+lo
+
+       K=   0.00000   0.00000   0.00000            1
+:RKM  : MATRIX SIZE  155LOs:  18  RKM= 6.96  WEIGHT= 1.00  PGR:    
+       EIGENVALUES ARE:
+        -3.4271566   -1.6654195   -1.6654195   -1.6654195   -0.1824157
+         0.7814877    0.7814877    0.7814877    0.8535462    0.8535462
+         0.8535462    0.8575967    0.8575967    1.5038443    1.7644352
+
+       ********************************************************
+
+       NUMBER OF K-POINTS:          47
+:GMA  : POTENTIAL AND CHARGE CUT-OFF  12.00 Ry**.5
+         Bandranges (emin - emax):
+:BAND   :   1   -3.427157   -3.419839
+:BAND   :   2   -1.702326   -1.665419
+:BAND   :   3   -1.688186   -1.665419
+:BAND   :   4   -1.678365   -1.665419
+:BAND   :   5   -0.182416    0.074429
+:BAND   :   6    0.300123    0.781488
+:BAND   :   7    0.491084    0.781488
+:BAND   :   8    0.517002    0.781488
+:BAND   :   9    0.701126    0.947660
+:BAND   :  10    0.807066    0.990133
+:BAND   :  11    0.853546    1.035314
+:BAND   :  12    0.857597    1.335320
+:BAND   :  13    0.857597    1.340251
+:BAND   :  14    1.340251    1.773122
+        Energy to separate low and high energystates:    0.25012
+
+
+:NOE  : NUMBER OF ELECTRONS          =  16.000
+
+:FER  : F E R M I - ENERGY(TETRAH.M.)=   0.73293
+
+
+
+
+:POS001: AT.NR.   1 POSITION = 0.00000 0.00000 0.00000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA001: TOTAL CHARGE INSIDE SPHERE   1 =     9.770413
+:PCS001: PARTIAL CHARGES SPHERE =  1 S,P,D,F,      D-EG,D-T2G 
+:QTL001: 2.1022 6.0203 1.6220 0.0219 0.0000 0.0000 0.0000 0.9205 0.7015 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL001:  2.0244 -3.3372    5.8508 -1.6590    0.1020  0.0139    0.0041 -0.0115
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH001:  0.0778  0.4249    0.1695  0.5186    1.5201  0.5486    0.0178  0.5762
+
+
+
+
+:POS002: AT.NR.   2 POSITION = 0.50000 0.50000 0.50000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA002: TOTAL CHARGE INSIDE SPHERE   2 =     3.461401
+:PCS002: PARTIAL CHARGES SPHERE =  2 S,P,D,F,      D-EG,D-T2G 
+:QTL002: 1.2427 2.1766 0.0344 0.0059 0.0000 0.0000 0.0000 0.0112 0.0231 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL002:  1.1961 -0.0147    0.0260 -0.9451    0.0061 -1.6196    0.0021 -1.6812
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH002:  0.0467  0.4672    2.1506  0.5302    0.0283  0.5680    0.0038  0.5367
+
+:CHA  : TOTAL CHARGE INSIDE UNIT CELL =      16.000000
+
+:SUM  : SUM OF EIGENVALUES =         -13.760899955
+
+
+
+   QTL-B VALUE .EQ.    2.06940   in Band of energy    0.78149   ATOM=    1   L=  2
+    Most likely no ghostbands, but adjust Energy-parameters or use -in1new
+
+
+:WARN : QTL-B value eq.   2.07  in Band of energy   0.78149   ATOM=    1   L=  2
+:WARN : You should change the E-parameter in case.in1 or use -in1new switch
+
+        1.ATOM      TiTi                  4 CORE STATES
+:1S 001: 1S                -356.606257617 Ry
+:2S 001: 2S                 -38.294511392 Ry
+:2PP001: 2P*                -31.763214648 Ry
+:2P 001: 2P                 -31.339113374 Ry
+
+        2.ATOM      C C                   1 CORE STATES
+:1S 002: 1S                 -18.723366281 Ry
+
+       DENSITY AT NUCLEUS
+        JATOM    VALENCE       SEMI-CORE            CORE           TOTAL
+
+:RTO001:   1       97.757126        0.000000     8473.950764     8571.707890
+:RTO002:   2        4.955461        0.000000      123.797147      128.752608
+     
+       CHARGES OF NEW CHARGE DENSITY
+:NTO  : TOTAL   INTERSTITIAL CHARGE=  2.7681820
+:NTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7704130
+:NTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4613988
+
+:NEC01: NUCLEAR AND ELECTRONIC CHARGE   28.00000  27.99999   1.00000
+     
+       CHARGES OF OLD CHARGE DENSITY
+:OTO  : TOTAL   INTERSTITIAL CHARGE=  2.7681379
+:OTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7703874
+:OTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4614747
+
+:NEC02: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+     
+       CONVERGENCE TEST
+:DTO001: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  1 =  0.0000426
+:DTO002: TOTAL   DIFFERENCE CHARGE**2 IN SPHERE  2 =  0.0001186
+
+:DIS  :  CHARGE DISTANCE       0.0000806
+:BIG check (qbig,qrms,qtot)    0.395D-04   0.630D-04   0.806D-04
+:REDuction and QMX before broyd:    1.0000    1.0000    0.4000
+:PLANE:  INTERSTITAL DISTANCE  0.0001010
+:DIRB :  |BROYD|= 0.575D-03 |PRATT|= 0.553D-03 ANGLE=   8.4 DEGREES
+       BROYD MIXING SCHEME WITH 0.397
+     
+       CHARGES OF MIXED CHARGE DENSITY
+:CTO  : TOTAL   INTERSTITIAL CHARGE=  2.7681588
+:CTO001: TOTAL   CHARGE IN SPHERE  1 = 19.7703918
+:CTO002: TOTAL   CHARGE IN SPHERE  2 =  5.4614494
+
+:NEC03: NUCLEAR AND ELECTRONIC CHARGE   28.00000  28.00000   1.00000
+
+
+:ENE  : *WARNING** TOTAL ENERGY IN Ry =        -1783.961348
+

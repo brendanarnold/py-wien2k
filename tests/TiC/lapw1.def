@@ -1,0 +1,11 @@
+ 4,'TiC.klist',          'unknown','formatted',0
+ 5,'TiC.in1',   'old',    'formatted',0
+ 6,'TiC.output1','unknown','formatted',0
+10,'./TiC.vector', 'unknown','unformatted',9000
+11,'TiC.energy', 'unknown','formatted',0
+18,'TiC.vsp',       'old',    'formatted',0
+19,'TiC.vns',       'unknown','formatted',0
+20,'TiC.struct',         'old',    'formatted',0
+21,'TiC.scf1',   'unknown','formatted',0
+55,'TiC.vec',            'unknown','formatted',0
+71,'TiC.nsh',    'unknown','formatted',0

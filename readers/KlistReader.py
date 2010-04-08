@@ -97,7 +97,7 @@ class KlistReader(object):
     def __init__(self, filename):
         self.filename = filename
         self.data = None
-        self.num_rlv_points = []
+        self.bz_shape = []
         self.is_bandlist = False
         self._load_values()
     def _load_values(self):
@@ -147,7 +147,7 @@ class KlistReader(object):
                     meta_vals = fmt['meta_data_line'].match(line).groups()
                     if len(meta_vals) != fmt['num_meta_data_vals']:
                         raise UnexpectedFileFormat('Meta line parsed wrong number of elements - check that the file is correct or update format (line: %d))' % line_num)
-                    self.num_rlv_points = [int(x) for x in meta_vals[9:12]]
+                    self.bz_shape = tuple([int(x) for x in meta_vals[9:12]])
                     tmp_data.append([float(x) for x in meta_vals[:6]]) # Line also contains a k point - add this
                 # Otherwise parse out the k point line
                 else:

@@ -1,0 +1,14 @@
+show all
+set terminal png
+set output '/home/ba1224/.w2web/vienna.phy.bris.ac.uk/tmp/239224-17190.png'
+set title '/home/ba1224/Calculations/TiC/TiC.dos1ev'
+set data style lines
+set xlabel "eV"
+set ylabel "total DOS "
+set xrange [-12.5:3.5]
+set yrange [:]
+set yzeroaxis
+plot '/home/ba1224/Calculations/TiC/:dos1' using 1:2 title ''
+set terminal postscript
+set output '/home/ba1224/.w2web/vienna.phy.bris.ac.uk/tmp/239224-17190.ps'
+replot

@@ -1,0 +1,35 @@
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  TiTi      
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=    0.3000
+             APW+lo
+          E( 0)=   -3.4625   E(BOTTOM)=   -3.685   E(TOP)=   -3.240
+             LOCAL ORBITAL
+          E( 1)=   -1.7250   E(BOTTOM)=   -2.080   E(TOP)=   -1.370
+             APW+lo
+          E( 1)=    0.3000
+             LOCAL ORBITAL
+          E( 2)=    0.3100   E(BOTTOM)=    0.310   E(TOP)= -200.000
+             APW+lo
+
+          ATOMIC SPHERE DEPENDENT PARAMETERS FOR ATOM  C C       
+          OVERALL ENERGY PARAMETER IS    0.3000
+          OVERALL BASIS SET ON ATOM IS LAPW
+          E( 0)=   -0.7800   E(BOTTOM)=   -0.970   E(TOP)= -200.000
+             APW+lo
+          E( 0)=    0.3000
+             LOCAL ORBITAL
+          E( 1)=    0.3000
+             APW+lo
+
+       K=   1.00000   0.50000   0.00000   W         
+:RKM  : MATRIX SIZE  134LOs:  18  RKM= 6.85  WEIGHT= 2.00  PGR:    
+       EIGENVALUES ARE:
+        -3.4198357   -1.6877105   -1.6877105   -1.6784323    0.0294436
+         0.4989235    0.4989235    0.5310061    0.9373967    0.9373967
+         0.9928691    1.1114356    1.1176596    1.7666559    1.7666559
+         1.8388320
+       ********************************************************
+
+       NUMBER OF K-POINTS:         111

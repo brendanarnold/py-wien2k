@@ -1,0 +1,2834 @@
+TiC                                                                             
+0         F      TYPE LATTICE ASSUMED
+          RELA-CALCULATION
+
+          R-MT TIMES K-MAX IS 7.00
+          MAX L IS 10     MAX L IN NONSPHERICAL MATRIXELEMENTS:  4
+ NUMBER OF ATOMS IS    2
+  -0.12227   0.12227   0.12227
+   0.12227  -0.12227   0.12227
+   0.12227   0.12227  -0.12227
+   0.00000   4.08937   4.08937
+   4.08937   0.00000   4.08937
+   4.08937   4.08937   0.00000
+          E( 0)=    0.3000
+             APW+lo
+          E( 0)=   -3.4625   E(BOTTOM)=   -3.685   E(TOP)=   -3.240
+             LOCAL ORBITAL
+          E( 1)=   -1.7250   E(BOTTOM)=   -2.080   E(TOP)=   -1.370
+             APW+lo
+          E( 1)=    0.3000
+             LOCAL ORBITAL
+          E( 2)=    0.3100   E(BOTTOM)=    0.310   E(TOP)= -200.000
+             APW+lo
+
+          POTENTIAL PARAMETERS 
+           L     U(R)          U'(R)         DU/DE        DU'/DE      NORM-U'
+           0 -0.708587E+00 -0.319301E+00  0.384054E-01  0.340388E+00  0.182872E-01      3 3 3
+           1 -0.171856E+00  0.242978E+00  0.481053E+00  0.652088E+00  0.263782E+00      1 1 1
+           2  0.461302E+00 -0.222607E-02 -0.284946E+00 -0.494944E+00  0.110608E+00      0 0 0
+           3  0.903077E+00  0.102807E+01 -0.595080E-01 -0.321248E+00  0.305851E-02      0 0 0
+           4  0.104641E+01  0.179222E+01 -0.391069E-01 -0.285753E+00  0.103834E-02      0 0 0
+           5  0.115859E+01  0.259355E+01 -0.293775E-01 -0.263347E+00  0.496689E-03      0 0 0
+           6  0.125621E+01  0.344940E+01 -0.234079E-01 -0.246497E+00  0.276344E-03      0 0 0
+           7  0.134466E+01  0.436196E+01 -0.193248E-01 -0.232916E+00  0.168365E-03      0 0 0
+           8  0.142649E+01  0.533020E+01 -0.163501E-01 -0.221546E+00  0.109226E-03      0 0 0
+           9  0.150321E+01  0.635225E+01 -0.140890E-01 -0.211791E+00  0.742661E-04      0 0 0
+          10  0.157575E+01  0.742608E+01 -0.123161E-01 -0.203276E+00  0.523929E-04      0 0 0
+
+          LOCAL ORBITAL POTENTIAL PARAMETERS
+           L     U(R)          U'(R)     NORM U1U2        NORM UE1U2
+           0  0.128230E+00 -0.200576E+00  0.212542E+00 -0.116107E+00      0 2 0
+           1  0.590158E+00  0.650969E+00  0.550539E+00  0.426536E+00      0 2 0
+LO COEFFICIENT: l,A,B,C   0          0.37203     6.86400     0.00000
+LO COEFFICIENT: l,A,B,C   0          0.17179     0.00000     0.94930
+LO COEFFICIENT: l,A,B,C   1          0.98358     0.35138     0.00000
+LO COEFFICIENT: l,A,B,C   1          0.84352     0.00000     0.24563
+LO COEFFICIENT: l,A,B,C   2          0.88049     1.42543     0.00000
+  POSSIBLE NONSPHERICAL CONTRIBUTIONS TO H: 
+ (L0,LL,LP,M, MM,MP, GNT,  U V U,    UE V UE,   U V UE     )
+    NUMBER OF RADIAL INTEGRALS FOR ATOM           1  =           26
+          E( 0)=   -0.7800   E(BOTTOM)=   -0.970   E(TOP)= -200.000
+             APW+lo
+          E( 0)=    0.3000
+             LOCAL ORBITAL
+          E( 1)=    0.3000
+             APW+lo
+
+          POTENTIAL PARAMETERS 
+           L     U(R)          U'(R)         DU/DE        DU'/DE      NORM-U'
+           0 -0.617980E+00  0.813298E-01  0.177992E+00  0.449379E+00  0.257251E-01      1 1 1
+           1  0.555600E+00 -0.189600E+00 -0.218394E+00 -0.451383E+00  0.437844E-01      0 0 0
+           2  0.960962E+00  0.765942E+00 -0.729894E-01 -0.362233E+00  0.348492E-02      0 0 0
+           3  0.114315E+01  0.164650E+01 -0.464480E-01 -0.322492E+00  0.112753E-02      0 0 0
+           4  0.128586E+01  0.260733E+01 -0.338765E-01 -0.295909E+00  0.506698E-03      0 0 0
+           5  0.140958E+01  0.365854E+01 -0.263681E-01 -0.275702E+00  0.267272E-03      0 0 0
+           6  0.152124E+01  0.479787E+01 -0.213645E-01 -0.259424E+00  0.155800E-03      0 0 0
+           7  0.162417E+01  0.602106E+01 -0.178015E-01 -0.245855E+00  0.974223E-04      0 0 0
+           8  0.172032E+01  0.732377E+01 -0.151462E-01 -0.234278E+00  0.642182E-04      0 0 0
+           9  0.181098E+01  0.870199E+01 -0.130994E-01 -0.224229E+00  0.441227E-04      0 0 0
+          10  0.189703E+01  0.101521E+02 -0.114796E-01 -0.215389E+00  0.313521E-04      0 0 0
+
+          LOCAL ORBITAL POTENTIAL PARAMETERS
+           L     U(R)          U'(R)     NORM U1U2        NORM UE1U2
+           0 -0.396049E+00  0.552599E+00  0.980107E+00  0.318094E-01      0 1 0
+LO COEFFICIENT: l,A,B,C   0          0.87367     3.03334     0.00000
+LO COEFFICIENT: l,A,B,C   0          1.63064     0.00000    -2.54438
+LO COEFFICIENT: l,A,B,C   1          0.88272     2.24567     0.00000
+  POSSIBLE NONSPHERICAL CONTRIBUTIONS TO H: 
+ (L0,LL,LP,M, MM,MP, GNT,  U V U,    UE V UE,   U V UE     )
+    NUMBER OF RADIAL INTEGRALS FOR ATOM           2  =           26
+                                        CPTIME ATPAR  =     0.1
+
+
+
+          R-MT= 2.0900000 1.8500000
+           FRACTIONAL VOLUME WITHIN MT= 0.2795945 0.1939121
+           ONE/UNIT CELL VOLUME= 0.731140940E-02
+
+          LATTICE CONSTANTS ARE:  8.17874  8.17874  8.17874
+   K=    0    0    0  IND= 1
+                     1. WAVE=    0    0    0    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.02682   0.00000
+   K=   -1   -1   -1  IND= 8
+                     1. WAVE=   -1    1    1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00128   0.00000
+                     2. WAVE=    1    1    1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00128   0.00000
+                     3. WAVE=    1   -1    1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00128   0.00000
+                     4. WAVE=    1    1   -1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00128   0.00000
+                     5. WAVE=   -1   -1    1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00128   0.00000
+                     6. WAVE=   -1    1   -1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00128   0.00000
+                     7. WAVE=    1   -1   -1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00128   0.00000
+                     8. WAVE=   -1   -1   -1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00128   0.00000
+   K=    0    0   -2  IND= 6
+                     1. WAVE=    0    0    2    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.01571   0.00000
+                     2. WAVE=    0    2    0    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.01571   0.00000
+                     3. WAVE=    2    0    0    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.01571   0.00000
+                     4. WAVE=   -2    0    0    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.01571   0.00000
+                     5. WAVE=    0   -2    0    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.01571   0.00000
+                     6. WAVE=    0    0   -2    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.01571   0.00000
+   K=    0   -2   -2  IND=12
+                     1. WAVE=    0    2    2    TAUP=   1.00000   0.00000
+                                                WARPING=   0.02170   0.00000
+                     2. WAVE=    2    0    2    TAUP=   1.00000   0.00000
+                                                WARPING=   0.02170   0.00000
+                     3. WAVE=    2    2    0    TAUP=   1.00000   0.00000
+                                                WARPING=   0.02170   0.00000
+                     4. WAVE=   -2    0    2    TAUP=   1.00000   0.00000
+                                                WARPING=   0.02170   0.00000
+                     5. WAVE=   -2    2    0    TAUP=   1.00000   0.00000
+                                                WARPING=   0.02170   0.00000
+                     6. WAVE=    0   -2    2    TAUP=   1.00000   0.00000
+                                                WARPING=   0.02170   0.00000
+                     7. WAVE=    0    2   -2    TAUP=   1.00000   0.00000
+                                                WARPING=   0.02170   0.00000
+                     8. WAVE=    2   -2    0    TAUP=   1.00000   0.00000
+                                                WARPING=   0.02170   0.00000
+                     9. WAVE=    2    0   -2    TAUP=   1.00000   0.00000
+                                                WARPING=   0.02170   0.00000
+                    10. WAVE=   -2   -2    0    TAUP=   1.00000   0.00000
+                                                WARPING=   0.02170   0.00000
+                    11. WAVE=   -2    0   -2    TAUP=   1.00000   0.00000
+                                                WARPING=   0.02170   0.00000
+                    12. WAVE=    0   -2   -2    TAUP=   1.00000   0.00000
+                                                WARPING=   0.02170   0.00000
+   K=   -1   -1   -3  IND=24
+                     1. WAVE=   -1    1    3    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                     2. WAVE=   -1    3    1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                     3. WAVE=    1    1    3    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                     4. WAVE=    1    3    1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                     5. WAVE=    1   -1    3    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                     6. WAVE=    1    3   -1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                     7. WAVE=   -1   -1    3    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                     8. WAVE=   -1    3   -1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                     9. WAVE=    3   -1    1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                    10. WAVE=    3    1   -1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                    11. WAVE=   -3   -1    1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                    12. WAVE=   -3    1   -1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                    13. WAVE=    3    1    1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                    14. WAVE=   -3    1    1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                    15. WAVE=    3   -1   -1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                    16. WAVE=   -3   -1   -1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                    17. WAVE=   -1   -3    1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                    18. WAVE=    1   -3    1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                    19. WAVE=   -1    1   -3    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                    20. WAVE=    1    1   -3    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                    21. WAVE=    1   -3   -1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                    22. WAVE=   -1   -3   -1    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                    23. WAVE=    1   -1   -3    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+                    24. WAVE=   -1   -1   -3    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00019   0.00000
+   K=   -2   -2   -2  IND= 8
+                     1. WAVE=   -2    2    2    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00142   0.00000
+                     2. WAVE=    2    2    2    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00142   0.00000
+                     3. WAVE=    2   -2    2    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00142   0.00000
+                     4. WAVE=    2    2   -2    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00142   0.00000
+                     5. WAVE=   -2   -2    2    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00142   0.00000
+                     6. WAVE=   -2    2   -2    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00142   0.00000
+                     7. WAVE=    2   -2   -2    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00142   0.00000
+                     8. WAVE=   -2   -2   -2    TAUP=   1.00000   0.00000
+                                                WARPING=   0.00142   0.00000
+   K=    0    0   -4  IND= 6
+                     1. WAVE=    0    0    4    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00015   0.00000
+                     2. WAVE=    0    4    0    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00015   0.00000
+                     3. WAVE=    4    0    0    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00015   0.00000
+                     4. WAVE=   -4    0    0    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00015   0.00000
+                     5. WAVE=    0   -4    0    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00015   0.00000
+                     6. WAVE=    0    0   -4    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00015   0.00000
+   K=   -1   -3   -3  IND=24
+                     1. WAVE=   -1    3    3    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                     2. WAVE=    1    3    3    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                     3. WAVE=    3   -1    3    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                     4. WAVE=    3    3   -1    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                     5. WAVE=   -3   -1    3    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                     6. WAVE=   -3    3   -1    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                     7. WAVE=    3    1    3    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                     8. WAVE=   -3    1    3    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                     9. WAVE=    3    3    1    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                    10. WAVE=   -3    3    1    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                    11. WAVE=   -1   -3    3    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                    12. WAVE=    1   -3    3    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                    13. WAVE=   -1    3   -3    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                    14. WAVE=    1    3   -3    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                    15. WAVE=    3   -3   -1    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                    16. WAVE=    3   -1   -3    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                    17. WAVE=   -3   -3   -1    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                    18. WAVE=   -3   -1   -3    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                    19. WAVE=    3   -3    1    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                    20. WAVE=    3    1   -3    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                    21. WAVE=   -3   -3    1    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                    22. WAVE=   -3    1   -3    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                    23. WAVE=   -1   -3   -3    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+                    24. WAVE=    1   -3   -3    TAUP=   1.00000   0.00000
+                                                WARPING=  -0.00391   0.00000
+   K=    0   -2   -4  IND=24
+ Matrix size          134
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.50000   0.00000   W         
+      MATRIX SIZE  134  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198357   -1.6877105   -1.6877105   -1.6784323    0.0294436
+      0.4989235    0.4989235    0.5310061    0.9373967    0.9373967
+      0.9928691    1.1114356    1.1176596    1.7666559    1.7666559
+      1.8388320
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          134
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        9.999999999999981E-003
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      240.610 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.97500   0.50000   0.02500             
+      MATRIX SIZE  134  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198463   -1.6878948   -1.6875963   -1.6782785    0.0297061
+      0.4946837    0.4990737    0.5339052    0.9365275    0.9369638
+      0.9937381    1.1127270    1.1193162    1.7626800    1.7668321
+      1.8396539
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          134
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      320.814 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.95000   0.50000   0.05000             
+      MATRIX SIZE  134  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198777   -1.6884114   -1.6872565   -1.6778528    0.0304881
+      0.4848059    0.4995185    0.5397804    0.9343264    0.9357327
+      0.9959703    1.1165319    1.1242317    1.7512928    1.7673657
+      1.8421053
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          136
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      251.546 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.92500   0.50000   0.07500             
+      MATRIX SIZE  136  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4199298   -1.6891783   -1.6867271   -1.6772368    0.0317723
+      0.4723888    0.5001897    0.5455532    0.9316360    0.9338870
+      0.9986548    1.1226171    1.1321572    1.7336544    1.7682633
+      1.8461411
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          134
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      320.814 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.90000   0.50000   0.10000             
+      MATRIX SIZE  134  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4200000   -1.6901050   -1.6859501   -1.6765054    0.0335384
+      0.4587322    0.5011785    0.5501411    0.9293732    0.9317347
+      1.0014465    1.1308982    1.1429276    1.7117250    1.7695687
+      1.8517405
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          138
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      262.807 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.87500   0.50000   0.12500             
+      MATRIX SIZE  138  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4200940   -1.6911758   -1.6850458   -1.6757427    0.0357221
+      0.4443403    0.5023364    0.5530780    0.9280162    0.9292009
+      1.0037568    1.1405313    1.1559339    1.6864591    1.7711732
+      1.8587093
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          138
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      350.410 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.85000   0.50000   0.15000             
+      MATRIX SIZE  138  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4201971   -1.6922718   -1.6839381   -1.6749498    0.0383108
+      0.4296888    0.5036680    0.5543799    0.9270793    0.9278298
+      1.0056994    1.1518968    1.1707595    1.6591424    1.7732928
+      1.8670018
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          136
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      251.546 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.82500   0.50000   0.17500             
+      MATRIX SIZE  136  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4203122   -1.6933765   -1.6826910   -1.6741706    0.0412365
+      0.4150356    0.5051162    0.5541074    0.9253723    0.9287967
+      1.0073754    1.1645148    1.1868495    1.6305766    1.7759111
+      1.8765433
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          138
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      350.410 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.80000   0.50000   0.20000             
+      MATRIX SIZE  138  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4204381   -1.6944986   -1.6813442   -1.6734360    0.0444241
+      0.4005550    0.5065964    0.5524671    0.9241501    0.9307016
+      1.0088588    1.1779821    1.2035792    1.6012883    1.7789145
+      1.8869538
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          140
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      274.400 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.77500   0.50000   0.22500             
+      MATRIX SIZE  140  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4205705   -1.6955940   -1.6799530   -1.6727323    0.0478072
+      0.3864643    0.5080957    0.5497058    0.9235743    0.9331556
+      1.0103724    1.1921523    1.2206760    1.5719947    1.7823799
+      1.8982100
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          140
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          17  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      365.867 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.75000   0.50000   0.25000             
+      MATRIX SIZE  140  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4207054   -1.6966440   -1.6784849   -1.6720785    0.0513050
+      0.3729729    0.5095701    0.5461861    0.9239245    0.9359779
+      1.0122223    1.2067930    1.2377717    1.5430284    1.7863038
+      1.9100247    1.9943326
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          140
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          17  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      365.867 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.72500   0.50000   0.27500             
+      MATRIX SIZE  140  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4208400   -1.6976373   -1.6770116   -1.6714803    0.0548331
+      0.3602360    0.5109600    0.5421708    0.9250810    0.9387569
+      1.0144405    1.2216834    1.2544564    1.5147741    1.7906514
+      1.9221197    1.9687482
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          140
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   9.999999999999898E-003
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          17  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      365.867 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.70000   0.50000   0.30000             
+      MATRIX SIZE  140  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4209712   -1.6985607   -1.6755693   -1.6709410    0.0583044
+      0.3484072    0.5122302    0.5379302    0.9270045    0.9412410
+      1.0170563    1.2366042    1.2704094    1.4875871    1.7953690
+      1.9341801    1.9434447
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          142
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          17  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.010       95.443 Mflops
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.67500   0.50000   0.32500             
+      MATRIX SIZE  142  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4210971   -1.6994079   -1.6742023   -1.6704728    0.0616299
+      0.3376258    0.5133150    0.5337007    0.9295917    0.9432380
+      1.0200031    1.2511321    1.2853083    1.4617933    1.8003568
+      1.9191917    1.9458585
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          142
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   1.000000000000001E-002
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          17  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      381.772 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.65000   0.50000   0.35000             
+      MATRIX SIZE  142  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4212119   -1.7001585   -1.6729282   -1.6700586    0.0647254
+      0.3280179    0.5142762    0.5296815    0.9326876    0.9447866
+      1.0231363    1.2654488    1.2989202    1.4377179    1.8054984
+      1.8966928    1.9567956
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          142
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          17  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      286.329 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.62500   0.50000   0.37500             
+      MATRIX SIZE  142  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4213140   -1.7008084   -1.6717876   -1.6697074    0.0675069
+      0.3196942    0.5150733    0.5260359    0.9360687    0.9458870
+      1.0262573    1.2791584    1.3109598    1.4156378    1.8105941
+      1.8764819    1.9666307
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          144
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          17  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      398.131 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.60000   0.50000   0.40000             
+      MATRIX SIZE  144  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4214031   -1.7013602   -1.6708359   -1.6694198    0.0698987
+      0.3127502    0.5157042    0.5228522    0.9394130    0.9465869
+      1.0291394    1.2919852    1.3210808    1.3956962    1.8153736
+      1.8590485    1.9750409
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          144
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   1.000000000000001E-002
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          17  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      398.131 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.57500   0.50000   0.42500             
+      MATRIX SIZE  144  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4214732   -1.7017885   -1.6700478   -1.6691954    0.0718339
+      0.3072656    0.5161863    0.5203099    0.9425131    0.9470407
+      1.0316159    1.3040946    1.3292661    1.3781415    1.8195862
+      1.8449036    1.9817724
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          142
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          17  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      286.329 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.55000   0.50000   0.45000             
+      MATRIX SIZE  142  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4215219   -1.7020783   -1.6694343   -1.6690281    0.0732649
+      0.3033087    0.5165450    0.5184471    0.9453219    0.9474408
+      1.0335356    1.3154613    1.3352523    1.3628732    1.8229758
+      1.8344709    1.9866954
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          138
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        9.999999999999898E-003
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          17  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      350.410 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.52500   0.50000   0.47500             
+      MATRIX SIZE  138  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4215506   -1.7022629   -1.6689956   -1.6689094    0.0741360
+      0.3009246    0.5169404    0.5173851    0.9471026    0.9476224
+      1.0349182    1.3264717    1.3390311    1.3498945    1.8251662
+      1.8280684    1.9896508
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          138
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          17  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.50000   0.50000   0.50000   L         
+      MATRIX SIZE  138  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4215613   -1.7023260   -1.6688784   -1.6688784    0.0744286
+      0.3001231    0.5170016    0.5170016    0.9476599    0.9476599
+      1.0353137    1.3353201    1.3402512    1.3402512    1.8259013
+      1.8259013    1.9906342
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          138
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          17  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      350.410 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.47500   0.47500   0.47500             
+      MATRIX SIZE  138  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4215959   -1.7021059   -1.6688560   -1.6688560    0.0709817
+      0.3042254    0.5179068    0.5179068    0.9464530    0.9464530
+      1.0331617    1.3380230    1.3380230    1.3392669    1.8289785
+      1.8289785    1.9873850
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          141
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          17  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      373.763 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.45000   0.45000   0.45000             
+      MATRIX SIZE  141  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4217005   -1.7014794   -1.6688059   -1.6688059    0.0613216
+      0.3158422    0.5205980    0.5205980    0.9425643    0.9425643
+      1.0270315    1.3314362    1.3314362    1.3506710    1.8380109
+      1.8380109    1.9778245
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          141
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          17  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      280.322 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.42500   0.42500   0.42500             
+      MATRIX SIZE  141  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4218692   -1.7004041   -1.6686998   -1.6686998    0.0470466
+      0.3334196    0.5251110    0.5251110    0.9367704    0.9367704
+      1.0179774    1.3207583    1.3207583    1.3684241    1.8527368
+      1.8527368    1.9627537
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          141
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          17  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      373.763 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.40000   0.40000   0.40000             
+      MATRIX SIZE  141  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4220992   -1.6989314   -1.6685539   -1.6685539    0.0297837
+      0.3553423    0.5314143    0.5314143    0.9290455    0.9290455
+      1.0070393    1.3063661    1.3063661    1.3911166    1.8725160
+      1.8725160    1.9431326
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          141
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          17  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.37500   0.37500   0.37500             
+      MATRIX SIZE  141  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4223848   -1.6970941   -1.6683717   -1.6683717    0.0108145
+      0.3803592    0.5394917    0.5394917    0.9197126    0.9197126
+      0.9951895    1.2886804    1.2886804    1.4173210    1.8966788
+      1.8966788    1.9201424
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          141
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          17  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      280.322 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.35000   0.35000   0.35000             
+      MATRIX SIZE  141  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4227188   -1.6949332   -1.6681576   -1.6681576   -0.0089564
+      0.4075978    0.5493224    0.5493224    0.9091317    0.9091317
+      0.9831560    1.2681203    1.2681203    1.4456628    1.8950356
+      1.9245120    1.9245120
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          150
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          17  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      450.000 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.32500   0.32500   0.32500             
+      MATRIX SIZE  150  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4230981   -1.6926136   -1.6679306   -1.6679306   -0.0289155
+      0.4363499    0.5608467    0.5608467    0.8973668    0.8973668
+      0.9708467    1.2448755    1.2448755    1.4747185    1.8686924
+      1.9552756    1.9552756
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          144
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          17  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.30000   0.30000   0.30000             
+      MATRIX SIZE  144  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4235014   -1.6899413   -1.6676490   -1.6676490   -0.0485829
+      0.4663860    0.5741457    0.5741457    0.8854917    0.8854917
+      0.9596848    1.2198732    1.2198732    1.5030318    1.8433256
+      1.9883665    1.9883665
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          150
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      337.500 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.27500   0.27500   0.27500             
+      MATRIX SIZE  150  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4239328   -1.6871491   -1.6674431   -1.6674431   -0.0676392
+      0.4972072    0.5888523    0.5888523    0.8732425    0.8732425
+      0.9491350    1.1925402    1.1925402    1.5286217    1.8198246
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          150
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      337.500 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.25000   0.25000   0.25000   LAMBDA    
+      MATRIX SIZE  150  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4243702   -1.6842682   -1.6671654   -1.6671654   -0.0858137
+      0.5286400    0.6053546    0.6053546    0.8611980    0.8611980
+      0.9394202    1.1640717    1.1640717    1.5495976    1.8001996
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          150
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      450.000 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.22500   0.22500   0.22500             
+      MATRIX SIZE  150  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4248070   -1.6813693   -1.6668864   -1.6668864   -0.1028849
+      0.5603520    0.6234118    0.6234118    0.8495854    0.8495854
+      0.9303348    1.1344238    1.1344238    1.5634818    1.7859880
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      423.536 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.20000   0.20000   0.20000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4252309   -1.6784839   -1.6666095   -1.6666095   -0.1186616
+      0.5921620    0.6429699    0.6429699    0.8387094    0.8387094
+      0.9218001    1.1039025    1.1039025    1.5687352    1.7780105
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      423.536 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.17500   0.17500   0.17500             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4256349   -1.6757693   -1.6663493   -1.6663493   -0.1329814
+      0.6235327    0.6639064    0.6639064    0.8287109    0.8287109
+      0.9133866    1.0726865    1.0726865    1.5657510    1.7750350
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          146
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      414.951 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.15000   0.15000   0.15000             
+      MATRIX SIZE  146  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4260064   -1.6732251   -1.6661079   -1.6661079   -0.1456961
+      0.6543673    0.6861094    0.6861094    0.8198801    0.8198801
+      0.9049657    1.0410638    1.0410638    1.5568269    1.7745535
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          146
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      414.951 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.12500   0.12500   0.12500             
+      MATRIX SIZE  146  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4263381   -1.6709686   -1.6658913   -1.6658913   -0.1566783
+      0.6838949    0.7093617    0.7093617    0.8125018    0.8125018
+      0.8961478    1.0092649    1.0092649    1.5448273    1.7741243
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          146
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      414.951 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.10000   0.10000   0.10000             
+      MATRIX SIZE  146  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4266211   -1.6690316   -1.6657049   -1.6657049   -0.1658182
+      0.7117518    0.7331981    0.7331981    0.8070664    0.8070664
+      0.8867533    0.9775128    0.9775128    1.5321865    1.7725996
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          146
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.07500   0.07500   0.07500             
+      MATRIX SIZE  146  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4268484   -1.6674663   -1.6655533   -1.6655533   -0.1730242
+      0.7372200    0.7562462    0.7562462    0.8049224    0.8049224
+      0.8767147    0.9460311    0.9460311    1.5206966    1.7700769
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          146
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      414.951 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.05000   0.05000   0.05000             
+      MATRIX SIZE  146  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4270146   -1.6663153   -1.6654402   -1.6654402   -0.1782240
+      0.7591611    0.7738162    0.7738162    0.8106693    0.8106693
+      0.8664368    0.9150642    0.9150642    1.5116262    1.7673306
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          152
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      468.241 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.02500   0.02500   0.02500             
+      MATRIX SIZE  152  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4271189   -1.6656103   -1.6654255   -1.6654255   -0.1813651
+      0.7752555    0.7803400    0.7803400    0.8293947    0.8293947
+      0.8574965    0.8846997    0.8846997    1.5058364    1.7652061
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          155
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      496.517 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.00000   0.00000   0.00000   GAMMA     
+      MATRIX SIZE  155  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4271566   -1.6654195   -1.6654195   -1.6654195   -0.1824157
+      0.7814877    0.7814877    0.7814877    0.8535462    0.8535462
+      0.8535462    0.8575967    0.8575967    1.5038443    1.7644352
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          155
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        9.999999999999787E-003
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.010        9.009 Mflops
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.02500   0.00000   0.00000             
+      MATRIX SIZE  155  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4271451   -1.6654749   -1.6654385   -1.6654385   -0.1820654
+      0.7802524    0.7802524    0.7811488    0.8325993    0.8550858
+      0.8550858    0.8577017    0.8783849    1.5045102    1.7646948
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          151
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      344.295 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.05000   0.00000   0.00000             
+      MATRIX SIZE  151  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4271067   -1.6655953   -1.6654646   -1.6654646   -0.1810167
+      0.7770513    0.7770513    0.7801999    0.8096977    0.8580164
+      0.8594165    0.8594165    0.9010368    1.5065171    1.7654983
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          143
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      389.894 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.07500   0.00000   0.00000             
+      MATRIX SIZE  143  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4270472   -1.6658716   -1.6655051   -1.6655051   -0.1792760
+      0.7721844    0.7721844    0.7787863    0.7868916    0.8590985
+      0.8659496    0.8659496    0.9234026    1.5098435    1.7668405
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          143
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      389.894 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.10000   0.00000   0.00000             
+      MATRIX SIZE  143  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4269688   -1.6662554   -1.6656401   -1.6656401   -0.1768545
+      0.7640857    0.7663602    0.7663602    0.7764515    0.8598061
+      0.8738319    0.8738319    0.9450530    1.5144814    1.7686081
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          143
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      292.421 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.12500   0.00000   0.00000             
+      MATRIX SIZE  143  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4268686   -1.6667425   -1.6658112   -1.6658112   -0.1737677
+      0.7414769    0.7601039    0.7601039    0.7735042    0.8607161
+      0.8826945    0.8826945    0.9661700    1.5204153    1.7708078
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          143
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      389.894 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.15000   0.00000   0.00000             
+      MATRIX SIZE  143  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4267474   -1.6673290   -1.6660175   -1.6660175   -0.1700355
+      0.7191498    0.7537258    0.7537258    0.7699789    0.8618243
+      0.8921929    0.8921929    0.9866650    1.5276177    1.7733938
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          143
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      389.894 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.17500   0.00000   0.00000             
+      MATRIX SIZE  143  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4266061   -1.6680100   -1.6662575   -1.6662575   -0.1656829
+      0.6971850    0.7474265    0.7474265    0.7659155    0.8631249
+      0.9020846    0.9020846    1.0064579    1.5360488    1.7763151
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          143
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.20000   0.00000   0.00000             
+      MATRIX SIZE  143  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4264454   -1.6687802   -1.6665299   -1.6665299   -0.1607395
+      0.6756606    0.7413378    0.7413378    0.7613585    0.8646118
+      0.9121890    0.9121890    1.0254783    1.5456536    1.7795174
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          143
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      389.894 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.22500   0.00000   0.00000             
+      MATRIX SIZE  143  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4262664   -1.6696335   -1.6668330   -1.6668330   -0.1552402
+      0.6546527    0.7355483    0.7355483    0.7563559    0.8662773
+      0.9223620    0.9223620    1.0436672    1.5563591    1.7829453
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          143
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      292.421 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.25000   0.00000   0.00000             
+      MATRIX SIZE  143  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4260702   -1.6705631   -1.6671649   -1.6671649   -0.1492248
+      0.6342355    0.7301190    0.7301190    0.7509582    0.8681131
+      0.9324809    0.9324809    1.0609781    1.5680719    1.7865444
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          143
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000001E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.27500   0.00000   0.00000             
+      MATRIX SIZE  143  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4258582   -1.6715620   -1.6675235   -1.6675235   -0.1427390
+      0.6144824    0.7250926    0.7250926    0.7452171    0.8701099
+      0.9424354    0.9424354    1.0773774    1.5806765    1.7902627
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.30000   0.00000   0.00000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4256325   -1.6726655   -1.6679122   -1.6679122   -0.1358368
+      0.5953738    0.7204481    0.7204481    0.7391797    0.8722573
+      0.9520761    0.9520761    1.0925859    1.5939881    1.7940504
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000023E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      423.536 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.32500   0.00000   0.00000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4253930   -1.6737842   -1.6683183   -1.6683183   -0.1285704
+      0.5771676    0.7163053    0.7163053    0.7329085    0.8745442
+      0.9613927    0.9613927    1.1070744    1.6079213    1.7978677
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      317.652 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.35000   0.00000   0.00000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4251419   -1.6749490   -1.6687441   -1.6687441   -0.1210050
+      0.5598434    0.7126297    0.7126297    0.7264502    0.8769584
+      0.9702541    0.9702541    1.1206138    1.6222554    1.8016747
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        9.999999999999787E-003
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      423.536 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.37500   0.00000   0.00000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4248807   -1.6761516   -1.6691870   -1.6691870   -0.1132096
+      0.5434737    0.7094295    0.7094295    0.7198550    0.8794869
+      0.9785739    0.9785739    1.1332073    1.6367795    1.8054385
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.010      105.884 Mflops
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.40000   0.00000   0.00000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4246113   -1.6773836   -1.6696442   -1.6696442   -0.1052589
+      0.5281309    0.7067078    0.7067078    0.7131711    0.8821159
+      0.9862724    0.9862724    1.1448601    1.6512565    1.8091321
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000023E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.42500   0.00000   0.00000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4243352   -1.6786366   -1.6701130   -1.6701130   -0.0972333
+      0.5138868    0.7044639    0.7044639    0.7064450    0.8848308
+      0.9932772    0.9932772    1.1555769    1.6654189    1.8127330
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          15  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      423.536 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.45000   0.00000   0.00000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4240541   -1.6799023   -1.6705903   -1.6705903   -0.0892175
+      0.5008119    0.6997206    0.7026931    0.7026931    0.8876162
+      0.9995260    0.9995260    1.1653579    1.6789595    1.8162237
+
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        9.999999999999787E-003
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      423.536 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.47500   0.00000   0.00000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4237699   -1.6811726   -1.6710733   -1.6710733   -0.0813000
+      0.4889737    0.6930395    0.7013872    0.7013872    0.8904560
+      1.0049678    1.0049678    1.1741970    1.6915143    1.8195902
+      1.9878457
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          151
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      344.295 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.50000   0.00000   0.00000   DELTA     
+      MATRIX SIZE  151  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4234915   -1.6824836   -1.6716283   -1.6716283   -0.0735707
+      0.4784131    0.6860325    0.7003253    0.7003253    0.8933334
+      1.0094690    1.0094690    1.1820536    1.7026245    1.8227840
+      1.9564196
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000023E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      423.536 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.52500   0.00000   0.00000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4232031   -1.6837005   -1.6721133   -1.6721133   -0.0661189
+      0.4692558    0.6795342    0.6999532    0.6999532    0.8962505
+      1.0132672    1.0132672    1.1893106    1.7118653    1.8258570
+      1.9277253
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.010      105.884 Mflops
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.55000   0.00000   0.00000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4229208   -1.6849396   -1.6726000   -1.6726000   -0.0590307
+      0.4614661    0.6731885    0.6999548    0.6999548    0.8991485
+      1.0161129    1.0161129    1.1951797    1.7181725    1.8287794
+      1.9024789
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000023E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.57500   0.00000   0.00000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4226422   -1.6861524   -1.6730804   -1.6730804   -0.0523854
+      0.4551049    0.6670269    0.7003546    0.7003546    0.9020313
+      1.0180964    1.0180964    1.1999964    1.7207945    1.8315473
+      1.8816128
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.010      105.884 Mflops
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.60000   0.00000   0.00000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4223693   -1.6873319   -1.6735516   -1.6735516   -0.0462516
+      0.4501829    0.6610785    0.7011264    0.7011264    0.9048806
+      1.0192460    1.0192460    1.2037154    1.7189120    1.8341586
+      1.8659874
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        9.999999999999787E-003
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      423.536 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.62500   0.00000   0.00000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4221035   -1.6884718   -1.6740106   -1.6740106   -0.0406840
+      0.4466873    0.6553699    0.7022403    0.7022403    0.9076779
+      1.0196066    1.0196066    1.2062921    1.7123350    1.8366117
+      1.8558593
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      317.652 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.65000   0.00000   0.00000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4218465   -1.6895658   -1.6744547   -1.6744547   -0.0357205
+      0.4445783    0.6499255    0.7036620    0.7036620    0.9104046
+      1.0192387    1.0192387    1.2076905    1.7018849    1.8389060
+      1.8504937
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000023E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.67500   0.00000   0.00000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4215998   -1.6906083   -1.6748811   -1.6748811   -0.0313798
+      0.4437862    0.6447678    0.7053529    0.7053529    0.9130423
+      1.0182172    1.0182172    1.2078922    1.6890513    1.8410414
+      1.8484997
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000023E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      423.536 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.70000   0.00000   0.00000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4213651   -1.6915939   -1.6752872   -1.6752872   -0.0276607
+      0.4442101    0.6399170    0.7072699    0.7072699    0.9155728
+      1.0166292    1.0166292    1.2069075    1.6753073    1.8430178
+      1.8485045
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.72500   0.00000   0.00000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4211436   -1.6925180   -1.6756705   -1.6756705   -0.0245430
+      0.4457177    0.6353914    0.7093653    0.7093653    0.9179785
+      1.0145724    1.0145724    1.2047865    1.6617471    1.8448354
+      1.8495038
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        9.999999999999787E-003
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      423.536 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.75000   0.00000   0.00000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4209366   -1.6933758   -1.6760286   -1.6760286   -0.0219897
+      0.4481480    0.6312075    0.7115869    0.7115869    0.9202421
+      1.0121524    1.0121524    1.2016280    1.6490678    1.8464947
+      1.8508688
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          147
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.010      105.884 Mflops
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.77500   0.00000   0.00000             
+      MATRIX SIZE  147  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4207455   -1.6941635   -1.6763593   -1.6763593   -0.0199501
+      0.4513140    0.6273802    0.7138778    0.7138778    0.9223474
+      1.0094809    1.0094809    1.1975844    1.6376655    1.8479958
+      1.8522420
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          139
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        9.999999999999787E-003
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      358.083 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.80000   0.00000   0.00000             
+      MATRIX SIZE  139  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4205701   -1.6948158   -1.6766305   -1.6766305   -0.0183635
+      0.4551661    0.6239963    0.7161812    0.7161812    0.9243655
+      1.0071891    1.0071891    1.1930005    1.6277321    1.8494909
+      1.8535278
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          139
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.82500   0.00000   0.00000             
+      MATRIX SIZE  139  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4204141   -1.6954560   -1.6769034   -1.6769034   -0.0171650
+      0.4591564    0.6209129    0.7184243    0.7184243    0.9260994
+      1.0043198    1.0043198    1.1878578    1.6193079    1.8506592
+      1.8544753
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          139
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000023E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      358.083 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.85000   0.00000   0.00000             
+      MATRIX SIZE  139  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4202770   -1.6960163   -1.6771432   -1.6771432   -0.0162878
+      0.4632249    0.6182211    0.7205478    0.7205478    0.9276328
+      1.0015468    1.0015468    1.1825694    1.6123535    1.8516716
+      1.8551639
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          135
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      246.037 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.87500   0.00000   0.00000             
+      MATRIX SIZE  135  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4201553   -1.6964587   -1.6773173   -1.6773173   -0.0156678
+      0.4671469    0.6159294    0.7226123    0.7226123    0.9292403
+      0.9991201    0.9991201    1.1774398    1.6068027    1.8525282
+      1.8558017
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          135
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        9.999999999999787E-003
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.90000   0.00000   0.00000             
+      MATRIX SIZE  135  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4200584   -1.6968519   -1.6774885   -1.6774885   -0.0152471
+      0.4707013    0.6140449    0.7242894    0.7242894    0.9303172
+      0.9968736    0.9968736    1.1727519    1.6024671    1.8532291
+      1.8560815
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          135
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      328.050 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.92500   0.00000   0.00000             
+      MATRIX SIZE  135  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4199824   -1.6971591   -1.6776228   -1.6776228   -0.0149749
+      0.4736945    0.6125733    0.7256615    0.7256615    0.9311638
+      0.9950240    0.9950240    1.1687869    1.5992544    1.8537742
+      1.8562290
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          134
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      240.610 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.95000   0.00000   0.00000             
+      MATRIX SIZE  134  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4199257   -1.6973579   -1.6777193   -1.6777193   -0.0147996
+      0.4759607    0.6115190    0.7266798    0.7266798    0.9317734
+      0.9936459    0.9936459    1.1659409    1.5970653    1.8541636
+      1.8563065
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          134
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.97500   0.00000   0.00000             
+      MATRIX SIZE  134  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198929   -1.6974913   -1.6777774   -1.6777774   -0.0147132
+      0.4773735    0.6108852    0.7273066    0.7273066    0.9321411
+      0.9927958    0.9927958    1.1640497    1.5957809    1.8543973
+      1.8563245
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          134
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000023E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.00000   0.00000   X         
+      MATRIX SIZE  134  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198820   -1.6975358   -1.6777968   -1.6777968   -0.0146864
+      0.4778534    0.6106737    0.7275183    0.7275183    0.9322640
+      0.9925084    0.9925084    1.1634066    1.5953592    1.8544751
+      1.8563275
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          134
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000023E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      320.814 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.02500   0.00000             
+      MATRIX SIZE  134  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198817   -1.6975054   -1.6778276   -1.6778006   -0.0144510
+      0.4778661    0.6095130    0.7254790    0.7290409    0.9340824
+      0.9925041    0.9925103    1.1633230    1.5962635    1.8538363
+      1.8558228
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          134
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      240.610 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.05000   0.00000             
+      MATRIX SIZE  134  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198807   -1.6974146   -1.6779196   -1.6778117   -0.0137485
+      0.4779056    0.6062094    0.7196088    0.7334264    0.9392934
+      0.9924858    0.9925160    1.1630704    1.5989750    1.8519452
+      1.8543181
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          134
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.07500   0.00000             
+      MATRIX SIZE  134  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198791   -1.6972639   -1.6780722   -1.6778299   -0.0125899
+      0.4779767    0.6012017    0.7105363    0.7402250    0.9472792
+      0.9924378    0.9925254    1.1626433    1.6034893    1.8488751
+      1.8518415
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          136
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000023E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      335.394 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.10000   0.00000             
+      MATRIX SIZE  136  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198787   -1.6970696   -1.6782846   -1.6778863   -0.0109943
+      0.4780872    0.5949987    0.6988955    0.7489096    0.9572171
+      0.9920693    0.9925382    1.1620325    1.6097940    1.8447410
+      1.8483409
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          136
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      251.546 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.12500   0.00000             
+      MATRIX SIZE  136  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198763   -1.6968036   -1.6785553   -1.6779188   -0.0089877
+      0.4782473    0.5880469    0.6856925    0.7590076    0.9685414
+      0.9918481    0.9925543    1.1612277    1.6178770    1.8396901
+      1.8440768
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          136
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        9.999999999999787E-003
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.15000   0.00000             
+      MATRIX SIZE  136  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198734   -1.6964815   -1.6788827   -1.6779564   -0.0066046
+      0.4784703    0.5806888    0.6714213    0.7701434    0.9805988
+      0.9914885    0.9925734    1.1602141    1.6277045    1.8338912
+      1.8390440
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          136
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        9.999999999999787E-003
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      335.394 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.17500   0.00000             
+      MATRIX SIZE  136  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198701   -1.6961052   -1.6792645   -1.6779982   -0.0038876
+      0.4787717    0.5731714    0.6565782    0.7820294    0.9909369
+      0.9925950    0.9929510    1.1589764    1.6392295    1.8275254
+      1.8333498
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          138
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      262.807 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.20000   0.00000             
+      MATRIX SIZE  138  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198703   -1.6956770   -1.6797044   -1.6780860   -0.0008918
+      0.4791688    0.5656174    0.6415438    0.7944280    0.9901330
+      0.9926188    1.0051519    1.1573163    1.6523806    1.8206788
+      1.8271206
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          138
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000023E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.22500   0.00000             
+      MATRIX SIZE  138  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198668   -1.6951994   -1.6801885   -1.6781361    0.0023322
+      0.4796810    0.5582503    0.6266659    0.8071888    0.9890105
+      0.9926444    1.0172220    1.1555588    1.6670664    1.8137215
+      1.8204991
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          138
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      350.410 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.25000   0.00000   Z         
+      MATRIX SIZE  138  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198632   -1.6946753   -1.6807189   -1.6781870    0.0057121
+      0.4803286    0.5511052    0.6121997    0.8201531    0.9874994
+      0.9926713    1.0288834    1.1535258    1.6831577    1.8067419
+      1.8136420
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          138
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.010       87.602 Mflops
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.27500   0.00000             
+      MATRIX SIZE  138  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198595   -1.6941078   -1.6812923   -1.6782375    0.0091716
+      0.4811333    0.5442422    0.5983758    0.8331923    0.9855275
+      0.9926990    1.0400340    1.1512017    1.7004877    1.7999078
+      1.8067149
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          138
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.30000   0.00000             
+      MATRIX SIZE  138  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198559   -1.6935004   -1.6819050   -1.6782865    0.0126276
+      0.4821170    0.5377032    0.5853987    0.8461906    0.9830229
+      0.9927271    1.0506122    1.1485720    1.7188406    1.7933768
+      1.7998887
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          142
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        9.999999999999787E-003
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      381.772 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.32500   0.00000             
+      MATRIX SIZE  142  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198529   -1.6928804   -1.6825582   -1.6783480    0.0159838
+      0.4832220    0.5315025    0.5734514    0.8590250    0.9797806
+      0.9926856    1.0605413    1.1455241    1.7379130    1.7872227
+      1.7931245
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          142
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      286.329 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.35000   0.00000             
+      MATRIX SIZE  142  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198497   -1.6922063   -1.6832383   -1.6783900    0.0191594
+      0.4846233    0.5256880    0.5627064    0.8716220    0.9760211
+      0.9927069    1.0699007    1.1422331    1.7573845    1.7817203
+      1.7869792
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          138
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        9.999999999999787E-003
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.37500   0.00000             
+      MATRIX SIZE  138  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198417   -1.6914907   -1.6839144   -1.6783594    0.0220724
+      0.4862707    0.5203202    0.5534213    0.8843238    0.9717475
+      0.9928356    1.0786524    1.1386831    1.7767557    1.7769393
+      1.7815000
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          134
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      320.814 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.40000   0.00000             
+      MATRIX SIZE  134  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198394   -1.6907602   -1.6846429   -1.6783652    0.0245944
+      0.4881948    0.5153209    0.5455308    0.8961703    0.9665504
+      0.9928600    1.0869619    1.1348289    1.7731221    1.7767513
+      1.7955682
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          134
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      320.814 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.42500   0.00000             
+      MATRIX SIZE  134  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198378   -1.6900160   -1.6853949   -1.6783941    0.0266550
+      0.4903977    0.5106494    0.5392566    0.9074480    0.9604800
+      0.9928637    1.0945107    1.1304866    1.7699942    1.7727620
+      1.8124076
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          134
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.45000   0.00000             
+      MATRIX SIZE  134  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198366   -1.6892565   -1.6861599   -1.6784152    0.0281842
+      0.4929083    0.5063646    0.5346990    0.9181218    0.9535964
+      0.9928666    1.1014622    1.1258154    1.7678428    1.7697077
+      1.8262451
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          134
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000023E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.47500   0.00000             
+      MATRIX SIZE  134  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198359   -1.6884864   -1.6869334   -1.6784280    0.0291257
+      0.4957447    0.5024593    0.5319333    0.9281236    0.9458974
+      0.9928684    1.1076729    1.1209685    1.7667199    1.7676578
+      1.8355319
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          134
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      320.814 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   1.00000   0.50000   0.00000   W         
+      MATRIX SIZE  134  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198357   -1.6877105   -1.6877105   -1.6784323    0.0294436
+      0.4989235    0.4989235    0.5310061    0.9373967    0.9373967
+      0.9928691    1.1114356    1.1176596    1.7666559    1.7666559
+      1.8388320
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          134
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      240.610 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.97500   0.52500   0.00000             
+      MATRIX SIZE  134  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198408   -1.6884610   -1.6870033   -1.6783450    0.0292695
+      0.4957942    0.5000570    0.5336778    0.9277730    0.9455150
+      0.9933517    1.1091172    1.1210341    1.7649086    1.7673523
+      1.8361999
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          134
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.95000   0.55000   0.00000             
+      MATRIX SIZE  134  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198543   -1.6891532   -1.6864636   -1.6780749    0.0288027
+      0.4930943    0.4976117    0.5407861    0.9167171    0.9519429
+      0.9948860    1.1076448    1.1256894    1.7598005    1.7684529
+      1.8302307
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          134
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        9.999999999999787E-003
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      320.814 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.92500   0.57500   0.00000             
+      MATRIX SIZE  134  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198735   -1.6897804   -1.6861049   -1.6776362    0.0281281
+      0.4907928    0.4936013    0.5502241    0.9044680    0.9566201
+      0.9974527    1.1084976    1.1299315    1.7504293    1.7698693
+      1.8241908
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          138
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      350.410 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.90000   0.60000   0.00000             
+      MATRIX SIZE  138  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4198986   -1.6903469   -1.6859061   -1.6771447    0.0273235
+      0.4888561    0.4891613    0.5605735    0.8912049    0.9595286
+      1.0007715    1.1112987    1.1334626    1.7370331    1.7714022
+      1.8199837
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          141
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        9.999999999999787E-003
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.87500   0.62500   0.00000             
+      MATRIX SIZE  141  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4199258   -1.6908424   -1.6858596   -1.6765629    0.0264819
+      0.4850001    0.4872668    0.5710085    0.8780933    0.9613472
+      1.0042527    1.1154132    1.1364430    1.7216499    1.7730246
+      1.8177162
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          139
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      358.083 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.85000   0.65000   0.00000             
+      MATRIX SIZE  139  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4199483   -1.6912296   -1.6858472   -1.6759709    0.0256845
+      0.4813850    0.4860435    0.5810401    0.8656626    0.9626164
+      1.0077313    1.1204446    1.1388271    1.7064758    1.7747747
+      1.8167301
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          139
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.82500   0.67500   0.00000             
+      MATRIX SIZE  139  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4199681   -1.6915475   -1.6858706   -1.6754644    0.0249866
+      0.4784412    0.4850730    0.5899474    0.8546591    0.9632725
+      1.0107094    1.1254587    1.1404710    1.6930250    1.7762153
+      1.8164175
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          139
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        1.000000000000023E-002
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.010      358.083 Mflops
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.80000   0.70000   0.00000             
+      MATRIX SIZE  139  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4199832   -1.6917767   -1.6859034   -1.6750734    0.0244471
+      0.4762742    0.4843914    0.5970469    0.8459453    0.9636351
+      1.0129689    1.1298281    1.1414252    1.6825641    1.7773500
+      1.8164014
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          143
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        0.000000000000000E+000
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.010      292.421 Mflops
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.000
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.77500   0.72500   0.00000             
+      MATRIX SIZE  143  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4199934   -1.6919319   -1.6859611   -1.6748315    0.0240994
+      0.4748936    0.4839325    0.6016550    0.8402958    0.9637833
+      1.0142312    1.1328574    1.1416238    1.6759311    1.7779003
+      1.8161372
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+ Matrix size          144
+ Time for al,bl:   0.000000000000000E+000
+ nlo          18
+ Time for los:   0.000000000000000E+000
+ Time for LOOP 260:        9.999999999999787E-003
+     HNS: Loop 140:      0.0 Loop 90:      0.0 matrix update:      0.0loop 30:     0.0(wall time)
+          16  Eigenvalues computed 
+ Seclr4(Cholesky complete (CPU)) :               0.000
+ Seclr4(Transform to eig.problem (CPU)) :        0.000
+ Seclr4(Compute eigenvalues (CPU)) :             0.000
+ Seclr4(Backtransform (CPU)) :                   0.010        8.294 Mflops
+       TIME HAMILT (CPU)  =     0.0, HNS =     0.0, DIAG =     0.0
+
+     K=   0.75000   0.75000   0.00000   K         
+      MATRIX SIZE  144  WEIGHT= 2.00  PGR:    
+     EIGENVALUES ARE:
+     -3.4199988   -1.6919784   -1.6859768   -1.6747682    0.0239795
+      0.4744296    0.4837973    0.6032561    0.8383228    0.9638396
+      1.0147057    1.1339097    1.1415887    1.6736592    1.7781460
+      1.8161610
+            0 EIGENVALUES BELOW THE ENERGY   -9.00000
+       ********************************************************
+
+       NUMBER OF K-POINTS:         111
+   ===> TOTAL CPU       TIME:      0.1 (INIT =      0.1 + K-POINTS =      0.0)
+   > SUM OF WALL CLOCK TIMES:      0.2 (INIT =      0.1 + K-POINTS =      0.0)
+      Maximum WALL clock time:    3.65291404724121     
+      Maximum CPU time:           3.41000000000000     

@@ -1,0 +1,53 @@
+:GMA  : POTENTIAL AND CHARGE CUT-OFF  12.00 Ry**.5
+         Bandranges (emin - emax):
+        Energy to separate low and high energystates:    0.25012
+
+
+:NOE  : NUMBER OF ELECTRONS          =  16.000
+
+:FER  : F E R M I - ENERGY           =   0.74023
+
+
+
+
+:POS001: AT.NR.   1 POSITION = 0.00000 0.00000 0.00000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA001: TOTAL CHARGE INSIDE SPHERE   1 =    10.246207
+:PCS001: PARTIAL CHARGES SPHERE =  1 S,P,D,F,      D-EG,D-T2G 
+:QTL001: 0.5695 0.5716 8.8749 0.2030 0.0000 0.0000 0.0000 3.5914 5.2835 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL001:  0.0673 -0.1133    0.0484  0.0104    0.1157  0.0075    0.0028  0.0278
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH001:  0.5022  1.5158    0.5232  1.1916    8.7593  0.9833    0.2002  1.4435
+
+
+
+
+:POS002: AT.NR.   2 POSITION = 0.50000 0.50000 0.50000  MULTIPLICITY =  1
+
+       LMMAX  5
+       LM=   0 0  4 0  4 4  6 0  6 4
+
+:CHA002: TOTAL CHARGE INSIDE SPHERE   2 =     6.746366
+:PCS002: PARTIAL CHARGES SPHERE =  2 S,P,D,F,      D-EG,D-T2G 
+:QTL002: 1.6855 4.5500 0.4664 0.0355 0.0000 0.0000 0.0000 0.2273 0.2391 0.0000 0.0000 0.0000
+        Q-s-low E-s-low   Q-p-low E-p-low   Q-d-low E-d-low   Q-f-low E-f-low
+:EPL002:  1.1694 -0.0240    0.0068 -0.0568    0.0005  0.0089    0.0001  0.0153
+        Q-s-hi  E-s-hi    Q-p-hi  E-p-hi    Q-d-hi  E-d-hi    Q-f-hi  E-f-hi 
+:EPH002:  0.5160  1.3670    4.5431  0.9495    0.4659  1.4580    0.0353  1.4091
+
+:CHA  : TOTAL CHARGE INSIDE UNIT CELL =      23.801802
+
+:SUM  : SUM OF EIGENVALUES =          23.501324855
+
+
+
+   QTL-B VALUE .EQ.   17.35693   in Band of energy    1.98785   ATOM=    1   L=  1
+    Check for ghostbands or EIGENVALUES BELOW XX messages
+    Adjust your Energy-parameters or use -in1new switch, check RMTs  !!!
+
+
+      NBAND in QTL-file:          11

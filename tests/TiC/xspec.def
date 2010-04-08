@@ -1,0 +1,13 @@
+ 5,'TiC.inxs',   'old',    'formatted',0
+ 6,'TiC.outputx','unknown','formatted',0
+ 7,'TiC.inc',   'old',    'formatted',0
+ 8,'TiC.int','unknown','formatted',0
+ 9,'TiC.corewfx', 'unknown','formatted',0
+18,'TiC.vsp',       'old',    'formatted',0
+20,'TiC.struct',         'old',    'formatted',0
+30,'TiC.qtl', 'old',    'formatted',0
+32,'TiC.dos1ev',        'unknown','formatted',0
+46,'TiC.xspec',            'unknown','formatted',0
+47,'TiC.txspec',            'unknown','formatted',0
+53,'TiC.m1',            'unknown','formatted',0
+54,'TiC.m2',            'unknown','formatted',0

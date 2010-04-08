@@ -32,7 +32,7 @@ class KlistWriter(object):
         self.filename = filename
         self.data = None
         self.total_number_k_points = 0
-        self.num_rlv_points = []
+        self.bz_shape = ()
         self.is_bandlist = False
 
     def write(self):
@@ -52,13 +52,13 @@ class KlistWriter(object):
                 else:
                     # Write a .klist file in the style of WIEN2k kgen
                     if line_num == 0:
-                        if self.num_rlv_points == []:
-                            num_rlv_points = [0, 0, 0]
+                        if len(self.bz_shape) == 0:
+                            bz_shape = (0, 0, 0)
                         else:
-                            num_rlv_points = self.num_rlv_points
+                            bz_shape = self.bz_shape
                         filehandle.write('%10d%10d%10d%10d%10d%5.1f%5.1f%5.1f    %6d k, div: (%3d%3d%3d)\n' % \
                             (k[0], k[1], k[2], k[3], k[4], k[5], -7.0, 1.5, self.total_number_k_points, \
-                            num_rlv_points[0], num_rlv_points[1], num_rlv_points[2]))
+                            bz_shape[0], bz_shape[1], bz_shape[2]))
                     else:
                         filehandle.write('%10d%10d%10d%10d%10d%5.1f\n' % (k[0], k[1], k[2], k[3], k[4], k[5]))
         filehandle.write('END\n')

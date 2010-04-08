@@ -1,0 +1,19 @@
+ 5,'TiC.inm',       'old',    'formatted',0
+ 6,'TiC.outputm',   'unknown','formatted',0
+ 7,'TiC.inc',       'old',    'formatted',0
+10,'TiC.clmsum_old','unknown','formatted',0
+17,'TiC.clmval',    'unknown','formatted',0
+18,'TiC.clmsc',     'unknown','formatted',0
+19,'TiC.clmcor',    'unknown','formatted',0
+20,'TiC.struct',    'old',    'formatted',0
+21,'TiC.scfm',      'unknown','formatted',0
+22,'TiC.scf',       'unknown','formatted',0
+31,'TiC.broyd1',    'unknown','unformatted',164896
+32,'TiC.broyd2',    'unknown','unformatted',164896
+51,'TiC.clmsum',    'unknown','formatted',0
+71,'TiC.dmatup','unknown','formatted',0
+72,'TiC.dmatdn','unknown','formatted',0
+73,'TiC.dmatud','unknown','formatted',0
+74,'TiC.dmatup_old','unknown','formatted',0
+75,'TiC.dmatdn_old','unknown','formatted',0
+76,'TiC.dmatud_old','unknown','formatted',0

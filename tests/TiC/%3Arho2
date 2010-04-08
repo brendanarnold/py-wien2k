@@ -1,0 +1,17 @@
+#set title '/home/ba1224/Calculations/TiC/TiC.rho'
+set data style lines 
+set noxtics
+set noytics
+set zrange[-0.5 :2.0]
+set nokey
+set hidden3d
+set contour base
+set cntrparam levels incremental -0.5,0.1,2.0
+#set cntrparam levels discrete 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.5, 2.0
+show cntrparam
+   set terminal png
+   set output '/home/ba1224/.w2web/vienna.phy.bris.ac.uk/tmp/239224-17035.png'
+   splot ':rho1' with lines lt 0
+   set terminal postscript color solid
+   set output '/home/ba1224/.w2web/vienna.phy.bris.ac.uk/tmp/239224-17035.ps'
+   replot

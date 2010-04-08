@@ -1,0 +1,22 @@
+ 3,'TiC.rhopw',   'unknown','formatted',0
+ 4,'TiC.inm',     'unknown','formatted',0
+ 5,'TiC.in0',     'old',    'formatted',0
+ 6,'TiC.output0', 'unknown','formatted',0
+ 7,'TiC.vorbup',  'unknown','formatted',0
+ 8,'TiC.clmsum',  'old',    'formatted',0
+ 9,'TiC.vtotal',  'unknown','formatted',0
+10,'TiC.vcoul',   'unknown','formatted',0
+11,'TiC.r2v',     'unknown','formatted',0
+12,'TiC.clmup',   'unknown','formatted',0
+13,'TiC.clmdn',   'unknown','formatted',0
+16,'TiC.vsp','unknown','formatted',0
+17,'TiC.vspdn',   'unknown','formatted',0
+18,'TiC.vns','unknown','formatted',0
+19,'TiC.vnsdn',   'unknown','formatted',0
+20,'TiC.struct',  'old',    'formatted',0         
+21,'TiC.scf0',    'unknown','formatted',0
+28,'TiC.vrespsum','unknown','formatted',0
+29,'TiC.vrespup', 'unknown','formatted',0
+30,'TiC.vrespdn', 'unknown','formatted',0
+50,'TiC.eeceup', 'unknown','formatted',0
+51,'TiC.eecedn', 'unknown','formatted',0
