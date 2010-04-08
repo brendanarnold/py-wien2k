@@ -31,7 +31,7 @@ def expand_ibz(klist_rdr=None, \
     bz_dims             The dimensions of the Brillouin Zone used for
                         constraining the zone, if not specified this
                         will be read from the KlistReader or the
-                        ibz_data, if not included will raise a ValueError
+                        ibz_data, if not included will default to [1.,1.,1.]
     bz_centre           The co-ordinates of the Brillouin zone centre in 
                         terms of the bz_dims (default: Half the bz_dims values)
     sort_by             A list of columns to sort by in order (default: None)
@@ -93,6 +93,8 @@ def expand_ibz(klist_rdr=None, \
         if bz_dims is None:
             klist_denominator = np.unique(klist_rdr.denominators)[0]
             bz_dims = 3*[klist_denominator]
+    if bz_dims is None:
+        bz_dims = [1.,1.,1.]
     if struct_rdr is not None:
         if sym_mats is not None:
             raise ValueError('Multiple sets of symmetry matrices specified - struct reader and a set of symmetry matrices')
@@ -172,7 +174,11 @@ def expand_ibz(klist_rdr=None, \
         else:
             full_bz = np.concatenate((full_bz, kpoints_buffer))
     # Remove duplicate k points
-    full_bz = remove_duplicates(full_bz)
+    rng_i = full_bz[:,1].max() - full_bz[:,1].min()
+    rng_j = full_bz[:,2].max() - full_bz[:,2].min()
+    rng_k = full_bz[:,3].max() - full_bz[:,3].min()
+    tolerance = 1e-8 * np.array([rng_i, rng_j, rng_k])
+    full_bz = remove_duplicates(full_bz, tol=tolerance)
 
 ##     kx,ky,kz = full_bz[:,1:4].transpose() # A way to sort by kx, then ky,kz,id
 ##     sorted_indices = np.lexsort(keys=(kz,ky,kx))

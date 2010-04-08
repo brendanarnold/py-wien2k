@@ -14,7 +14,24 @@ class Kmesh(object):
     over a Cartesian grid (although points may be missing)
 
     A full cubic 3D mesh of energies is created (missing points are 'masked')
-    correspdonging i, j and k values are also created.
+    corresponding i, j and k values are also created.
+
+    Retrieve some band data and expand to full Brillouin zone
+
+    >>> import wien2k
+    >>> from wien2k.utils import expand_ibz
+    >>> b = wien2k.EnergyReader('TiC.energy').bands[0]
+    >>> sym_mats = wien2k.StructReader('TiC.struct').sym_mats
+    >>> full_zone = expand_ibz(ibz_data=b.data, sym_mats=sym_mats)
+    
+    Now use the Kmesh object
+
+    >>> km = Kmesh(full_zone)
+    >>> km.shape
+        (10, 10, 10)
+    >>> km2 = km[:,:,5]
+    >>> km2.shape
+        (10, 10)
     '''
     def __init__(self, band_data=None):
         self.i_spacing = None
@@ -196,8 +213,14 @@ class Kmesh(object):
             differences = copy_series[1:] - copy_series[:-1]
         else:
             differences = np.array([0.0])
+        # Pick a difference that is at least slightly sensible
+        cut_off = copy_series.min() * 1e-10
+        i = 0
         a = copy_series[0]
-        b = differences.min()
+        for diff in differences:
+            if diff > cut_off:
+                b = diff
+                break
         return (a, b)
 
     def shape(self):
@@ -234,3 +257,55 @@ class Kmesh(object):
             new_km.k_offset, new_km.k_spacing = self._find_arithmetic_series_formula(k_vals)
         return new_km
 
+    def query(self):
+        '''
+        Returns a bunch of useful stuff when using interactively
+        '''
+        out = '''
+        Kmesh object:
+          i_spacing = %f
+          i_offset = %f
+          j_spacing = %f
+          j_offset = %f
+          k_spacing = %f
+          k_offset = %f
+          mesh.shape = %s
+          mesh_ids.shape = %s
+          len(kpoints) = %d
+          energy min = %f
+          energy max = %f
+          id min = %d
+          id max = %d
+          total points = %d
+          num masked = %d
+        ''' % (
+            self.i_spacing,
+            self.i_offset,
+            self.j_spacing,
+            self.j_offset,
+            self.k_spacing,
+            self.k_offset,
+            str(self.mesh.shape),
+            str(self.mesh_ids.shape),
+            len(self.kpoints),
+            self.mesh.min(),
+            self.mesh.max(),
+            self.mesh_ids.min(),
+            self.mesh_ids.max(),
+            self.mesh.shape[0] * self.mesh.shape[1] * self.mesh.shape[2],
+            self.mesh.mask.sum()
+        )
+        print out
+    q = property(query)
+        
+
+if __name__ == '__main__':
+    '''Do some testing ...'''
+    import doctest
+    import os
+    import sys
+    orig_dir = os.getcwd()
+    os.chdir(os.path.join(sys.path[0], 'tests', 'TiC'))
+    doctest.testmod()
+    doctest.testfile(os.path.join('..', 'Kmesh_test.txt'))
+    os.chdir(orig_dir)
