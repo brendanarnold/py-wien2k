@@ -2,3 +2,5 @@ glob:*.pyc
 glob:*.swp
 glob:*.hst
 glob:*.ppr
+glob:.spyderproject
+glob:*.bak

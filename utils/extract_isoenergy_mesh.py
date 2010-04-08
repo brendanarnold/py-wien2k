@@ -1,16 +1,5 @@
 '''
 extract_isoenergy_mesh.py
-
-Pass in a Kmesh object, an energy and an optional precision
-
-Returns a Nx3 array of i, j, k values corresponding to the closest k points the
-the iso-energy surface. Also returns the mean energy for the points and the standard deviation
-
-Interpolates using linear approximation
-TODO: Interpolates using radial basis functions (See Scipy) and bisection
-
-RETURNS:
-  <Nx3 array i,j,k values>
 '''
 
 __all__ = ['extract_isoenergy_mesh']
@@ -22,8 +11,51 @@ import copy
 import pdb
 
 def extract_isoenergy_mesh(orig_kmesh, energy, precision=sys.float_info.epsilon, verbose=False, interp_method='linear'):
-    '''Returns a list of i, j, k values that map a surface'''
-##  pdb.set_trace()
+    '''
+    Returns a np.array of i, j, k values that map an isoenergy surface
+
+    INPUT:
+    
+    kmesh:          Kmesh instance containing the scalar energy field
+    energy:         The energy at which to find the surface
+    precision:      The precision to which bisection algorithms search to 
+                    (default sys.float_info.epsilon)
+    verbose:        If True will print progress to STDOUT (default: False)
+    interp_method:  The method to use for the interpolation (default: 'linear')
+                    Only 'linear' available for the moment
+
+    OUTPUT:
+
+    i,j,k values:   A 3xN Numpy array of interpolated values
+
+    
+    EXAMPLE:
+
+    >>> from wien2k.utils import extract_isoenergy_mesh
+    >>> import wien2k
+    >>> import numpy as np
+
+    Create an array that represents a pyramid (with linear interpolation)
+
+    >>> pyramid = np.array([[ 1., 0.,  0.,  0.,  0.],
+    ...    [ 2., 0.,  1.,  0.,  0.],
+    ...    [ 3., 0.,  2.,  0.,  0.],
+    ...    [ 4., 1.,  0.,  0.,  0.],
+    ...    [ 5., 1.,  1.,  0.,  1.],
+    ...    [ 6., 1.,  2.,  0.,  0.],
+    ...    [ 7., 2.,  0.,  0.,  0.],
+    ...    [ 8., 2.,  1.,  0.,  0.],
+    ...    [ 9., 2.,  2.,  0.,  0.]])
+    >>> km = wien2k.Kmesh(pyramid)
+    >>> extract_isoenergy_mesh(km, 0.5)
+    array([[ 0.5,  1. ,  0. ],
+           [ 1.5,  1. ,  0. ],
+           [ 1. ,  0.5,  0. ],
+           [ 1. ,  1.5,  0. ]])
+
+    '''
+##     pdb.set_trace()
+
     kmesh = copy.deepcopy(orig_kmesh)
     # Builds a 'marching cube' (http://en.wikipedia.org/wiki/Marching_cubes)
     # map of the Kmesh based on whether the values lie under or over the
@@ -32,6 +64,14 @@ def extract_isoenergy_mesh(orig_kmesh, energy, precision=sys.float_info.epsilon,
     isoenergy_3d_mesh = kmesh.mesh > energy
     if verbose == True:
         print 'Building marching cube indexes ...'
+    # Algorithm requires length of each dim > 1
+    len_i, len_j, len_k = kmesh.shape
+    if len_i == 1:
+        isoenergy_3d_mesh = np.tile(isoenergy_3d_mesh, (2, 1, 1))
+    if len_j == 1:
+        isoenergy_3d_mesh = np.tile(isoenergy_3d_mesh, (1, 2, 1))
+    if len_k == 1:
+        isoenergy_3d_mesh = np.tile(isoenergy_3d_mesh, (1, 1, 2))
     marching_cube_indexes = \
           np.ma.array(isoenergy_3d_mesh[:-1,:-1,:-1], dtype=int) * 1 \
         + np.ma.array(isoenergy_3d_mesh[:-1,:-1:,1:], dtype=int) * 2 \
@@ -59,12 +99,12 @@ def extract_isoenergy_mesh(orig_kmesh, energy, precision=sys.float_info.epsilon,
     # the mesh, we need to convert the indexes to real values.
     if verbose == True:
         print 'Converting back to real co-ordinates ...'
-    a_i = kmesh.i_series_offset
-    a_j = kmesh.j_series_offset
-    a_k = kmesh.k_series_offset
-    b_i = kmesh.i_series_spacing
-    b_j = kmesh.j_series_spacing
-    b_k = kmesh.k_series_spacing
+    a_i = kmesh.i_offset
+    a_j = kmesh.j_offset
+    a_k = kmesh.k_offset
+    b_i = kmesh.i_spacing
+    b_j = kmesh.j_spacing
+    b_k = kmesh.k_spacing
     del(kmesh)
     i_vals = a_i + surface_i_vals * b_i
     j_vals = a_j + surface_j_vals * b_j
@@ -76,7 +116,7 @@ def _interp_nearest(kmesh, marching_cube_indexes, verbose):
     '''
     Gets the points that lie on the edge -not exactly nearest neighbour
     '''
-    surface_i_vals, surface_j_vals, surface_k_vals = np.where( \
+    surface_i_vals, surface_j_vals, surface_k_vals = np.ma.where( \
         (marching_cube_indexes != 255) & \
         (marching_cube_indexes != 0) \
     )
@@ -101,12 +141,10 @@ def _interp_linear(kmesh, marching_cube_indexes, verbose, energy):
     surface_k_vals = np.array([])
     if verbose == True:
         print 'Interpolating along i direction ...'
-    # Create ugly looking mask due bug in Numpy
-    # (http://projects.scipy.org/numpy/ticket/1440)
-    mask = ~marching_cube_indexes.mask & \
-      ((((marching_cube_indexes & 1) + (marching_cube_indexes & 16)) == 1) | \
-      (((marching_cube_indexes & 1) + (marching_cube_indexes & 16)) == 16))
-    i_ind, j_ind, k_ind = np.where(np.array(mask, dtype=bool))
+    i_ind, j_ind, k_ind = np.ma.where(
+      (((marching_cube_indexes & 1) + (marching_cube_indexes & 16)) == 1) | \
+      (((marching_cube_indexes & 1) + (marching_cube_indexes & 16)) == 16) \
+    )
     new_i_vals = _linear_equation(i_ind, i_ind+1, \
       kmesh.mesh[i_ind, j_ind, k_ind], kmesh.mesh[i_ind+1, j_ind, k_ind], energy)
     surface_i_vals = np.append(surface_i_vals, new_i_vals)
@@ -114,11 +152,10 @@ def _interp_linear(kmesh, marching_cube_indexes, verbose, energy):
     surface_k_vals = np.append(surface_k_vals, k_ind)
     if verbose == True:
         print 'Interpolating along j direction ...'
-    # Create mask due bug in Numpy
-    mask = ~marching_cube_indexes.mask & \
-      ((((marching_cube_indexes & 1) + (marching_cube_indexes & 4)) == 1) | \
-      (((marching_cube_indexes & 1) + (marching_cube_indexes & 4)) == 4))
-    i_ind, j_ind, k_ind = np.where(np.array(mask, dtype=bool))
+    i_ind, j_ind, k_ind = np.ma.where(
+      (((marching_cube_indexes & 1) + (marching_cube_indexes & 4)) == 1) | \
+      (((marching_cube_indexes & 1) + (marching_cube_indexes & 4)) == 4) \
+    )
     new_j_vals = _linear_equation(j_ind, j_ind+1, \
       kmesh.mesh[i_ind, j_ind, k_ind], kmesh.mesh[i_ind, j_ind+1, k_ind], energy)
     surface_i_vals = np.append(surface_i_vals, i_ind)
@@ -126,11 +163,10 @@ def _interp_linear(kmesh, marching_cube_indexes, verbose, energy):
     surface_k_vals = np.append(surface_k_vals, k_ind)
     if verbose == True:
         print 'Interpolating along k direction ...'
-    # Create mask due bug in Numpy
-    mask = ~marching_cube_indexes.mask & \
-      ((((marching_cube_indexes & 1) + (marching_cube_indexes & 2)) == 1) | \
-      (((marching_cube_indexes & 1) + (marching_cube_indexes & 2)) == 2))
-    i_ind, j_ind, k_ind = np.where(np.array(mask, dtype=bool))
+    i_ind, j_ind, k_ind = np.ma.where(
+      (((marching_cube_indexes & 1) + (marching_cube_indexes & 2)) == 1) | \
+      (((marching_cube_indexes & 1) + (marching_cube_indexes & 2)) == 2) \
+    )
     new_k_vals = _linear_equation(k_ind, k_ind+1, \
       kmesh.mesh[i_ind, j_ind, k_ind], kmesh.mesh[i_ind, j_ind, k_ind+1], energy)
     surface_i_vals = np.append(surface_i_vals, i_ind)
@@ -262,5 +298,8 @@ def _bisect_along_line(fn, i_vals, j_vals, k_vals, direction='i', reverse=False,
 
 
 if __name__ == '__main__':
-    pass
+    import doctest
+    from os.path import abspath, join
+    doctest.testmod()
+    doctest.testfile(abspath(join('..', 'tests', 'extract_isoenergy_mesh_test.txt')))
 
