@@ -16,21 +16,17 @@ class Kmesh(object):
     A full cubic 3D mesh of energies is created (missing points are 'masked')
     corresponding i, j and k values are also created.
 
-    Retrieve some band data and expand to full Brillouin zone
+    EXAMPLES:
 
-    >>> import wien2k
-    >>> from wien2k.utils import expand_ibz
-    >>> b = wien2k.EnergyReader('TiC.energy').bands[0]
-    >>> sym_mats = wien2k.StructReader('TiC.struct').sym_mats
-    >>> full_zone = expand_ibz(ibz_data=b.data, sym_mats=sym_mats)
-    
-    Now use the Kmesh object
+    'band_data' is expanded band data read from TiC.energy
 
-    >>> km = Kmesh(full_zone)
+    >>> km = Kmesh(band_data)
     >>> km.shape
         (10, 10, 10)
-    >>> km2 = km[:,:,5]
-    >>> km2.shape
+    >>> km_slice = km[:,:,5]
+    >>> km_slice.shape
+        (10, 10, 1)
+    >>> km_slice.i_plaid.shape
         (10, 10)
     '''
     def __init__(self, band_data=None):
@@ -63,6 +59,78 @@ class Kmesh(object):
         return np.arange(self.energies.shape[2]) * \
           self.k_spacing + self.k_offset
     k_vals = property(k_vals)
+
+    def i_plaid(self):
+        '''
+        Returns a squeezed 'plaid' array of i values - i.e. if the Kmesh is a
+        'slice' i.e. Kmesh.shape = (10, 10, 1) then Kmesh.i_plaid.shape = (10,
+        10). This is an array suitable for use with contour
+
+        EXAMPLE:
+
+        >>> km = Kmesh(band_data)
+        >>> km.shape
+            (10, 10, 10)
+        >>> km.i_plaid.shape
+            (10, 10, 10)
+        >>> km_slice = km[:,:,5]
+        >>> km_slice.shape
+            (10, 10, 1)
+        >>> km_slice.i_plaid.shape
+            (10, 10)
+        '''
+        i_mesh = np.ones(self.energies.shape)
+        i_mesh = i_mesh * self.i_vals.reshape((1,1,-1))
+        return np.squeeze(i_mesh)
+    i_plaid = property(i_plaid)
+
+    def j_plaid(self):
+        '''
+        Returns a squeezed 'plaid' array of j values - i.e. if the Kmesh is a
+        'slice' i.e. Kmesh.shape = (10, 10, 1) then Kmesh.j_plaid.shape = (10,
+        10). This is an array suitable for use with contour
+
+        EXAMPLE:
+
+        >>> km = Kmesh(band_data)
+        >>> km.shape
+            (10, 10, 10)
+        >>> km.j_plaid.shape
+            (10, 10, 10)
+        >>> km_slice = km[:,:,5]
+        >>> km_slice.shape
+            (10, 10, 1)
+        >>> km_slice.j_plaid.shape
+            (10, 10)
+        '''
+        j_mesh = np.ones(self.energies.shape)
+        j_mesh = j_mesh * self.j_vals.reshape((1,-1,1))
+        return np.squeeze(j_mesh)
+    j_plaid = property(j_plaid)
+
+    def k_plaid(self):
+        '''
+        Returns a squeezed 'plaid' array of i values - i.e. if the Kmesh is a
+        'slice' i.e. Kmesh.shape = (10, 1, 10) then Kmesh.k_plaid.shape = (10,
+        10). This is an array suitable for use with contour
+
+        EXAMPLE:
+
+        >>> km = Kmesh(band_data)
+        >>> km.shape
+            (10, 10, 10)
+        >>> km.k_plaid.shape
+            (10, 10, 10)
+        >>> km_slice = km[:,5,:]
+        >>> km_slice.shape
+            (10, 1, 10)
+        >>> km_slice.k_plaid.shape
+            (10, 10)
+        '''
+        k_mesh = np.ones(self.energies.shape)
+        k_mesh = k_mesh * self.k_vals.reshape((-1,1,1))
+        return np.squeeze(k_mesh)
+    k_plaid = property(k_plaid)
 
     def shift_centre(self, shift_by, rel=True):
         '''
@@ -107,7 +175,7 @@ class Kmesh(object):
         '''
         ind_list = np.array([ind + (en,) for ind, en in np.ndenumerate(self.energies) if (self.energies.mask[ind] == False)])
         ids = np.array([id for ind, id in np.ndenumerate(self.ids) if (self.ids.mask[ind] == False)])
-        return np.concatenate((ids.reshape((ids.shape[0], 1)), ind_list), axis=1)
+        return np.column_stack((ids, ind_list))
     indexes = property(indexes)
 
     def kpoints(self):
@@ -122,7 +190,15 @@ class Kmesh(object):
     kpoints = property(kpoints)
 
     def centre_point(self):
-        ''' Returns the cente point of the zone '''
+        ''' 
+        Returns the cente point of the zone
+
+        EXAMPLE:
+
+        >>> km = Kmesh(band_data)
+        >>> km.centre_point
+        array([ 0.5,  0.5,  0.5])
+        '''
         i_centre = (self.i_vals.max() + self.i_vals.min()) / 2.0
         j_centre = (self.j_vals.max() + self.j_vals.min()) / 2.0
         k_centre = (self.k_vals.max() + self.k_vals.min()) / 2.0
@@ -259,26 +335,46 @@ class Kmesh(object):
 
     def query(self):
         '''
-        Returns a bunch of useful stuff when using interactively
-        '''
-        out = '''
+        Returns a bunch of useful stuff when using interactively. Aliased to
+        the property 'q'
+
+        EXAMPLE:
+
+        >>> km = Kmesh(band_data)
+        >>> km.q
         Kmesh object:
-          i_spacing = %f
-          i_offset = %f
-          j_spacing = %f
-          j_offset = %f
-          k_spacing = %f
-          k_offset = %f
-          energies.shape = %s
-          ids.shape = %s
-          len(kpoints) = %d
-          energy min = %f
-          energy max = %f
-          id min = %d
-          id max = %d
-          total points = %d
-          num masked = %d
-        ''' % (
+          i_spacing = 0.100000
+          i_offset = 0.000000
+          j_spacing = 0.100000
+          j_offset = 0.000000
+          k_spacing = 0.100000
+          k_offset = 0.000000
+          mesh.shape = (11, 11, 11)
+          mesh_ids.shape = (11, 11, 11)
+          len(kpoints) = 325
+          energy min = -3.427157
+          energy max = -3.419839
+          id min = 1
+          id max = 47
+          total points = 1331
+          num masked = 1006
+        '''
+        out = '''Kmesh object:
+  i_spacing = %f
+  i_offset = %f
+  j_spacing = %f
+  j_offset = %f
+  k_spacing = %f
+  k_offset = %f
+  energies.shape = %s
+  ids.shape = %s
+  len(kpoints) = %d
+  energy min = %f
+  energy max = %f
+  id min = %d
+  id max = %d
+  total points = %d
+  num masked = %d''' % (
             self.i_spacing,
             self.i_offset,
             self.j_spacing,
@@ -304,8 +400,15 @@ if __name__ == '__main__':
     import doctest
     import os
     import sys
+    # Setup some objects
+    import wien2k
+    from wien2k.utils import expand_ibz
+    # Set the context
     orig_dir = os.getcwd()
     os.chdir(os.path.join(sys.path[0], 'tests', 'TiC'))
-    doctest.testmod()
+    b = wien2k.EnergyReader('TiC.energy').bands[0]
+    sym_mats = wien2k.StructReader('TiC.struct').sym_mats
+    band_data = expand_ibz(ibz_data=b.data, sym_mats=sym_mats)
+    doctest.testmod(globs={'band_data':band_data, 'Kmesh': Kmesh})
     doctest.testfile(os.path.join('..', 'Kmesh_test.txt'))
     os.chdir(orig_dir)
