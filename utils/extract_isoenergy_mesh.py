@@ -61,7 +61,7 @@ def extract_isoenergy_mesh(orig_kmesh, energy, precision=sys.float_info.epsilon,
     # map of the Kmesh based on whether the values lie under or over the
     # specified energy level. This can be used to detect the surface
     # 'edge'
-    isoenergy_3d_mesh = kmesh.mesh > energy
+    isoenergy_3d_mesh = kmesh.energies > energy
     if verbose == True:
         print 'Building marching cube indexes ...'
     # Algorithm requires length of each dim > 1
@@ -146,7 +146,7 @@ def _interp_linear(kmesh, marching_cube_indexes, verbose, energy):
       (((marching_cube_indexes & 1) + (marching_cube_indexes & 16)) == 16) \
     )
     new_i_vals = _linear_equation(i_ind, i_ind+1, \
-      kmesh.mesh[i_ind, j_ind, k_ind], kmesh.mesh[i_ind+1, j_ind, k_ind], energy)
+      kmesh.energies[i_ind, j_ind, k_ind], kmesh.energies[i_ind+1, j_ind, k_ind], energy)
     surface_i_vals = np.append(surface_i_vals, new_i_vals)
     surface_j_vals = np.append(surface_j_vals, j_ind)
     surface_k_vals = np.append(surface_k_vals, k_ind)
@@ -157,7 +157,7 @@ def _interp_linear(kmesh, marching_cube_indexes, verbose, energy):
       (((marching_cube_indexes & 1) + (marching_cube_indexes & 4)) == 4) \
     )
     new_j_vals = _linear_equation(j_ind, j_ind+1, \
-      kmesh.mesh[i_ind, j_ind, k_ind], kmesh.mesh[i_ind, j_ind+1, k_ind], energy)
+      kmesh.energies[i_ind, j_ind, k_ind], kmesh.energies[i_ind, j_ind+1, k_ind], energy)
     surface_i_vals = np.append(surface_i_vals, i_ind)
     surface_j_vals = np.append(surface_j_vals, new_j_vals)
     surface_k_vals = np.append(surface_k_vals, k_ind)
@@ -168,7 +168,7 @@ def _interp_linear(kmesh, marching_cube_indexes, verbose, energy):
       (((marching_cube_indexes & 1) + (marching_cube_indexes & 2)) == 2) \
     )
     new_k_vals = _linear_equation(k_ind, k_ind+1, \
-      kmesh.mesh[i_ind, j_ind, k_ind], kmesh.mesh[i_ind, j_ind, k_ind+1], energy)
+      kmesh.energies[i_ind, j_ind, k_ind], kmesh.energies[i_ind, j_ind, k_ind+1], energy)
     surface_i_vals = np.append(surface_i_vals, i_ind)
     surface_j_vals = np.append(surface_j_vals, j_ind)
     surface_k_vals = np.append(surface_k_vals, new_k_vals)
@@ -184,9 +184,9 @@ def _interp_rbf(kmesh, marching_cube_indexes, precision, verbose, energy):
     '''
     if verbose == True:
         print 'Generating Radial Basis Function for interpolation ...'
-    i_indexes, j_indexes, k_indexes = np.where(kmesh.mesh.mask == False)
-    rbf_energy_function = Rbf(i_indexes, j_indexes, k_indexes, kmesh.mesh[i_indexes, j_indexes, k_indexes])
-    kmesh.mesh.mask = kmesh.mesh.mask | (marching_cube_indexes == 0) | (marching_cube_indexes == 255)
+    i_indexes, j_indexes, k_indexes = np.where(kmesh.energies.mask == False)
+    rbf_energy_function = Rbf(i_indexes, j_indexes, k_indexes, kmesh.energies[i_indexes, j_indexes, k_indexes])
+    kmesh.energies.mask = kmesh.energies.mask | (marching_cube_indexes == 0) | (marching_cube_indexes == 255)
     surface_i_vals = np.array([])
     surface_j_vals = np.array([])
     surface_k_vals = np.array([])

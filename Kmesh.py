@@ -46,21 +46,21 @@ class Kmesh(object):
                 band_data = band_data.data
             self._build_mesh(band_data)
         else:
-            self.mesh = None
-            self.mesh_ids = None
+            self.energies = None
+            self.ids = None
 
     def i_vals(self):
-        return np.arange(self.mesh.shape[0]) * \
+        return np.arange(self.energies.shape[0]) * \
           self.i_spacing + self.i_offset
     i_vals = property(i_vals)
 
     def j_vals(self):
-        return np.arange(self.mesh.shape[1]) * \
+        return np.arange(self.energies.shape[1]) * \
           self.j_spacing + self.j_offset
     j_vals = property(j_vals)
 
     def k_vals(self):
-        return np.arange(self.mesh.shape[2]) * \
+        return np.arange(self.energies.shape[2]) * \
           self.k_spacing + self.k_offset
     k_vals = property(k_vals)
 
@@ -82,20 +82,20 @@ class Kmesh(object):
         shifted by half and there are an odd number of points in the mesh then
         the choice of the centre point will be always rounded up
         '''
-        if self.mesh.shape != self.mesh_ids.shape:
+        if self.energies.shape != self.ids.shape:
             raise ValueError('Energy mesh and id mesh do not match in size! Cannot shift ...')
         spacings = np.array([self.i_spacing, self.j_spacing, self.k_spacing])
         if rel == True:
-            shift_places = np.ceil(np.array(shift_by) * (np.array(self.mesh.shape)-1)).astype(int)
+            shift_places = np.ceil(np.array(shift_by) * (np.array(self.energies.shape)-1)).astype(int)
         else:
             shift_places = np.ceil(np.array(shift_by) / spacings).astype(int)
         # Roll the matrices around
-        self.mesh = np.roll(self.mesh, shift_places[0], axis=0)
-        self.mesh = np.roll(self.mesh, shift_places[1], axis=1)
-        self.mesh = np.roll(self.mesh, shift_places[2], axis=2)
-        self.mesh_ids = np.roll(self.mesh_ids, shift_places[0], axis=0)
-        self.mesh_ids = np.roll(self.mesh_ids, shift_places[1], axis=1)
-        self.mesh_ids = np.roll(self.mesh_ids, shift_places[2], axis=2)
+        self.energies = np.roll(self.energies, shift_places[0], axis=0)
+        self.energies = np.roll(self.energies, shift_places[1], axis=1)
+        self.energies = np.roll(self.energies, shift_places[2], axis=2)
+        self.ids = np.roll(self.ids, shift_places[0], axis=0)
+        self.ids = np.roll(self.ids, shift_places[1], axis=1)
+        self.ids = np.roll(self.ids, shift_places[2], axis=2)
         # Adjust the offsets
         self.i_offset = self.i_offset + shift_places[0] * self.i_spacing
         self.j_offset = self.j_offset + shift_places[1] * self.j_spacing
@@ -105,8 +105,8 @@ class Kmesh(object):
         '''
         Returns an Nx4 array of the id,i,j,k,energy values as indexes
         '''
-        ind_list = np.array([ind + (en,) for ind, en in np.ndenumerate(self.mesh) if (self.mesh.mask[ind] == False)])
-        ids = np.array([id for ind, id in np.ndenumerate(self.mesh_ids) if (self.mesh_ids.mask[ind] == False)])
+        ind_list = np.array([ind + (en,) for ind, en in np.ndenumerate(self.energies) if (self.energies.mask[ind] == False)])
+        ids = np.array([id for ind, id in np.ndenumerate(self.ids) if (self.ids.mask[ind] == False)])
         return np.concatenate((ids.reshape((ids.shape[0], 1)), ind_list), axis=1)
     indexes = property(indexes)
 
@@ -158,10 +158,10 @@ class Kmesh(object):
             k_dimension = int((k_vals.max() - k_vals.min()) / self.k_spacing) + 1
         else:
             k_dimension = 1
-        self.mesh = np.ma.zeros((i_dimension, j_dimension, k_dimension))
-        self.mesh_ids = np.ma.zeros((i_dimension, j_dimension, k_dimension))
-        self.mesh.mask = True
-        self.mesh_ids.mask = True
+        self.energies = np.ma.zeros((i_dimension, j_dimension, k_dimension))
+        self.ids = np.ma.zeros((i_dimension, j_dimension, k_dimension))
+        self.energies.mask = True
+        self.ids.mask = True
         # Convert the band_data co-ordinates to indexes
 ##         if self.i_spacing == 0:
 ##             band_data[:,1] = 0
@@ -194,10 +194,10 @@ class Kmesh(object):
             i = int(i)
             j = int(j)
             k = int(k)
-            self.mesh[i, j, k] = energy
-            self.mesh_ids[i, j, k] = id
-            self.mesh.mask[i, j, k] = False
-            self.mesh_ids.mask[i, j, k] = False
+            self.energies[i, j, k] = energy
+            self.ids[i, j, k] = id
+            self.energies.mask[i, j, k] = False
+            self.ids.mask[i, j, k] = False
 
     def _find_arithmetic_series_formula(self, series):
         '''Returns the formula for an incomplete arithmetic progression
@@ -224,11 +224,11 @@ class Kmesh(object):
         return (a, b)
 
     def shape(self):
-        return self.mesh.shape
+        return self.energies.shape
     shape = property(shape)
 
     def __len__(self):
-        return len(self.mesh)
+        return len(self.energies)
 
     def __getitem__(self, *args):
         '''
@@ -238,8 +238,8 @@ class Kmesh(object):
         slices = args[0]
         new_km = Kmesh()
         # Copy across the meshes
-        new_km.mesh = self.mesh[slices].copy()
-        new_km.mesh_ids = self.mesh_ids[slices].copy()
+        new_km.energies = self.energies[slices].copy()
+        new_km.ids = self.ids[slices].copy()
         # Redefine the spacings and offsets
         if type(slices) != tuple:
             slices = tuple([slices])
@@ -269,8 +269,8 @@ class Kmesh(object):
           j_offset = %f
           k_spacing = %f
           k_offset = %f
-          mesh.shape = %s
-          mesh_ids.shape = %s
+          energies.shape = %s
+          ids.shape = %s
           len(kpoints) = %d
           energy min = %f
           energy max = %f
@@ -285,15 +285,15 @@ class Kmesh(object):
             self.j_offset,
             self.k_spacing,
             self.k_offset,
-            str(self.mesh.shape),
-            str(self.mesh_ids.shape),
+            str(self.energies.shape),
+            str(self.ids.shape),
             len(self.kpoints),
-            self.mesh.min(),
-            self.mesh.max(),
-            self.mesh_ids.min(),
-            self.mesh_ids.max(),
-            self.mesh.shape[0] * self.mesh.shape[1] * self.mesh.shape[2],
-            self.mesh.mask.sum()
+            self.energies.min(),
+            self.energies.max(),
+            self.ids.min(),
+            self.ids.max(),
+            self.energies.shape[0] * self.energies.shape[1] * self.energies.shape[2],
+            self.energies.mask.sum()
         )
         print out
     q = property(query)
