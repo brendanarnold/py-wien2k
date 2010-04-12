@@ -6,15 +6,18 @@ import numpy as np
 from wien2k.utils.remove_duplicates import remove_duplicates
 
 def expand_ibz(klist_rdr=None, \
-        struct_rdr=None, sym_mats=None, band=None, sort_by=None, \
-        ibz_data=None, bz_dims=None, bz_centre=None, constrain_to_bz=True, cols=[1,2,3]):
+        struct_rdr=None, outputkgen_rdr=None, sym_mats=None, band=None, \
+        sort_by=None, ibz_data=None, bz_dims=None, bz_centre=None, \
+        constrain_to_bz=True, cols=[1,2,3], rlvs=None):
     '''
     Expands a data set containing irreducible k points into a full Brillouin
     zone of k points
 
     The following parameters need to be passed,
 
-    sym_mats   A list SymMat instances
+    sym_mats            A list SymMat instances
+    rlvs                A 3x3 Numpy array of reciprocal lattice vectors,
+                        default is the identity matrix
     ibz_data            A NxM>=4 array of N k points representing the
                         irreducible Brillouin zone with each row of form
                         id,kx,ky,kz,[klist denom],...
@@ -93,6 +96,11 @@ def expand_ibz(klist_rdr=None, \
         if bz_dims is None:
             klist_denominator = np.unique(klist_rdr.denominators)[0]
             bz_dims = 3*[klist_denominator]
+    if outputkgen_rdr is not None:
+        if sym_mats is not None:
+            sym_mats = outputkgen_rdr.sym_mats
+        if rlvs is not None:
+            rlvs = outputkgen_rdr.rlvs
     if bz_dims is None:
         bz_dims = [1.,1.,1.]
     if struct_rdr is not None:
@@ -105,6 +113,8 @@ def expand_ibz(klist_rdr=None, \
         ibz_data = band.data
     if (bz_centre is None) and (bz_dims is not None):
         bz_centre = [bz_dims[0]/2.0, bz_dims[1]/2.0, bz_dims[2]/2.0]
+    if rlvs is None:
+        rlvs = np.identity(3)
 
 ##     if band != None:
 ##         ibz_data = ibz_data or band.data
@@ -131,7 +141,9 @@ def expand_ibz(klist_rdr=None, \
     # Use the Struct vectors to build the full Brollouin zone
     full_bz = None
     for symmetry_matrix in sym_mats:
-        kpoints_buffer = symmetry_matrix.map(ibz_data, cols=cols)
+        kpoints_buffer = ibz_data.copy()
+        kpoints_buffer[:,cols] = np.dot(kpoints_buffer[:,cols], rlvs.transpose())
+        kpoints_buffer = symmetry_matrix.map(kpoints_buffer, cols=cols)
         # Map transforms back into the unit cell if required
         if constrain_to_bz == True:
             # Some outliers on the edge of the cells may be

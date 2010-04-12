@@ -396,19 +396,16 @@ class Kmesh(object):
         
 
 if __name__ == '__main__':
-    '''Do some testing ...'''
+    # Do some testing ...
     import doctest
     import os
     import sys
-    # Setup some objects
     import wien2k
     from wien2k.utils import expand_ibz
-    # Set the context
-    orig_dir = os.getcwd()
-    os.chdir(os.path.join(sys.path[0], 'tests', 'TiC'))
-    b = wien2k.EnergyReader('TiC.energy').bands[0]
+    # Set the context - a band expanded to the full zone
+    energy_filename = os.path.join(sys.path[0], 'tests', 'TiC', 'TiC.energy')
+    band = wien2k.EnergyReader(energy_filename).bands[0]
     sym_mats = wien2k.StructReader('TiC.struct').sym_mats
-    band_data = expand_ibz(ibz_data=b.data, sym_mats=sym_mats)
+    band_data = expand_ibz(ibz_data=band.data, sym_mats=sym_mats)
     doctest.testmod(globs={'band_data':band_data, 'Kmesh': Kmesh})
-    doctest.testfile(os.path.join('..', 'Kmesh_test.txt'))
-    os.chdir(orig_dir)
+    doctest.testfile(os.path.join('tests', 'Kmesh_test.txt'))
