@@ -20,14 +20,6 @@ class Kmesh(object):
 
     'band_data' is expanded band data read from TiC.energy
 
-    >>> km = Kmesh(band_data)
-    >>> km.shape
-        (10, 10, 10)
-    >>> km_slice = km[:,:,5]
-    >>> km_slice.shape
-        (10, 10, 1)
-    >>> km_slice.i_plaid.shape
-        (10, 10)
     '''
     def __init__(self, band_data=None):
         self.i_spacing = None
@@ -70,17 +62,17 @@ class Kmesh(object):
 
         >>> km = Kmesh(band_data)
         >>> km.shape
-            (10, 10, 10)
+        (10, 10, 10)
         >>> km.i_plaid.shape
-            (10, 10, 10)
+        (10, 10, 10)
         >>> km_slice = km[:,:,5]
         >>> km_slice.shape
-            (10, 10, 1)
+        (10, 10, 1)
         >>> km_slice.i_plaid.shape
-            (10, 10)
+        (10, 10)
         '''
         i_mesh = np.ones(self.energies.shape)
-        i_mesh = i_mesh * self.i_vals.reshape((1,1,-1))
+        i_mesh = i_mesh * self.i_vals.reshape((-1,1,1))
         return np.squeeze(i_mesh)
     i_plaid = property(i_plaid)
 
@@ -94,14 +86,14 @@ class Kmesh(object):
 
         >>> km = Kmesh(band_data)
         >>> km.shape
-            (10, 10, 10)
+        (10, 10, 10)
         >>> km.j_plaid.shape
-            (10, 10, 10)
+        (10, 10, 10)
         >>> km_slice = km[:,:,5]
         >>> km_slice.shape
-            (10, 10, 1)
+        (10, 10, 1)
         >>> km_slice.j_plaid.shape
-            (10, 10)
+        (10, 10)
         '''
         j_mesh = np.ones(self.energies.shape)
         j_mesh = j_mesh * self.j_vals.reshape((1,-1,1))
@@ -118,17 +110,17 @@ class Kmesh(object):
 
         >>> km = Kmesh(band_data)
         >>> km.shape
-            (10, 10, 10)
+        (10, 10, 10)
         >>> km.k_plaid.shape
-            (10, 10, 10)
+        (10, 10, 10)
         >>> km_slice = km[:,5,:]
         >>> km_slice.shape
-            (10, 1, 10)
+        (10, 1, 10)
         >>> km_slice.k_plaid.shape
-            (10, 10)
+        (10, 10)
         '''
         k_mesh = np.ones(self.energies.shape)
-        k_mesh = k_mesh * self.k_vals.reshape((-1,1,1))
+        k_mesh = k_mesh * self.k_vals.reshape((1,1,-1))
         return np.squeeze(k_mesh)
     k_plaid = property(k_plaid)
 
@@ -197,7 +189,7 @@ class Kmesh(object):
 
         >>> km = Kmesh(band_data)
         >>> km.centre_point
-        array([ 0.5,  0.5,  0.5])
+        array([ 0.45,  0.45,  0.45])
         '''
         i_centre = (self.i_vals.max() + self.i_vals.min()) / 2.0
         j_centre = (self.j_vals.max() + self.j_vals.min()) / 2.0
@@ -238,19 +230,6 @@ class Kmesh(object):
         self.ids = np.ma.zeros((i_dimension, j_dimension, k_dimension))
         self.energies.mask = True
         self.ids.mask = True
-        # Convert the band_data co-ordinates to indexes
-##         if self.i_spacing == 0:
-##             band_data[:,1] = 0
-##         else:
-##             band_data[:,1] = (band_data[:,1]-self.i_offset)/self.i_spacing
-##         if self.j_spacing == 0:
-##             band_data[:,2] = 0
-##         else:
-##             band_data[:,2] = (band_data[:,2]-self.j_offset)/self.j_spacing
-##         if self.k_spacing == 0:
-##             band_data[:,3] = 0
-##         else:
-##             band_data[:,3] = (band_data[:,3]-self.k_offset)/self.k_spacing
         # Now populate the mesh
         for k in band_data:
             id, i, j, k, energy = k
@@ -285,18 +264,14 @@ class Kmesh(object):
             series = np.array([series])
         copy_series = np.unique(series[:])
         copy_series.sort()
+        # Allow up to one million points in each span of Kmesh
+        copy_series = np.around(copy_series, decimals=6)
         if len(copy_series) > 1:
             differences = copy_series[1:] - copy_series[:-1]
         else:
             differences = np.array([0.0])
-        # Pick a difference that is at least slightly sensible
-        cut_off = copy_series.min() * 1e-10
-        i = 0
         a = copy_series[0]
-        for diff in differences:
-            if diff > cut_off:
-                b = diff
-                break
+        b = differences.min()
         return (a, b)
 
     def shape(self):
@@ -312,27 +287,32 @@ class Kmesh(object):
         object itself (raw data can be got from the attributes directly)
         '''
         slices = args[0]
-        new_km = Kmesh()
-        # Copy across the meshes
-        new_km.energies = self.energies[slices].copy()
-        new_km.ids = self.ids[slices].copy()
-        # Redefine the spacings and offsets
-        if type(slices) != tuple:
-            slices = tuple([slices])
-        if len(slices) > 0:
-            i_vals = self.i_vals
-            i_vals = i_vals[slices[0]]
-            new_km.i_offset, new_km.i_spacing = self._find_arithmetic_series_formula(i_vals)
-        if len(slices) > 1:
-            j_vals = self.j_vals
-            j_vals = j_vals[slices[1]]
-            new_km.j_offset, new_km.j_spacing = self._find_arithmetic_series_formula(j_vals)
-        if len(slices) > 2:
-            k_vals = self.k_vals
-            k_vals = k_vals[slices[0]]
-            new_km.k_offset, new_km.k_spacing = self._find_arithmetic_series_formula(k_vals)
-        return new_km
-
+        # Create a matrix of indexes
+        i_vals = np.ma.zeros(self.energies.shape)
+        i_vals.mask = self.energies.mask.copy()
+        j_vals = np.ma.zeros(self.energies.shape)
+        j_vals.mask = self.energies.mask.copy()
+        k_vals = np.ma.zeros(self.energies.shape)
+        k_vals.mask = self.energies.mask.copy()
+        for ind, en in np.ndenumerate(self.energies):
+            if self.energies.mask[ind] == False:
+                i_vals[ind] = ind[0]
+                j_vals[ind] = ind[1]
+                k_vals[ind] = ind[2]
+        # Now parse down to only those asked for
+        ens = self.energies[slices]
+        ids = self.ids[slices]
+        i_vals = i_vals[slices]
+        j_vals = j_vals[slices]
+        k_vals = k_vals[slices]
+        # Now output a klist to create the new kmesh
+        klist = []
+        for ind, mask in np.ndenumerate(ens.mask):
+            if mask == False:
+                klist.append([ids[ind], i_vals[ind], j_vals[ind], k_vals[ind], ens[ind]])
+        new_kmesh = Kmesh(np.array(klist))
+        return new_kmesh
+            
     def query(self):
         '''
         Returns a bunch of useful stuff when using interactively. Aliased to
@@ -344,28 +324,44 @@ class Kmesh(object):
         >>> km.q
         Kmesh object:
           i_spacing = 0.100000
-          i_offset = 0.000000
           j_spacing = 0.100000
-          j_offset = 0.000000
           k_spacing = 0.100000
+          i_offset = 0.000000
+          j_offset = 0.000000
           k_offset = 0.000000
-          mesh.shape = (11, 11, 11)
-          mesh_ids.shape = (11, 11, 11)
-          len(kpoints) = 325
-          energy min = -3.427157
-          energy max = -3.419839
+          i_vals.max() = 0.900000
+          j_vals.max() = 0.900000
+          k_vals.max() = 0.900000
+          i_vals.min() = 0.000000
+          j_vals.min() = 0.000000
+          k_vals.min() = 0.000000
+          centre_point = [ 0.45  0.45  0.45]
+          energies.shape = (10, 10, 10)
+          ids.shape = (10, 10, 10)
+          len(kpoints) = 1000
+          energy min = 0.491084
+          energy max = 0.781488
           id min = 1
           id max = 47
-          total points = 1331
-          num masked = 1006
+          total points = 1000
+          num masked = 0
+
+
         '''
         out = '''Kmesh object:
   i_spacing = %f
-  i_offset = %f
   j_spacing = %f
-  j_offset = %f
   k_spacing = %f
+  i_offset = %f
+  j_offset = %f
   k_offset = %f
+  i_vals.max() = %f
+  j_vals.max() = %f
+  k_vals.max() = %f
+  i_vals.min() = %f
+  j_vals.min() = %f
+  k_vals.min() = %f
+  centre_point = %s
   energies.shape = %s
   ids.shape = %s
   len(kpoints) = %d
@@ -376,11 +372,18 @@ class Kmesh(object):
   total points = %d
   num masked = %d''' % (
             self.i_spacing,
-            self.i_offset,
             self.j_spacing,
-            self.j_offset,
             self.k_spacing,
+            self.i_offset,
+            self.j_offset,
             self.k_offset,
+            self.i_vals.max(),
+            self.j_vals.max(),
+            self.k_vals.max(),
+            self.i_vals.min(),
+            self.j_vals.min(),
+            self.k_vals.min(),
+            str(self.centre_point),
             str(self.energies.shape),
             str(self.ids.shape),
             len(self.kpoints),
@@ -394,7 +397,6 @@ class Kmesh(object):
         print out
     q = property(query)
         
-
 if __name__ == '__main__':
     # Do some testing ...
     import doctest
@@ -404,8 +406,13 @@ if __name__ == '__main__':
     from wien2k.utils import expand_ibz
     # Set the context - a band expanded to the full zone
     energy_filename = os.path.join(sys.path[0], 'tests', 'TiC', 'TiC.energy')
-    band = wien2k.EnergyReader(energy_filename).bands[0]
-    sym_mats = wien2k.StructReader('TiC.struct').sym_mats
-    band_data = expand_ibz(ibz_data=band.data, sym_mats=sym_mats)
-    doctest.testmod(globs={'band_data':band_data, 'Kmesh': Kmesh})
+    outputkgen_filename = os.path.join(sys.path[0], 'tests', 'TiC', 'TiC.outputkgen')
+    band = wien2k.EnergyReader(energy_filename).bands[6]
+    outputkgen_rdr = wien2k.OutputkgenReader(outputkgen_filename)
+    band_data = expand_ibz(band=band, outputkgen_rdr=outputkgen_rdr)
+    globs = {
+        'band_data' : band_data,
+        'Kmesh': Kmesh
+    }
+    doctest.testmod(globs=globs)
     doctest.testfile(os.path.join('tests', 'Kmesh_test.txt'))

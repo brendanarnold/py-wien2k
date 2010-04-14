@@ -5,7 +5,7 @@ import numpy as np
 from wien2k.utils.remove_duplicates import remove_duplicates
 
 def expand_ibz(klist_rdr=None, \
-        struct_rdr=None, outputkgen_rdr=None, sym_mats=None, band=None, \
+        outputkgen_rdr=None, sym_mats=None, band=None, \
         sort_by=None, ibz_data=None, bz_dims=None, bz_centre=None, \
         constrain_to_bz=True, cols=[1,2,3], rlvs=None):
     '''
@@ -32,16 +32,18 @@ def expand_ibz(klist_rdr=None, \
                         back inside the Brillouin zone
     bz_dims             The dimensions of the Brillouin Zone used for
                         constraining the zone, if not specified this
-                        will be read from the KlistReader or the
-                        ibz_data, if not included will default to [1.,1.,1.]
+                        will be read from the KlistReader or the if not 
+                        included will default to [1,1,1]
     bz_centre           The co-ordinates of the Brillouin zone centre in 
                         terms of the bz_dims (default: Half the bz_dims values)
     sort_by             A list of columns to sort by in order (default: [0])
 
     The above can be covered with the following objects,
 
-    struct_rdr          A StructReader instance will cover the symmetry matrices
-    klist_rdr           A KlistReader instance will cover the ibz_data and the bz_dims arguments
+    outputkgen_rdr      An OutputkgenReader instance will cover the
+                        symmetry matrices and the rlvs arguments
+    klist_rdr           A KlistReader instance will cover the ibz_data
+                        and the bz_dims
     band                A Band instance will cover the ibz_data
 
     Returns: An OxM array of k points with each row of form id,kx,ky,kz,...
@@ -70,6 +72,7 @@ def expand_ibz(klist_rdr=None, \
     >>> full_zone_data = expand_ibz(outputkgen_rdr=outputkgen_rdr, band=band)
     >>> full_zone_data.shape
     (1000, 5)
+
     '''
 
     # == CALCULATING THE RECTANGULAR LATTICE ==
@@ -79,10 +82,10 @@ def expand_ibz(klist_rdr=None, \
     # Let N be the .outputkgen symmetry matrices
     # Let R be the rectangular lattice vectors as read from .outputkgen after normalisation
     #
-    # The k point in rectagular co-ordinates can be found from either:
-    #     M.k     or
+    # The k point in rectagular co-ordinates can be found from:
     #     N.R^(-1).k
     #
+    # Don't know how to do this with the struct reader
 
     # Assign the parameters depending on how the function was called
     if band is not None:
@@ -99,11 +102,6 @@ def expand_ibz(klist_rdr=None, \
             # Must normalise the reciprocal lattice vectors from 
             # outputkgen - don't know why ...
             rlvs = outputkgen_rdr.rlvs / outputkgen_rdr.rlvs.max()
-    if struct_rdr is not None:
-        if sym_mats is not None:
-            raise ValueError('Multiple sets of symmetry matrices specified - struct reader and a set of symmetry matrices')
-        else:
-            sym_mats = sym_mats or struct_rdr.sym_mats
     # Set the default values if needed
     if bz_dims is None:
         bz_dims = [1.,1.,1.]
