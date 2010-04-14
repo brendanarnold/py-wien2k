@@ -1,6 +1,5 @@
 import numpy as np
 import wien2k
-from wien2k.utils.remove_duplicates import remove_duplicates
 from wien2k.utils.reduce_ibz import reduce_ibz
 from wien2k.utils.expand_ibz import expand_ibz
 

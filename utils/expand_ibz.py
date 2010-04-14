@@ -37,7 +37,7 @@ def expand_ibz(klist_rdr=None, \
                         ibz_data, if not included will default to [1.,1.,1.]
     bz_centre           The co-ordinates of the Brillouin zone centre in 
                         terms of the bz_dims (default: Half the bz_dims values)
-    sort_by             A list of columns to sort by in order (default: None)
+    sort_by             A list of columns to sort by in order (default: [0])
 
     The above can be covered with the following objects,
 
@@ -47,34 +47,30 @@ def expand_ibz(klist_rdr=None, \
 
     Returns: An OxM array of k points with each row of form id,kx,ky,kz,...
 
-    Example:
+    EXAMPLES:
 
-    Manually specifying each value and 'expanding' using the identity
-    matrix (note that the list is no longer in order)
+    Expanding a .klist
 
     >>> import wien2k
-    >>> ibz_data = np.array([ 
-    ...   [1,0,0,0,1.1],  
-    ...   [2,0,0,1,1.2],  
-    ...   [3,0,1,0,1.0],  
-    ...   [4,0,1,1,1.1],  
-    ...   [5,1,0,0,1.2],  
-    ...   [6,1,0,1,1.2],  
-    ...   [7,1,1,0,1.2], 
-    ...   [8,1,1,1,1.0]])
-    >>> sms = [wien2k.SymMat(matrix=np.identity(3))]
-    >>> bz_dims = [1,1,1]
-    >>> expand_ibz(sym_mats=sms, bz_dims=bz_dims, \
-        ibz_data=ibz_data, sort_by=[0])
-    array([[ 1. ,  0. ,  0. ,  0. ,  1.1],
-           [ 2. ,  0. ,  0. ,  1. ,  1.2],
-           [ 3. ,  0. ,  1. ,  0. ,  1. ],
-           [ 4. ,  0. ,  1. ,  1. ,  1.1],
-           [ 5. ,  1. ,  0. ,  0. ,  1.2],
-           [ 6. ,  1. ,  0. ,  1. ,  1.2],
-           [ 7. ,  1. ,  1. ,  0. ,  1.2],
-           [ 8. ,  1. ,  1. ,  1. ,  1. ]])
+    >>> klist_rdr = wien2k.KlistReader(TiC_klist_filename)
+    >>> outputkgen_rdr = wien2k.OutputkgenReader(TiC_outputkgen_filename)
+    >>> klist_rdr.data.shape     # There is 47 values in the IBZ
+    (47, 6)
+    >>> klist_rdr.bz_shape       # Expanded we get 10x10x10 = 1000 values
+    (10, 10, 10)
+    >>> full_zone_data = expand_ibz(outputkgen_rdr=outputkgen_rdr, klist_rdr=klist_rdr)
+    >>> full_zone_data.shape     # We have 1000 values
+    (1000, 6)
 
+    Expanding a Band read from a .energy file
+
+    >>> energy_rdr = wien2k.EnergyReader(TiC_energy_filename)
+    >>> band = energy_rdr.bands[6]  # A band that crosses the Fermi energy
+    >>> band.data.shape
+    (47, 5)
+    >>> full_zone_data = expand_ibz(outputkgen_rdr=outputkgen_rdr, band=band)
+    >>> full_zone_data.shape
+    (1000, 5)
     '''
 
     # == CALCULATING THE RECTANGULAR LATTICE ==
@@ -90,31 +86,35 @@ def expand_ibz(klist_rdr=None, \
     #
 
     # Assign the parameters depending on how the function was called
+    if band is not None:
+        ibz_data = band.data
     if klist_rdr is not None:
         if ibz_data is None:
             ibz_data = klist_rdr.data
         if bz_dims is None:
-            klist_denominator = np.unique(klist_rdr.denominators)[0]
-            bz_dims = 3*[klist_denominator]
+            bz_dims = klist_rdr.bz_shape 
     if outputkgen_rdr is not None:
-        if sym_mats is not None:
+        if sym_mats is None:
             sym_mats = outputkgen_rdr.sym_mats
-        if rlvs is not None:
-            rlvs = outputkgen_rdr.rlvs
-    if bz_dims is None:
-        bz_dims = [1.,1.,1.]
+        if rlvs is None:
+            # Must normalise the reciprocal lattice vectors from 
+            # outputkgen - don't know why ...
+            rlvs = outputkgen_rdr.rlvs / outputkgen_rdr.rlvs.max()
     if struct_rdr is not None:
         if sym_mats is not None:
             raise ValueError('Multiple sets of symmetry matrices specified - struct reader and a set of symmetry matrices')
         else:
             sym_mats = sym_mats or struct_rdr.sym_mats
-    if band is not None:
-        # Don't check for ibz_data as Klist may have set it
-        ibz_data = band.data
-    if (bz_centre is None) and (bz_dims is not None):
-        bz_centre = [bz_dims[0]/2.0, bz_dims[1]/2.0, bz_dims[2]/2.0]
+    # Set the default values if needed
+    if bz_dims is None:
+        bz_dims = [1.,1.,1.]
     if rlvs is None:
         rlvs = np.identity(3)
+    if sort_by is None:
+        sort_by = [0]
+    if (bz_centre is None) and (bz_dims is not None):
+        bz_centre = [bz_dims[0]/2.0, bz_dims[1]/2.0, bz_dims[2]/2.0]
+
 
 ##     if band != None:
 ##         ibz_data = ibz_data or band.data
@@ -130,7 +130,7 @@ def expand_ibz(klist_rdr=None, \
 ##                 sym_mats.append(np.dot(sm,np.linalg.inv(norm_rlvs)))
 
     # Complain a bit if necessary
-    if (ibz_data is None) and (sym_mats is None):
+    if (ibz_data is None) or (sym_mats is None):
         raise ValueError('One of the parameters was not specified')
     if (constrain_to_bz == True) and \
         ((bz_dims is None) or (len(bz_dims) != 3)):
@@ -138,11 +138,11 @@ def expand_ibz(klist_rdr=None, \
     if (len(sym_mats) == 0):
         raise ValueError('No symmetry matrices in list')
 
-    # Use the Struct vectors to build the full Brollouin zone
+    # Build the full Brollouin zone
     full_bz = None
     for symmetry_matrix in sym_mats:
         kpoints_buffer = ibz_data.copy()
-        kpoints_buffer[:,cols] = np.dot(kpoints_buffer[:,cols], rlvs.transpose())
+        kpoints_buffer[:,cols] = np.dot(kpoints_buffer[:,cols], np.linalg.inv(rlvs).transpose())
         kpoints_buffer = symmetry_matrix.map(kpoints_buffer, cols=cols)
         # Map transforms back into the unit cell if required
         if constrain_to_bz == True:
@@ -186,11 +186,7 @@ def expand_ibz(klist_rdr=None, \
         else:
             full_bz = np.concatenate((full_bz, kpoints_buffer))
     # Remove duplicate k points
-    rng_i = full_bz[:,1].max() - full_bz[:,1].min()
-    rng_j = full_bz[:,2].max() - full_bz[:,2].min()
-    rng_k = full_bz[:,3].max() - full_bz[:,3].min()
-    tolerance = 1e-8 * np.array([rng_i, rng_j, rng_k])
-    full_bz = remove_duplicates(full_bz, tol=tolerance)
+    full_bz = remove_duplicates(full_bz, dp_tol=6) # Allows up to one million points
 
 ##     kx,ky,kz = full_bz[:,1:4].transpose() # A way to sort by kx, then ky,kz,id
 ##     sorted_indices = np.lexsort(keys=(kz,ky,kx))
@@ -211,5 +207,18 @@ def expand_ibz(klist_rdr=None, \
 
 if __name__ == '__main__':
     import doctest
-    doctest.testmod()
+    import wien2k
+    import os
+    import sys
+    TiC_klist_filename = os.path.join(sys.path[0], '..', 'tests', 'TiC', 'TiC.klist')
+    TiC_outputkgen_filename = os.path.join(sys.path[0], '..', 'tests', 'TiC', 'TiC.outputkgen')
+    TiC_energy_filename = os.path.join(sys.path[0], '..', 'tests', 'TiC', 'TiC.energy')
+    globs = {
+        'TiC_klist_filename' : TiC_klist_filename,
+        'TiC_outputkgen_filename' : TiC_outputkgen_filename,
+        'TiC_energy_filename' : TiC_energy_filename,
+        'expand_ibz' : expand_ibz,
+    }
+    doctest.testfile(os.path.join(sys.path[0], '..', 'tests', 'expand_ibz_test.txt'), globs=globs)
+    doctest.testmod(globs=globs)
     
