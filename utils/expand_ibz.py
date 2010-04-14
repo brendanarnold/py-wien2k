@@ -1,4 +1,3 @@
-
 __all__ = ['expand_ibz']
 
 import sys
@@ -115,20 +114,6 @@ def expand_ibz(klist_rdr=None, \
     if (bz_centre is None) and (bz_dims is not None):
         bz_centre = [bz_dims[0]/2.0, bz_dims[1]/2.0, bz_dims[2]/2.0]
 
-
-##     if band != None:
-##         ibz_data = ibz_data or band.data
-##     if outputkgen_rdr != None:
-##         if sym_mats = None:
-##             # See note above about having to operate the matrices on the
-##             # inverse of the normalised rectangular lattice vectors
-##             # FIXME, may not be needed for hexagonal lattices - investigate this
-##             rlvs = outputkgen_rdr.rlvs
-##             norm_rlvs = rlvs / rlvs.max(axis=0)
-##             sym_mats = []
-##             for sm in outputkgen_rdr.sym_mats:
-##                 sym_mats.append(np.dot(sm,np.linalg.inv(norm_rlvs)))
-
     # Complain a bit if necessary
     if (ibz_data is None) or (sym_mats is None):
         raise ValueError('One of the parameters was not specified')
@@ -142,14 +127,11 @@ def expand_ibz(klist_rdr=None, \
     full_bz = None
     for symmetry_matrix in sym_mats:
         kpoints_buffer = ibz_data.copy()
+        # FIXME, rlv operation may not be needed for hexagonal lattices - investigate this
         kpoints_buffer[:,cols] = np.dot(kpoints_buffer[:,cols], np.linalg.inv(rlvs).transpose())
         kpoints_buffer = symmetry_matrix.map(kpoints_buffer, cols=cols)
         # Map transforms back into the unit cell if required
         if constrain_to_bz == True:
-            # Some outliers on the edge of the cells may be
-            # inadvertently mapped inside due to reounding errors,
-            # introduce a tolerance
-##             tolerance = sys.float_info.epsilon * 1e1
             i_col, j_col, k_col = kpoints_buffer[:,cols].transpose()
             max_i = bz_dims[0]/2.0 + bz_centre[0] 
             max_j = bz_dims[1]/2.0 + bz_centre[1]
@@ -159,23 +141,17 @@ def expand_ibz(klist_rdr=None, \
             min_k = bz_centre[2] - bz_dims[2]/2.0
             # Map coords that are too big inside Brillouin zone
             while i_col.max() > max_i:
-##                 i_col[(i_col < (max_i + tolerance)) & (i_col > max_i)] = max_i
                 i_col[i_col > max_i] -= bz_dims[0]
             while j_col.max() > max_j:
-##                 j_col[(j_col < (max_j + tolerance)) & (j_col > max_j)] = max_j
                 j_col[j_col > max_j] -= bz_dims[1]
             while k_col.max() > max_k:
-##                 k_col[(k_col < (max_k + tolerance)) & (k_col > max_k)] = max_k
                 k_col[k_col > max_k] -= bz_dims[2]
             # Map coords that are too small inside Brillouin zone
             while i_col.min() < min_i:
-##                 i_col[(i_col > (min_i - tolerance)) & (i_col < min_i)] = min_i
                 i_col[i_col < min_i] += bz_dims[0]
             while j_col.min() < min_j:
-##                 j_col[(j_col > (min_j - tolerance)) & (j_col < min_j)] = min_j
                 j_col[j_col < min_j] += bz_dims[1]
             while k_col.min() < min_k:
-##                 k_col[(k_col > (min_k - tolerance)) & (k_col < min_k)] = min_k
                 k_col[k_col < min_k] += bz_dims[2]
             kpoints_buffer[:,cols[0]] = i_col
             kpoints_buffer[:,cols[1]] = j_col
@@ -185,16 +161,11 @@ def expand_ibz(klist_rdr=None, \
             full_bz = kpoints_buffer
         else:
             full_bz = np.concatenate((full_bz, kpoints_buffer))
-    # Remove duplicate k points
-    full_bz = remove_duplicates(full_bz, dp_tol=6) # Allows up to one million points
 
-##     kx,ky,kz = full_bz[:,1:4].transpose() # A way to sort by kx, then ky,kz,id
-##     sorted_indices = np.lexsort(keys=(kz,ky,kx))
-##     full_bz = np.take(full_bz, sorted_indices, axis=0)
-##     full_bz = full_bz.tolist()
-##     full_bz = [kp for i,kp in enumerate(full_bz) \
-##             if i == 0 or kp[1:4] != full_bz[i-1][1:4]]
+    full_bz = remove_duplicates(full_bz, dp_tol=6, cols=cols)
 
+    # Remove duplicate k points, with tolerance that allows up to one
+    # million k points
     # Sort the results if required
     if sort_by is not None:
         sorted_inds = np.lexsort([full_bz[:,c] for c in sort_by])
@@ -204,12 +175,12 @@ def expand_ibz(klist_rdr=None, \
     return full_bz.copy()
 
 
-
 if __name__ == '__main__':
+    # Set up the testing
     import doctest
-    import wien2k
     import os
     import sys
+    # Try to find the test files as robustly as possible
     TiC_klist_filename = os.path.join(sys.path[0], '..', 'tests', 'TiC', 'TiC.klist')
     TiC_outputkgen_filename = os.path.join(sys.path[0], '..', 'tests', 'TiC', 'TiC.outputkgen')
     TiC_energy_filename = os.path.join(sys.path[0], '..', 'tests', 'TiC', 'TiC.energy')

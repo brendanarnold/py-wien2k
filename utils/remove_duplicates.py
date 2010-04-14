@@ -93,7 +93,7 @@ def remove_duplicates(data, dp_tol=None, cols=None, sort_by=None):
 
     # TODO: For now, use a slow Python 'for' loop, try to find a more
     # numponic way later - see: http://stackoverflow.com/questions/2433882/
-    sorted_indexes = np.lexsort(tuple([data[:,col] for col in cols]))
+    sorted_indexes = np.lexsort(tuple([rnd_data[:,col] for col in cols]))
     rnd_data = rnd_data[sorted_indexes]
     unique_kpts = []
     for i in xrange(len(rnd_data)):
