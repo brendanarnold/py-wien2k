@@ -215,15 +215,15 @@ class Kmesh(object):
         # Find the dimensions of the 3D array - bearing in mind that there may
         # not be a point at every spacing
         if self.i_spacing != 0.0:
-            i_dimension = int((i_vals.max() - i_vals.min()) / self.i_spacing) + 1
+            i_dimension = int(round((i_vals.max() - i_vals.min()) / self.i_spacing)) + 1
         else:
             i_dimension = 1
         if self.j_spacing != 0.0:
-            j_dimension = int((j_vals.max() - j_vals.min()) / self.j_spacing) + 1
+            j_dimension = int(round((j_vals.max() - j_vals.min()) / self.j_spacing)) + 1
         else:
             j_dimension = 1
         if self.k_spacing != 0.0:
-            k_dimension = int((k_vals.max() - k_vals.min()) / self.k_spacing) + 1
+            k_dimension = int(round((k_vals.max() - k_vals.min()) / self.k_spacing)) + 1
         else:
             k_dimension = 1
         self.energies = np.ma.zeros((i_dimension, j_dimension, k_dimension))
@@ -246,9 +246,9 @@ class Kmesh(object):
             else:
                 k = (k-self.k_offset)/self.k_spacing
             id = int(id)
-            i = int(i)
-            j = int(j)
-            k = int(k)
+            i = int(round(i))
+            j = int(round(j))
+            k = int(round(k))
             self.energies[i, j, k] = energy
             self.ids[i, j, k] = id
             self.energies.mask[i, j, k] = False
@@ -264,7 +264,7 @@ class Kmesh(object):
             series = np.array([series])
         copy_series = np.unique(series[:])
         copy_series.sort()
-        # Allow up to one million points in each span of Kmesh
+        # Allow up to million points in each span of Kmesh
         copy_series = np.around(copy_series, decimals=6)
         if len(copy_series) > 1:
             differences = copy_series[1:] - copy_series[:-1]
@@ -302,9 +302,9 @@ class Kmesh(object):
         # Now parse down to only those asked for
         ens = self.energies[slices]
         ids = self.ids[slices]
-        i_vals = i_vals[slices]
-        j_vals = j_vals[slices]
-        k_vals = k_vals[slices]
+        i_vals = i_vals[slices] * self.i_spacing + self.i_offset
+        j_vals = j_vals[slices] * self.j_spacing + self.j_offset
+        k_vals = k_vals[slices] * self.k_spacing + self.k_offset
         # Now output a klist to create the new kmesh
         klist = []
         for ind, mask in np.ndenumerate(ens.mask):
